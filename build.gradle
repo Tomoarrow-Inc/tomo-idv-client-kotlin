@@ -69,9 +69,14 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
     }
 }
 
+// ── Maven Central 필수: sources + javadoc JAR ──
+
 java {
     withSourcesJar()
+    withJavadocJar()
 }
+
+// ── Publishing 설정 ──
 
 publishing {
     publications {
@@ -83,20 +88,42 @@ publishing {
 
             pom {
                 name = 'IDV Kotlin Client'
-                description = 'Kotlin client for the Tomo Identity Verification API'
-                url = 'https://github.com/Tomoarrow-Inc/identity-verification'
+                description = 'Kotlin client SDK for the Tomo Identity Verification API. Provides typed API bindings for KYC identity verification across multiple countries and providers.'
+                url = 'https://github.com/Tomoarrow-Inc/tomo-idv-client-kotlin'
+
+                licenses {
+                    license {
+                        // ★ 라이선스를 결정한 후 변경할 것
+                        name = 'MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+
+                developers {
+                    developer {
+                        // ★ 실제 담당자 정보로 변경할 것
+                        id = 'tomoarrow'
+                        name = 'Tomoarrow Inc'
+                        email = 'dev@tomoarrow.com'
+                    }
+                }
+
+                scm {
+                    connection = 'scm:git:git://github.com/Tomoarrow-Inc/tomo-idv-client-kotlin.git'
+                    developerConnection = 'scm:git:ssh://github.com/Tomoarrow-Inc/tomo-idv-client-kotlin.git'
+                    url = 'https://github.com/Tomoarrow-Inc/tomo-idv-client-kotlin'
+                }
             }
         }
     }
     repositories {
         maven {
-            name = 'sonatype'
-            def releasesRepoUrl = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
-            def snapshotsRepoUrl = 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
-            url = version.toString().endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            name = 'central'
+            // Central Portal 방식 (2024년~ 신규 프로젝트 권장)
+            url = 'https://central.sonatype.com/api/v1/publisher/deployments/download/'
             credentials {
-                username = findProperty('ossrhUsername') ?: System.getenv('OSSRH_USERNAME') ?: ''
-                password = findProperty('ossrhPassword') ?: System.getenv('OSSRH_PASSWORD') ?: ''
+                username = findProperty('centralUsername') ?: System.getenv('MAVEN_CENTRAL_USERNAME') ?: ''
+                password = findProperty('centralPassword') ?: System.getenv('MAVEN_CENTRAL_PASSWORD') ?: ''
             }
         }
     }

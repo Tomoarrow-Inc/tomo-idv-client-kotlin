@@ -1,0 +1,17 @@
+services:
+  gpg:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.gpg
+    working_dir: /workspace
+    volumes:
+      - ..:/workspace
+      - gpg-keys:/root/.gnupg
+      - gradle-cache:/root/.gradle
+    tty: true
+    stdin_open: true
+    entrypoint: ["bash"]
+
+volumes:
+  gpg-keys:
+  gradle-cache:
