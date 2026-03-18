@@ -1,0 +1,25 @@
+/**
+ * Copy OpenAPI-generated Kotlin client from ci into tomo-idv-client-kotlin/.
+ * Only syncs src/ and docs/ — scaffold files (build.gradle, gradlew, etc.) are preserved.
+ * Run from tomo-idv-client-kotlin root: node scripts/copy-generated.mjs
+ * Or from ci after gen: node ../tomo-idv-client-kotlin/scripts/copy-generated.mjs
+ */
+import { cpSync, rmSync, existsSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const source = join(__dirname, '..', '..', 'ci', 'contracts', 'openapi-generator', 'generated', 'idv-kotlin-client');
+const repoRoot = join(__dirname, '..');
+
+for (const dir of ['src', 'docs']) {
+  const src = join(source, dir);
+  const dest = join(repoRoot, dir);
+  if (!existsSync(src)) {
+    console.error(`Source not found: ${src}`);
+    process.exit(1);
+  }
+  rmSync(dest, { recursive: true, force: true });
+  cpSync(src, dest, { recursive: true });
+}
+console.log('Copied generated Kotlin client to', repoRoot);
