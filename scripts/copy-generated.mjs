@@ -12,9 +12,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const source = join(__dirname, '..', '..', 'ci', 'contracts', 'openapi-generator', 'generated', 'idv-kotlin-client');
 const repoRoot = join(__dirname, '..');
 
-for (const dir of ['src', 'docs']) {
-  const src = join(source, dir);
-  const dest = join(repoRoot, dir);
+const mapping = [
+  { from: 'src',  to: join('generated', 'src') },
+  { from: 'docs', to: 'generated-docs' },
+];
+
+for (const { from, to } of mapping) {
+  const src = join(source, from);
+  const dest = join(repoRoot, to);
   if (!existsSync(src)) {
     console.error(`Source not found: ${src}`);
     process.exit(1);

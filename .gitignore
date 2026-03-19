@@ -34,3 +34,7 @@ local.properties
 # IDE
 .idea/
 *.iml
+
+# 구 생성 경로 (실수 방지)
+/src/
+/docs/
