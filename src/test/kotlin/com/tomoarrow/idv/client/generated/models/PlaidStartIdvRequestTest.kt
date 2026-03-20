@@ -31,16 +31,16 @@ class PlaidStartIdvRequestTest : ShouldSpec() {
             //modelInstance.callbackUrl shouldBe ("TODO")
         }
 
-        // to test the property `email`
-        should("test email") {
-            // uncomment below to test the property
-            //modelInstance.email shouldBe ("TODO")
-        }
-
         // to test the property `userId`
         should("test userId") {
             // uncomment below to test the property
             //modelInstance.userId shouldBe ("TODO")
+        }
+
+        // to test the property `email`
+        should("test email") {
+            // uncomment below to test the property
+            //modelInstance.email shouldBe ("TODO")
         }
 
     }

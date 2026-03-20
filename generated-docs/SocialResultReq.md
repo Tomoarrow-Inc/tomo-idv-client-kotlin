@@ -1,11 +1,10 @@
 
-# TomoIdvStartReq
+# SocialResultReq
 
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **callbackUrl** | **kotlin.String** |  |  |
-| **userId** | **kotlin.String** |  |  |
+| **socialId** | **kotlin.String** |  |  |
 
 
 

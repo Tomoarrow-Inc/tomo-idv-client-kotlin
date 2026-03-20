@@ -23,15 +23,15 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param redirectUrl 
+ * @param callbackUrl 
  * @param userId 
  */
 @Serializable
 
 data class TomoIdvStartReq (
 
-    @SerialName(value = "redirect_url")
-    val redirectUrl: kotlin.String,
+    @SerialName(value = "callback_url")
+    val callbackUrl: kotlin.String,
 
     @SerialName(value = "user_id")
     val userId: kotlin.String

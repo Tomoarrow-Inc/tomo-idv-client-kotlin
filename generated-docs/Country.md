@@ -12,6 +12,8 @@
 
     * `JP` (value: `"jp"`)
 
+    * `CN` (value: `"cn"`)
+
     * `UNKNOWN` (value: `"unknown"`)
 
 

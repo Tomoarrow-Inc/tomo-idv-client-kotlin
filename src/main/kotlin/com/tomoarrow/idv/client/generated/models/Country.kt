@@ -19,11 +19,10 @@ package com.tomoarrow.idv.client.generated.models
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-
 /**
  * 
  *
- * Values: US,UK,CA,JP,UNKNOWN
+ * Values: US,UK,CA,JP,CN,UNKNOWN
  */
 @Serializable
 enum class Country(val value: kotlin.String) {
@@ -39,6 +38,9 @@ enum class Country(val value: kotlin.String) {
 
     @SerialName(value = "jp")
     JP("jp"),
+
+    @SerialName(value = "cn")
+    CN("cn"),
 
     @SerialName(value = "unknown")
     UNKNOWN("unknown");
@@ -63,11 +65,10 @@ enum class Country(val value: kotlin.String) {
          */
         fun decode(data: kotlin.Any?): Country? = data?.let {
           val normalizedData = "$it".lowercase()
-          entries.firstOrNull { value ->
+          values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()
           }
         }
     }
 }
-
 

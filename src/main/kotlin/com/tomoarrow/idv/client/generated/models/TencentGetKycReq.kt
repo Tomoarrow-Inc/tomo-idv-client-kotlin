@@ -15,6 +15,7 @@
 
 package com.tomoarrow.idv.client.generated.models
 
+import com.tomoarrow.idv.client.generated.models.TencentIdvField
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
@@ -23,22 +24,18 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param callbackUrl 
  * @param userId 
- * @param email 
+ * @param fields 
  */
 @Serializable
 
-data class PlaidStartIdvRequest (
-
-    @SerialName(value = "callback_url")
-    val callbackUrl: kotlin.String,
+data class TencentGetKycReq (
 
     @SerialName(value = "user_id")
     val userId: kotlin.String,
 
-    @SerialName(value = "email")
-    val email: kotlin.String? = null
+    @SerialName(value = "fields")
+    val fields: kotlin.collections.List<@Contextual TencentIdvField>? = null
 
 ) {
 

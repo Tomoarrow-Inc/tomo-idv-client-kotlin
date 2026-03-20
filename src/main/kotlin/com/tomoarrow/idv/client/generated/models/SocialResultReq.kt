@@ -23,22 +23,14 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param callbackUrl 
- * @param userId 
- * @param email 
+ * @param socialId 
  */
 @Serializable
 
-data class PlaidStartIdvRequest (
+data class SocialResultReq (
 
-    @SerialName(value = "callback_url")
-    val callbackUrl: kotlin.String,
-
-    @SerialName(value = "user_id")
-    val userId: kotlin.String,
-
-    @SerialName(value = "email")
-    val email: kotlin.String? = null
+    @SerialName(value = "social_id")
+    val socialId: kotlin.String
 
 ) {
 

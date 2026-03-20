@@ -19,37 +19,26 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.tomoarrow.idv.client.generated.models.EitherStringValue
 import com.tomoarrow.idv.client.generated.models.GetKycReq
 import com.tomoarrow.idv.client.generated.models.GetKycResp
 import com.tomoarrow.idv.client.generated.models.GoogleStartReq
 import com.tomoarrow.idv.client.generated.models.GoogleStartResp
 import com.tomoarrow.idv.client.generated.models.LiquidGetKycReq
 import com.tomoarrow.idv.client.generated.models.LiquidIntegratedAppResponse
-import com.tomoarrow.idv.client.generated.models.LiquidPutKycReq
-import com.tomoarrow.idv.client.generated.models.LiquidSessionTokenRequest
 import com.tomoarrow.idv.client.generated.models.LiquidStartIdvRequest
-import com.tomoarrow.idv.client.generated.models.LoginTicketRequest
-import com.tomoarrow.idv.client.generated.models.LoginTicketResponse
 import com.tomoarrow.idv.client.generated.models.PlaidGetKycReq
-import com.tomoarrow.idv.client.generated.models.PlaidPutKycReq
-import com.tomoarrow.idv.client.generated.models.PlaidSessionTokenRequest
 import com.tomoarrow.idv.client.generated.models.PlaidStartIdvRequest
 import com.tomoarrow.idv.client.generated.models.PlaidStartIdvResp
-import com.tomoarrow.idv.client.generated.models.SessionToken
+import com.tomoarrow.idv.client.generated.models.SocialResultReq
 import com.tomoarrow.idv.client.generated.models.StartIdvReq
 import com.tomoarrow.idv.client.generated.models.StartIdvResp
+import com.tomoarrow.idv.client.generated.models.TencentGetKycReq
+import com.tomoarrow.idv.client.generated.models.TencentGetUnionResultResp
 import com.tomoarrow.idv.client.generated.models.TokenResponse
-import com.tomoarrow.idv.client.generated.models.TomoIdvGetResultReq
-import com.tomoarrow.idv.client.generated.models.TomoIdvIssueTokenReq
-import com.tomoarrow.idv.client.generated.models.TomoIdvIssueTokenRes
-import com.tomoarrow.idv.client.generated.models.TomoIdvMockGetResultReq
-import com.tomoarrow.idv.client.generated.models.TomoIdvMockIssueTokenReq
-import com.tomoarrow.idv.client.generated.models.TomoIdvMockIssueTokenRes
-import com.tomoarrow.idv.client.generated.models.TomoIdvMockStartReq
-import com.tomoarrow.idv.client.generated.models.TomoIdvMockStartRes
 import com.tomoarrow.idv.client.generated.models.TomoIdvStartReq
 import com.tomoarrow.idv.client.generated.models.TomoIdvStartRes
+import com.tomoarrow.idv.client.generated.models.WeChatStartReq
+import com.tomoarrow.idv.client.generated.models.WeChatStartResp
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -70,86 +59,12 @@ import com.tomoarrow.idv.client.generated.infrastructure.ResponseType
 import com.tomoarrow.idv.client.generated.infrastructure.Success
 import com.tomoarrow.idv.client.generated.infrastructure.toMultiValue
 
-open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
+class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
             System.getProperties().getProperty(ApiClient.baseUrlKey, "http://localhost")
         }
-    }
-
-    /**
-     * POST /v1/idv/ca/cookie/start
-     * 
-     * 
-     * @param plaidStartIdvRequest  (optional)
-     * @return PlaidStartIdvResp
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvCaCookieStartPost(plaidStartIdvRequest: PlaidStartIdvRequest? = null) : PlaidStartIdvResp = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvCaCookieStartPostWithHttpInfo(plaidStartIdvRequest = plaidStartIdvRequest)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as PlaidStartIdvResp
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/ca/cookie/start
-     * 
-     * 
-     * @param plaidStartIdvRequest  (optional)
-     * @return ApiResponse<PlaidStartIdvResp?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvCaCookieStartPostWithHttpInfo(plaidStartIdvRequest: PlaidStartIdvRequest?) : ApiResponse<PlaidStartIdvResp?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvCaCookieStartPostRequestConfig(plaidStartIdvRequest = plaidStartIdvRequest)
-
-        return@withContext request<PlaidStartIdvRequest, PlaidStartIdvResp>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvCaCookieStartPost
-     *
-     * @param plaidStartIdvRequest  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvCaCookieStartPostRequestConfig(plaidStartIdvRequest: PlaidStartIdvRequest?) : RequestConfig<PlaidStartIdvRequest> {
-        val localVariableBody = plaidStartIdvRequest
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/ca/cookie/start",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
     }
 
     /**
@@ -293,78 +208,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/v1/idv/ca/kyc/get",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/ca/kyc/put
-     * 
-     * 
-     * @param plaidPutKycReq  (optional)
-     * @return void
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvCaKycPutPost(plaidPutKycReq: PlaidPutKycReq? = null) : Unit = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvCaKycPutPostWithHttpInfo(plaidPutKycReq = plaidPutKycReq)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> Unit
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/ca/kyc/put
-     * 
-     * 
-     * @param plaidPutKycReq  (optional)
-     * @return ApiResponse<Unit?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvCaKycPutPostWithHttpInfo(plaidPutKycReq: PlaidPutKycReq?) : ApiResponse<Unit?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvCaKycPutPostRequestConfig(plaidPutKycReq = plaidPutKycReq)
-
-        return@withContext request<PlaidPutKycReq, Unit>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvCaKycPutPost
-     *
-     * @param plaidPutKycReq  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvCaKycPutPostRequestConfig(plaidPutKycReq: PlaidPutKycReq?) : RequestConfig<PlaidPutKycReq> {
-        val localVariableBody = plaidPutKycReq
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/ca/kyc/put",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,
@@ -525,8 +368,8 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * 
      * 
      * @param authorization  (optional)
-     * @param tomoIdvGetResultReq  (optional)
-     * @return kotlin.Any
+     * @param tencentGetKycReq  (optional)
+     * @return TencentGetUnionResultResp
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -535,11 +378,11 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvCnKycGetPost(authorization: kotlin.String? = null, tomoIdvGetResultReq: TomoIdvGetResultReq? = null) : kotlin.Any = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvCnKycGetPostWithHttpInfo(authorization = authorization, tomoIdvGetResultReq = tomoIdvGetResultReq)
+    suspend fun v1IdvCnKycGetPost(authorization: kotlin.String? = null, tencentGetKycReq: TencentGetKycReq? = null) : TencentGetUnionResultResp = withContext(Dispatchers.IO) {
+        val localVarResponse = v1IdvCnKycGetPostWithHttpInfo(authorization = authorization, tencentGetKycReq = tencentGetKycReq)
 
         return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Any
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TencentGetUnionResultResp
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -558,17 +401,17 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * 
      * 
      * @param authorization  (optional)
-     * @param tomoIdvGetResultReq  (optional)
-     * @return ApiResponse<kotlin.Any?>
+     * @param tencentGetKycReq  (optional)
+     * @return ApiResponse<TencentGetUnionResultResp?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvCnKycGetPostWithHttpInfo(authorization: kotlin.String?, tomoIdvGetResultReq: TomoIdvGetResultReq?) : ApiResponse<kotlin.Any?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvCnKycGetPostRequestConfig(authorization = authorization, tomoIdvGetResultReq = tomoIdvGetResultReq)
+    suspend fun v1IdvCnKycGetPostWithHttpInfo(authorization: kotlin.String?, tencentGetKycReq: TencentGetKycReq?) : ApiResponse<TencentGetUnionResultResp?> = withContext(Dispatchers.IO) {
+        val localVariableConfig = v1IdvCnKycGetPostRequestConfig(authorization = authorization, tencentGetKycReq = tencentGetKycReq)
 
-        return@withContext request<TomoIdvGetResultReq, kotlin.Any>(
+        return@withContext request<TencentGetKycReq, TencentGetUnionResultResp>(
             localVariableConfig
         )
     }
@@ -577,11 +420,11 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * To obtain the request config of the operation v1IdvCnKycGetPost
      *
      * @param authorization  (optional)
-     * @param tomoIdvGetResultReq  (optional)
+     * @param tencentGetKycReq  (optional)
      * @return RequestConfig
      */
-    fun v1IdvCnKycGetPostRequestConfig(authorization: kotlin.String?, tomoIdvGetResultReq: TomoIdvGetResultReq?) : RequestConfig<TomoIdvGetResultReq> {
-        val localVariableBody = tomoIdvGetResultReq
+    fun v1IdvCnKycGetPostRequestConfig(authorization: kotlin.String?, tencentGetKycReq: TencentGetKycReq?) : RequestConfig<TencentGetKycReq> {
+        val localVariableBody = tencentGetKycReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
@@ -591,310 +434,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/v1/idv/cn/kyc/get",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/cn/mock/kyc/get
-     * 
-     * 
-     * @param authorization  (optional)
-     * @param tomoIdvMockGetResultReq  (optional)
-     * @return kotlin.Any
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvCnMockKycGetPost(authorization: kotlin.String? = null, tomoIdvMockGetResultReq: TomoIdvMockGetResultReq? = null) : kotlin.Any = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvCnMockKycGetPostWithHttpInfo(authorization = authorization, tomoIdvMockGetResultReq = tomoIdvMockGetResultReq)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Any
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/cn/mock/kyc/get
-     * 
-     * 
-     * @param authorization  (optional)
-     * @param tomoIdvMockGetResultReq  (optional)
-     * @return ApiResponse<kotlin.Any?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvCnMockKycGetPostWithHttpInfo(authorization: kotlin.String?, tomoIdvMockGetResultReq: TomoIdvMockGetResultReq?) : ApiResponse<kotlin.Any?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvCnMockKycGetPostRequestConfig(authorization = authorization, tomoIdvMockGetResultReq = tomoIdvMockGetResultReq)
-
-        return@withContext request<TomoIdvMockGetResultReq, kotlin.Any>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvCnMockKycGetPost
-     *
-     * @param authorization  (optional)
-     * @param tomoIdvMockGetResultReq  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvCnMockKycGetPostRequestConfig(authorization: kotlin.String?, tomoIdvMockGetResultReq: TomoIdvMockGetResultReq?) : RequestConfig<TomoIdvMockGetResultReq> {
-        val localVariableBody = tomoIdvMockGetResultReq
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/cn/mock/kyc/get",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/cn/mock/start
-     * 
-     * 
-     * @param authorization  (optional)
-     * @param tomoIdvMockStartReq  (optional)
-     * @return TomoIdvMockStartRes
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvCnMockStartPost(authorization: kotlin.String? = null, tomoIdvMockStartReq: TomoIdvMockStartReq? = null) : TomoIdvMockStartRes = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvCnMockStartPostWithHttpInfo(authorization = authorization, tomoIdvMockStartReq = tomoIdvMockStartReq)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TomoIdvMockStartRes
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/cn/mock/start
-     * 
-     * 
-     * @param authorization  (optional)
-     * @param tomoIdvMockStartReq  (optional)
-     * @return ApiResponse<TomoIdvMockStartRes?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvCnMockStartPostWithHttpInfo(authorization: kotlin.String?, tomoIdvMockStartReq: TomoIdvMockStartReq?) : ApiResponse<TomoIdvMockStartRes?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvCnMockStartPostRequestConfig(authorization = authorization, tomoIdvMockStartReq = tomoIdvMockStartReq)
-
-        return@withContext request<TomoIdvMockStartReq, TomoIdvMockStartRes>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvCnMockStartPost
-     *
-     * @param authorization  (optional)
-     * @param tomoIdvMockStartReq  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvCnMockStartPostRequestConfig(authorization: kotlin.String?, tomoIdvMockStartReq: TomoIdvMockStartReq?) : RequestConfig<TomoIdvMockStartReq> {
-        val localVariableBody = tomoIdvMockStartReq
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/cn/mock/start",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/cn/mock/token
-     * 
-     * 
-     * @param authorization  (optional)
-     * @param tomoIdvMockIssueTokenReq  (optional)
-     * @return TomoIdvMockIssueTokenRes
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvCnMockTokenPost(authorization: kotlin.String? = null, tomoIdvMockIssueTokenReq: TomoIdvMockIssueTokenReq? = null) : TomoIdvMockIssueTokenRes = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvCnMockTokenPostWithHttpInfo(authorization = authorization, tomoIdvMockIssueTokenReq = tomoIdvMockIssueTokenReq)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TomoIdvMockIssueTokenRes
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/cn/mock/token
-     * 
-     * 
-     * @param authorization  (optional)
-     * @param tomoIdvMockIssueTokenReq  (optional)
-     * @return ApiResponse<TomoIdvMockIssueTokenRes?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvCnMockTokenPostWithHttpInfo(authorization: kotlin.String?, tomoIdvMockIssueTokenReq: TomoIdvMockIssueTokenReq?) : ApiResponse<TomoIdvMockIssueTokenRes?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvCnMockTokenPostRequestConfig(authorization = authorization, tomoIdvMockIssueTokenReq = tomoIdvMockIssueTokenReq)
-
-        return@withContext request<TomoIdvMockIssueTokenReq, TomoIdvMockIssueTokenRes>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvCnMockTokenPost
-     *
-     * @param authorization  (optional)
-     * @param tomoIdvMockIssueTokenReq  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvCnMockTokenPostRequestConfig(authorization: kotlin.String?, tomoIdvMockIssueTokenReq: TomoIdvMockIssueTokenReq?) : RequestConfig<TomoIdvMockIssueTokenReq> {
-        val localVariableBody = tomoIdvMockIssueTokenReq
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/cn/mock/token",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/cn/result/web
-     * 
-     * 
-     * @return kotlin.Any
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvCnResultWebPost() : kotlin.Any = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvCnResultWebPostWithHttpInfo()
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Any
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/cn/result/web
-     * 
-     * 
-     * @return ApiResponse<kotlin.Any?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvCnResultWebPostWithHttpInfo() : ApiResponse<kotlin.Any?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvCnResultWebPostRequestConfig()
-
-        return@withContext request<Unit, kotlin.Any>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvCnResultWebPost
-     *
-     * @return RequestConfig
-     */
-    fun v1IdvCnResultWebPostRequestConfig() : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/cn/result/web",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,
@@ -973,324 +512,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/v1/idv/cn/start",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/cn/token
-     * 
-     * 
-     * @param authorization  (optional)
-     * @param tomoIdvIssueTokenReq  (optional)
-     * @return TomoIdvIssueTokenRes
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvCnTokenPost(authorization: kotlin.String? = null, tomoIdvIssueTokenReq: TomoIdvIssueTokenReq? = null) : TomoIdvIssueTokenRes = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvCnTokenPostWithHttpInfo(authorization = authorization, tomoIdvIssueTokenReq = tomoIdvIssueTokenReq)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TomoIdvIssueTokenRes
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/cn/token
-     * 
-     * 
-     * @param authorization  (optional)
-     * @param tomoIdvIssueTokenReq  (optional)
-     * @return ApiResponse<TomoIdvIssueTokenRes?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvCnTokenPostWithHttpInfo(authorization: kotlin.String?, tomoIdvIssueTokenReq: TomoIdvIssueTokenReq?) : ApiResponse<TomoIdvIssueTokenRes?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvCnTokenPostRequestConfig(authorization = authorization, tomoIdvIssueTokenReq = tomoIdvIssueTokenReq)
-
-        return@withContext request<TomoIdvIssueTokenReq, TomoIdvIssueTokenRes>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvCnTokenPost
-     *
-     * @param authorization  (optional)
-     * @param tomoIdvIssueTokenReq  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvCnTokenPostRequestConfig(authorization: kotlin.String?, tomoIdvIssueTokenReq: TomoIdvIssueTokenReq?) : RequestConfig<TomoIdvIssueTokenReq> {
-        val localVariableBody = tomoIdvIssueTokenReq
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/cn/token",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /v1/idv/google/callback
-     * 
-     * 
-     * @param code  (optional)
-     * @param state  (optional)
-     * @param error  (optional)
-     * @return void
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvGoogleCallbackGet(code: kotlin.String? = null, state: kotlin.String? = null, error: kotlin.String? = null) : Unit = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvGoogleCallbackGetWithHttpInfo(code = code, state = state, error = error)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> Unit
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /v1/idv/google/callback
-     * 
-     * 
-     * @param code  (optional)
-     * @param state  (optional)
-     * @param error  (optional)
-     * @return ApiResponse<Unit?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvGoogleCallbackGetWithHttpInfo(code: kotlin.String?, state: kotlin.String?, error: kotlin.String?) : ApiResponse<Unit?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvGoogleCallbackGetRequestConfig(code = code, state = state, error = error)
-
-        return@withContext request<Unit, Unit>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvGoogleCallbackGet
-     *
-     * @param code  (optional)
-     * @param state  (optional)
-     * @param error  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvGoogleCallbackGetRequestConfig(code: kotlin.String?, state: kotlin.String?, error: kotlin.String?) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
-            .apply {
-                if (code != null) {
-                    put("code", listOf(code.toString()))
-                }
-                if (state != null) {
-                    put("state", listOf(state.toString()))
-                }
-                if (error != null) {
-                    put("error", listOf(error.toString()))
-                }
-            }
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/v1/idv/google/callback",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/google/start
-     * 
-     * 
-     * @param authorization  (optional)
-     * @param googleStartReq  (optional)
-     * @return GoogleStartResp
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvGoogleStartPost(authorization: kotlin.String? = null, googleStartReq: GoogleStartReq? = null) : GoogleStartResp = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvGoogleStartPostWithHttpInfo(authorization = authorization, googleStartReq = googleStartReq)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as GoogleStartResp
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/google/start
-     * 
-     * 
-     * @param authorization  (optional)
-     * @param googleStartReq  (optional)
-     * @return ApiResponse<GoogleStartResp?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvGoogleStartPostWithHttpInfo(authorization: kotlin.String?, googleStartReq: GoogleStartReq?) : ApiResponse<GoogleStartResp?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvGoogleStartPostRequestConfig(authorization = authorization, googleStartReq = googleStartReq)
-
-        return@withContext request<GoogleStartReq, GoogleStartResp>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvGoogleStartPost
-     *
-     * @param authorization  (optional)
-     * @param googleStartReq  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvGoogleStartPostRequestConfig(authorization: kotlin.String?, googleStartReq: GoogleStartReq?) : RequestConfig<GoogleStartReq> {
-        val localVariableBody = googleStartReq
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/google/start",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/jp/cookie/start
-     * 
-     * 
-     * @param liquidStartIdvRequest  (optional)
-     * @return LiquidIntegratedAppResponse
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvJpCookieStartPost(liquidStartIdvRequest: LiquidStartIdvRequest? = null) : LiquidIntegratedAppResponse = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvJpCookieStartPostWithHttpInfo(liquidStartIdvRequest = liquidStartIdvRequest)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as LiquidIntegratedAppResponse
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/jp/cookie/start
-     * 
-     * 
-     * @param liquidStartIdvRequest  (optional)
-     * @return ApiResponse<LiquidIntegratedAppResponse?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvJpCookieStartPostWithHttpInfo(liquidStartIdvRequest: LiquidStartIdvRequest?) : ApiResponse<LiquidIntegratedAppResponse?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvJpCookieStartPostRequestConfig(liquidStartIdvRequest = liquidStartIdvRequest)
-
-        return@withContext request<LiquidStartIdvRequest, LiquidIntegratedAppResponse>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvJpCookieStartPost
-     *
-     * @param liquidStartIdvRequest  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvJpCookieStartPostRequestConfig(liquidStartIdvRequest: LiquidStartIdvRequest?) : RequestConfig<LiquidStartIdvRequest> {
-        val localVariableBody = liquidStartIdvRequest
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/jp/cookie/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,
@@ -1439,152 +660,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/v1/idv/jp/kyc/get",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/jp/kyc/put
-     * 
-     * 
-     * @param liquidPutKycReq  (optional)
-     * @return void
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvJpKycPutPost(liquidPutKycReq: LiquidPutKycReq? = null) : Unit = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvJpKycPutPostWithHttpInfo(liquidPutKycReq = liquidPutKycReq)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> Unit
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/jp/kyc/put
-     * 
-     * 
-     * @param liquidPutKycReq  (optional)
-     * @return ApiResponse<Unit?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvJpKycPutPostWithHttpInfo(liquidPutKycReq: LiquidPutKycReq?) : ApiResponse<Unit?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvJpKycPutPostRequestConfig(liquidPutKycReq = liquidPutKycReq)
-
-        return@withContext request<LiquidPutKycReq, Unit>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvJpKycPutPost
-     *
-     * @param liquidPutKycReq  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvJpKycPutPostRequestConfig(liquidPutKycReq: LiquidPutKycReq?) : RequestConfig<LiquidPutKycReq> {
-        val localVariableBody = liquidPutKycReq
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/jp/kyc/put",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/jp/notification
-     * 
-     * 
-     * @param body  (optional)
-     * @return EitherStringValue
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvJpNotificationPost(body: kotlin.Any? = null) : EitherStringValue = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvJpNotificationPostWithHttpInfo(body = body)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as EitherStringValue
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/jp/notification
-     * 
-     * 
-     * @param body  (optional)
-     * @return ApiResponse<EitherStringValue?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvJpNotificationPostWithHttpInfo(body: kotlin.Any?) : ApiResponse<EitherStringValue?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvJpNotificationPostRequestConfig(body = body)
-
-        return@withContext request<kotlin.Any, EitherStringValue>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvJpNotificationPost
-     *
-     * @param body  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvJpNotificationPostRequestConfig(body: kotlin.Any?) : RequestConfig<kotlin.Any> {
-        val localVariableBody = body
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/jp/notification",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,
@@ -1749,11 +824,12 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
-     * POST /v1/idv/liquid/token/session
+     * POST /v1/idv/social/google/start
      * 
      * 
-     * @param liquidSessionTokenRequest  (optional)
-     * @return SessionToken
+     * @param authorization  (optional)
+     * @param googleStartReq  (optional)
+     * @return GoogleStartResp
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1762,11 +838,11 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvLiquidTokenSessionPost(liquidSessionTokenRequest: LiquidSessionTokenRequest? = null) : SessionToken = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvLiquidTokenSessionPostWithHttpInfo(liquidSessionTokenRequest = liquidSessionTokenRequest)
+    suspend fun v1IdvSocialGoogleStartPost(authorization: kotlin.String? = null, googleStartReq: GoogleStartReq? = null) : GoogleStartResp = withContext(Dispatchers.IO) {
+        val localVarResponse = v1IdvSocialGoogleStartPostWithHttpInfo(authorization = authorization, googleStartReq = googleStartReq)
 
         return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SessionToken
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GoogleStartResp
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1781,40 +857,43 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
-     * POST /v1/idv/liquid/token/session
+     * POST /v1/idv/social/google/start
      * 
      * 
-     * @param liquidSessionTokenRequest  (optional)
-     * @return ApiResponse<SessionToken?>
+     * @param authorization  (optional)
+     * @param googleStartReq  (optional)
+     * @return ApiResponse<GoogleStartResp?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvLiquidTokenSessionPostWithHttpInfo(liquidSessionTokenRequest: LiquidSessionTokenRequest?) : ApiResponse<SessionToken?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvLiquidTokenSessionPostRequestConfig(liquidSessionTokenRequest = liquidSessionTokenRequest)
+    suspend fun v1IdvSocialGoogleStartPostWithHttpInfo(authorization: kotlin.String?, googleStartReq: GoogleStartReq?) : ApiResponse<GoogleStartResp?> = withContext(Dispatchers.IO) {
+        val localVariableConfig = v1IdvSocialGoogleStartPostRequestConfig(authorization = authorization, googleStartReq = googleStartReq)
 
-        return@withContext request<LiquidSessionTokenRequest, SessionToken>(
+        return@withContext request<GoogleStartReq, GoogleStartResp>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation v1IdvLiquidTokenSessionPost
+     * To obtain the request config of the operation v1IdvSocialGoogleStartPost
      *
-     * @param liquidSessionTokenRequest  (optional)
+     * @param authorization  (optional)
+     * @param googleStartReq  (optional)
      * @return RequestConfig
      */
-    fun v1IdvLiquidTokenSessionPostRequestConfig(liquidSessionTokenRequest: LiquidSessionTokenRequest?) : RequestConfig<LiquidSessionTokenRequest> {
-        val localVariableBody = liquidSessionTokenRequest
+    fun v1IdvSocialGoogleStartPostRequestConfig(authorization: kotlin.String?, googleStartReq: GoogleStartReq?) : RequestConfig<GoogleStartReq> {
+        val localVariableBody = googleStartReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
         return RequestConfig(
             method = RequestMethod.POST,
-            path = "/v1/idv/liquid/token/session",
+            path = "/v1/idv/social/google/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,
@@ -1823,11 +902,12 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
-     * POST /v1/idv/login-ticket
+     * POST /v1/idv/social/result
      * 
      * 
-     * @param loginTicketRequest  (optional)
-     * @return LoginTicketResponse
+     * @param authorization  (optional)
+     * @param socialResultReq  (optional)
+     * @return GetKycResp
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1836,11 +916,11 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvLoginTicketPost(loginTicketRequest: LoginTicketRequest? = null) : LoginTicketResponse = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvLoginTicketPostWithHttpInfo(loginTicketRequest = loginTicketRequest)
+    suspend fun v1IdvSocialResultPost(authorization: kotlin.String? = null, socialResultReq: SocialResultReq? = null) : GetKycResp = withContext(Dispatchers.IO) {
+        val localVarResponse = v1IdvSocialResultPostWithHttpInfo(authorization = authorization, socialResultReq = socialResultReq)
 
         return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as LoginTicketResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetKycResp
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1855,40 +935,43 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
-     * POST /v1/idv/login-ticket
+     * POST /v1/idv/social/result
      * 
      * 
-     * @param loginTicketRequest  (optional)
-     * @return ApiResponse<LoginTicketResponse?>
+     * @param authorization  (optional)
+     * @param socialResultReq  (optional)
+     * @return ApiResponse<GetKycResp?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvLoginTicketPostWithHttpInfo(loginTicketRequest: LoginTicketRequest?) : ApiResponse<LoginTicketResponse?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvLoginTicketPostRequestConfig(loginTicketRequest = loginTicketRequest)
+    suspend fun v1IdvSocialResultPostWithHttpInfo(authorization: kotlin.String?, socialResultReq: SocialResultReq?) : ApiResponse<GetKycResp?> = withContext(Dispatchers.IO) {
+        val localVariableConfig = v1IdvSocialResultPostRequestConfig(authorization = authorization, socialResultReq = socialResultReq)
 
-        return@withContext request<LoginTicketRequest, LoginTicketResponse>(
+        return@withContext request<SocialResultReq, GetKycResp>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation v1IdvLoginTicketPost
+     * To obtain the request config of the operation v1IdvSocialResultPost
      *
-     * @param loginTicketRequest  (optional)
+     * @param authorization  (optional)
+     * @param socialResultReq  (optional)
      * @return RequestConfig
      */
-    fun v1IdvLoginTicketPostRequestConfig(loginTicketRequest: LoginTicketRequest?) : RequestConfig<LoginTicketRequest> {
-        val localVariableBody = loginTicketRequest
+    fun v1IdvSocialResultPostRequestConfig(authorization: kotlin.String?, socialResultReq: SocialResultReq?) : RequestConfig<SocialResultReq> {
+        val localVariableBody = socialResultReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
         return RequestConfig(
             method = RequestMethod.POST,
-            path = "/v1/idv/login-ticket",
+            path = "/v1/idv/social/result",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,
@@ -1897,11 +980,12 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
-     * POST /v1/idv/plaid/token/session
+     * POST /v1/idv/social/wechat/start
      * 
      * 
-     * @param plaidSessionTokenRequest  (optional)
-     * @return SessionToken
+     * @param authorization  (optional)
+     * @param weChatStartReq  (optional)
+     * @return WeChatStartResp
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1910,11 +994,11 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvPlaidTokenSessionPost(plaidSessionTokenRequest: PlaidSessionTokenRequest? = null) : SessionToken = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvPlaidTokenSessionPostWithHttpInfo(plaidSessionTokenRequest = plaidSessionTokenRequest)
+    suspend fun v1IdvSocialWechatStartPost(authorization: kotlin.String? = null, weChatStartReq: WeChatStartReq? = null) : WeChatStartResp = withContext(Dispatchers.IO) {
+        val localVarResponse = v1IdvSocialWechatStartPostWithHttpInfo(authorization = authorization, weChatStartReq = weChatStartReq)
 
         return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SessionToken
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WeChatStartResp
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1929,40 +1013,43 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
-     * POST /v1/idv/plaid/token/session
+     * POST /v1/idv/social/wechat/start
      * 
      * 
-     * @param plaidSessionTokenRequest  (optional)
-     * @return ApiResponse<SessionToken?>
+     * @param authorization  (optional)
+     * @param weChatStartReq  (optional)
+     * @return ApiResponse<WeChatStartResp?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvPlaidTokenSessionPostWithHttpInfo(plaidSessionTokenRequest: PlaidSessionTokenRequest?) : ApiResponse<SessionToken?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvPlaidTokenSessionPostRequestConfig(plaidSessionTokenRequest = plaidSessionTokenRequest)
+    suspend fun v1IdvSocialWechatStartPostWithHttpInfo(authorization: kotlin.String?, weChatStartReq: WeChatStartReq?) : ApiResponse<WeChatStartResp?> = withContext(Dispatchers.IO) {
+        val localVariableConfig = v1IdvSocialWechatStartPostRequestConfig(authorization = authorization, weChatStartReq = weChatStartReq)
 
-        return@withContext request<PlaidSessionTokenRequest, SessionToken>(
+        return@withContext request<WeChatStartReq, WeChatStartResp>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation v1IdvPlaidTokenSessionPost
+     * To obtain the request config of the operation v1IdvSocialWechatStartPost
      *
-     * @param plaidSessionTokenRequest  (optional)
+     * @param authorization  (optional)
+     * @param weChatStartReq  (optional)
      * @return RequestConfig
      */
-    fun v1IdvPlaidTokenSessionPostRequestConfig(plaidSessionTokenRequest: PlaidSessionTokenRequest?) : RequestConfig<PlaidSessionTokenRequest> {
-        val localVariableBody = plaidSessionTokenRequest
+    fun v1IdvSocialWechatStartPostRequestConfig(authorization: kotlin.String?, weChatStartReq: WeChatStartReq?) : RequestConfig<WeChatStartReq> {
+        val localVariableBody = weChatStartReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
         return RequestConfig(
             method = RequestMethod.POST,
-            path = "/v1/idv/plaid/token/session",
+            path = "/v1/idv/social/wechat/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,
@@ -2041,80 +1128,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/v1/idv/start",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/uk/cookie/start
-     * 
-     * 
-     * @param plaidStartIdvRequest  (optional)
-     * @return PlaidStartIdvResp
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvUkCookieStartPost(plaidStartIdvRequest: PlaidStartIdvRequest? = null) : PlaidStartIdvResp = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvUkCookieStartPostWithHttpInfo(plaidStartIdvRequest = plaidStartIdvRequest)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as PlaidStartIdvResp
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/uk/cookie/start
-     * 
-     * 
-     * @param plaidStartIdvRequest  (optional)
-     * @return ApiResponse<PlaidStartIdvResp?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvUkCookieStartPostWithHttpInfo(plaidStartIdvRequest: PlaidStartIdvRequest?) : ApiResponse<PlaidStartIdvResp?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvUkCookieStartPostRequestConfig(plaidStartIdvRequest = plaidStartIdvRequest)
-
-        return@withContext request<PlaidStartIdvRequest, PlaidStartIdvResp>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvUkCookieStartPost
-     *
-     * @param plaidStartIdvRequest  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvUkCookieStartPostRequestConfig(plaidStartIdvRequest: PlaidStartIdvRequest?) : RequestConfig<PlaidStartIdvRequest> {
-        val localVariableBody = plaidStartIdvRequest
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/uk/cookie/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,
@@ -2271,78 +1284,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
-     * POST /v1/idv/uk/kyc/put
-     * 
-     * 
-     * @param plaidPutKycReq  (optional)
-     * @return void
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvUkKycPutPost(plaidPutKycReq: PlaidPutKycReq? = null) : Unit = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvUkKycPutPostWithHttpInfo(plaidPutKycReq = plaidPutKycReq)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> Unit
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/uk/kyc/put
-     * 
-     * 
-     * @param plaidPutKycReq  (optional)
-     * @return ApiResponse<Unit?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvUkKycPutPostWithHttpInfo(plaidPutKycReq: PlaidPutKycReq?) : ApiResponse<Unit?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvUkKycPutPostRequestConfig(plaidPutKycReq = plaidPutKycReq)
-
-        return@withContext request<PlaidPutKycReq, Unit>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvUkKycPutPost
-     *
-     * @param plaidPutKycReq  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvUkKycPutPostRequestConfig(plaidPutKycReq: PlaidPutKycReq?) : RequestConfig<PlaidPutKycReq> {
-        val localVariableBody = plaidPutKycReq
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/uk/kyc/put",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
      * POST /v1/idv/uk/start
      * 
      * 
@@ -2413,80 +1354,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/v1/idv/uk/start",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/us/cookie/start
-     * 
-     * 
-     * @param plaidStartIdvRequest  (optional)
-     * @return PlaidStartIdvResp
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvUsCookieStartPost(plaidStartIdvRequest: PlaidStartIdvRequest? = null) : PlaidStartIdvResp = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvUsCookieStartPostWithHttpInfo(plaidStartIdvRequest = plaidStartIdvRequest)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as PlaidStartIdvResp
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/us/cookie/start
-     * 
-     * 
-     * @param plaidStartIdvRequest  (optional)
-     * @return ApiResponse<PlaidStartIdvResp?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvUsCookieStartPostWithHttpInfo(plaidStartIdvRequest: PlaidStartIdvRequest?) : ApiResponse<PlaidStartIdvResp?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvUsCookieStartPostRequestConfig(plaidStartIdvRequest = plaidStartIdvRequest)
-
-        return@withContext request<PlaidStartIdvRequest, PlaidStartIdvResp>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvUsCookieStartPost
-     *
-     * @param plaidStartIdvRequest  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvUsCookieStartPostRequestConfig(plaidStartIdvRequest: PlaidStartIdvRequest?) : RequestConfig<PlaidStartIdvRequest> {
-        val localVariableBody = plaidStartIdvRequest
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/us/cookie/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,
@@ -2635,78 +1502,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/v1/idv/us/kyc/get",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /v1/idv/us/kyc/put
-     * 
-     * 
-     * @param plaidPutKycReq  (optional)
-     * @return void
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvUsKycPutPost(plaidPutKycReq: PlaidPutKycReq? = null) : Unit = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvUsKycPutPostWithHttpInfo(plaidPutKycReq = plaidPutKycReq)
-
-        return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> Unit
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /v1/idv/us/kyc/put
-     * 
-     * 
-     * @param plaidPutKycReq  (optional)
-     * @return ApiResponse<Unit?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvUsKycPutPostWithHttpInfo(plaidPutKycReq: PlaidPutKycReq?) : ApiResponse<Unit?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvUsKycPutPostRequestConfig(plaidPutKycReq = plaidPutKycReq)
-
-        return@withContext request<PlaidPutKycReq, Unit>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IdvUsKycPutPost
-     *
-     * @param plaidPutKycReq  (optional)
-     * @return RequestConfig
-     */
-    fun v1IdvUsKycPutPostRequestConfig(plaidPutKycReq: PlaidPutKycReq?) : RequestConfig<PlaidPutKycReq> {
-        val localVariableBody = plaidPutKycReq
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
-        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/v1/idv/us/kyc/put",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,

@@ -18,23 +18,24 @@ package com.tomoarrow.idv.client.generated.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import com.tomoarrow.idv.client.generated.models.TomoIdvStartReq
+import com.tomoarrow.idv.client.generated.models.TencentGetKycReq
+import com.tomoarrow.idv.client.generated.models.TencentIdvField
 
-class TomoIdvStartReqTest : ShouldSpec() {
+class TencentGetKycReqTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of TomoIdvStartReq
-        //val modelInstance = TomoIdvStartReq()
-
-        // to test the property `callbackUrl`
-        should("test callbackUrl") {
-            // uncomment below to test the property
-            //modelInstance.callbackUrl shouldBe ("TODO")
-        }
+        // uncomment below to create an instance of TencentGetKycReq
+        //val modelInstance = TencentGetKycReq()
 
         // to test the property `userId`
         should("test userId") {
             // uncomment below to test the property
             //modelInstance.userId shouldBe ("TODO")
+        }
+
+        // to test the property `fields`
+        should("test fields") {
+            // uncomment below to test the property
+            //modelInstance.fields shouldBe ("TODO")
         }
 
     }

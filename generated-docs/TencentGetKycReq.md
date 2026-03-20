@@ -1,12 +1,11 @@
 
-# PlaidStartIdvRequest
+# TencentGetKycReq
 
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **callbackUrl** | **kotlin.String** |  |  |
 | **userId** | **kotlin.String** |  |  |
-| **email** | **kotlin.String** |  |  [optional] |
+| **fields** | [**kotlin.collections.List&lt;TencentIdvField&gt;**](TencentIdvField.md) |  |  [optional] |
 
 
 

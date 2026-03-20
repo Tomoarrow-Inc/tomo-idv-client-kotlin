@@ -22,40 +22,28 @@ import kotlinx.serialization.Serializable
 /**
  * 
  *
- * Values: DATE_OF_BIRTH,EMAIL_ADDRESS,PHONE_NUMBER,FAMILY_NAME,GIVEN_NAME,CITY,COUNTRY,POSTAL_CODE,REGION,STREET
+ * Values: FULL_NAME,DATE_OF_BIRTH,SEX,ADDRESS,ID_NUMBER,NATIONALITY
  */
 @Serializable
-enum class PlaidIdvField(val value: kotlin.String) {
+enum class TencentIdvField(val value: kotlin.String) {
+
+    @SerialName(value = "full_name")
+    FULL_NAME("full_name"),
 
     @SerialName(value = "date_of_birth")
     DATE_OF_BIRTH("date_of_birth"),
 
-    @SerialName(value = "email_address")
-    EMAIL_ADDRESS("email_address"),
+    @SerialName(value = "sex")
+    SEX("sex"),
 
-    @SerialName(value = "phone_number")
-    PHONE_NUMBER("phone_number"),
+    @SerialName(value = "address")
+    ADDRESS("address"),
 
-    @SerialName(value = "family_name")
-    FAMILY_NAME("family_name"),
+    @SerialName(value = "id_number")
+    ID_NUMBER("id_number"),
 
-    @SerialName(value = "given_name")
-    GIVEN_NAME("given_name"),
-
-    @SerialName(value = "city")
-    CITY("city"),
-
-    @SerialName(value = "country")
-    COUNTRY("country"),
-
-    @SerialName(value = "postal_code")
-    POSTAL_CODE("postal_code"),
-
-    @SerialName(value = "region")
-    REGION("region"),
-
-    @SerialName(value = "street")
-    STREET("street");
+    @SerialName(value = "nationality")
+    NATIONALITY("nationality");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use
@@ -70,12 +58,12 @@ enum class PlaidIdvField(val value: kotlin.String) {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is PlaidIdvField) "$data" else null
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is TencentIdvField) "$data" else null
 
         /**
-         * Returns a valid [PlaidIdvField] for [data], null otherwise.
+         * Returns a valid [TencentIdvField] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): PlaidIdvField? = data?.let {
+        fun decode(data: kotlin.Any?): TencentIdvField? = data?.let {
           val normalizedData = "$it".lowercase()
           values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()

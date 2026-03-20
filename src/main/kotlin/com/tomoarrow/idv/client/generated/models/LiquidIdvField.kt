@@ -19,7 +19,6 @@ package com.tomoarrow.idv.client.generated.models
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-
 /**
  * 
  *
@@ -63,11 +62,10 @@ enum class LiquidIdvField(val value: kotlin.String) {
          */
         fun decode(data: kotlin.Any?): LiquidIdvField? = data?.let {
           val normalizedData = "$it".lowercase()
-          entries.firstOrNull { value ->
+          values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()
           }
         }
     }
 }
-
 

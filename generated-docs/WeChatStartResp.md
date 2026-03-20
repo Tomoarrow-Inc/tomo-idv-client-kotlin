@@ -1,11 +1,10 @@
 
-# TomoIdvStartReq
+# WeChatStartResp
 
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **callbackUrl** | **kotlin.String** |  |  |
-| **userId** | **kotlin.String** |  |  |
+| **authorizationUrl** | **kotlin.String** |  |  |
 
 
 

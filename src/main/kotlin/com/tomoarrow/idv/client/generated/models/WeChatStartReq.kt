@@ -24,21 +24,21 @@ import kotlinx.serialization.Contextual
  * 
  *
  * @param callbackUrl 
- * @param userId 
- * @param email 
+ * @param country 
+ * @param loginHint 
  */
 @Serializable
 
-data class PlaidStartIdvRequest (
+data class WeChatStartReq (
 
     @SerialName(value = "callback_url")
     val callbackUrl: kotlin.String,
 
-    @SerialName(value = "user_id")
-    val userId: kotlin.String,
+    @SerialName(value = "country")
+    val country: kotlin.String? = null,
 
-    @SerialName(value = "email")
-    val email: kotlin.String? = null
+    @SerialName(value = "login_hint")
+    val loginHint: kotlin.String? = null
 
 ) {
 

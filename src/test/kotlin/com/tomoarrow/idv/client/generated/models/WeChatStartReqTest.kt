@@ -18,12 +18,12 @@ package com.tomoarrow.idv.client.generated.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import com.tomoarrow.idv.client.generated.models.TomoIdvStartReq
+import com.tomoarrow.idv.client.generated.models.WeChatStartReq
 
-class TomoIdvStartReqTest : ShouldSpec() {
+class WeChatStartReqTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of TomoIdvStartReq
-        //val modelInstance = TomoIdvStartReq()
+        // uncomment below to create an instance of WeChatStartReq
+        //val modelInstance = WeChatStartReq()
 
         // to test the property `callbackUrl`
         should("test callbackUrl") {
@@ -31,10 +31,16 @@ class TomoIdvStartReqTest : ShouldSpec() {
             //modelInstance.callbackUrl shouldBe ("TODO")
         }
 
-        // to test the property `userId`
-        should("test userId") {
+        // to test the property `country`
+        should("test country") {
             // uncomment below to test the property
-            //modelInstance.userId shouldBe ("TODO")
+            //modelInstance.country shouldBe ("TODO")
+        }
+
+        // to test the property `loginHint`
+        should("test loginHint") {
+            // uncomment below to test the property
+            //modelInstance.loginHint shouldBe ("TODO")
         }
 
     }
