@@ -1,0 +1,12 @@
+# Scaffold files — preserved manually, not overwritten by generator
+build.gradle
+settings.gradle
+gradle.properties
+gradlew
+gradlew.bat
+gradle/**
+README.md
+.gitignore
+proguard-rules.pro
+scripts/**
+CLAUDE.md
