@@ -39,4 +39,4 @@ local.properties
 /generated/
 
 # Allow gradle wrapper jar (overrides *.jar above)
-!/gradle/wrapper/gradle-wrapper.jar
+!/gradle/wrapper/gradle-wrapper.jar.openapi-generator/
