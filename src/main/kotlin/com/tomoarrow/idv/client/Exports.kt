@@ -37,3 +37,7 @@ typealias TomoIdvStartReq = com.tomoarrow.idv.client.generated.models.TomoIdvSta
 typealias TomoIdvStartRes = com.tomoarrow.idv.client.generated.models.TomoIdvStartRes
 typealias WeChatStartReq = com.tomoarrow.idv.client.generated.models.WeChatStartReq
 typealias WeChatStartResp = com.tomoarrow.idv.client.generated.models.WeChatStartResp
+
+// ── Client Assertion ──
+// ClientAssertionHelper, ClientAssertionOptions, BodyOptions, TokenRequestData는
+// com.tomoarrow.idv.client 패키지에 직접 위치하므로 typealias 불필요
