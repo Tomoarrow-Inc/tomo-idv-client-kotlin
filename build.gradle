@@ -82,12 +82,12 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'com.tomoarrow.idv'
-            artifactId = 'idv-kotlin-client'
+            artifactId = 'tomo-idv-client-kotlin'
             version = project.version
             from components.java
 
             pom {
-                name = 'IDV Kotlin Client'
+                name = 'Tomo IDV Client Kotlin'
                 description = 'Kotlin client SDK for the Tomo Identity Verification API. Provides typed API bindings for KYC identity verification across multiple countries and providers.'
                 url = 'https://github.com/Tomoarrow-Inc/tomo-idv-client-kotlin'
 
