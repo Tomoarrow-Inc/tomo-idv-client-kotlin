@@ -1,4 +1,4 @@
-group 'com.tomoarrow.idv'
+group 'io.github.tomoarrow-inc'
 version findProperty('publishVersion') ?: '1.0.0-SNAPSHOT'
 
 wrapper {
@@ -81,7 +81,7 @@ java {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.tomoarrow.idv'
+            groupId = 'io.github.tomoarrow-inc'
             artifactId = 'tomo-idv-client-kotlin'
             version = project.version
             from components.java
@@ -130,6 +130,7 @@ publishing {
 }
 
 signing {
+    useGpgCmd() 
     required { !version.toString().endsWith('SNAPSHOT') && gradle.taskGraph.hasTask('publish') }
     sign publishing.publications.maven
 }
