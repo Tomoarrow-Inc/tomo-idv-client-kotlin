@@ -8,9 +8,17 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
+    "UnusedImport",
+    "UnnecessaryVariable",
+    "unused"
 )
 
 package com.tomoarrow.idv.client.generated.apis
@@ -24,6 +32,7 @@ import com.tomoarrow.idv.client.generated.models.GetKycResp
 import com.tomoarrow.idv.client.generated.models.GoogleStartReq
 import com.tomoarrow.idv.client.generated.models.GoogleStartResp
 import com.tomoarrow.idv.client.generated.models.LiquidGetKycReq
+import com.tomoarrow.idv.client.generated.models.LiquidGetUnionResultResp
 import com.tomoarrow.idv.client.generated.models.LiquidIntegratedAppResponse
 import com.tomoarrow.idv.client.generated.models.LiquidStartIdvRequest
 import com.tomoarrow.idv.client.generated.models.PlaidGetKycReq
@@ -58,12 +67,13 @@ import com.tomoarrow.idv.client.generated.infrastructure.RequestMethod
 import com.tomoarrow.idv.client.generated.infrastructure.ResponseType
 import com.tomoarrow.idv.client.generated.infrastructure.Success
 import com.tomoarrow.idv.client.generated.infrastructure.toMultiValue
+import com.tomoarrow.idv.client.generated.infrastructure.Serializer
 
-class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
+open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://localhost")
+            System.getProperties().getProperty(ApiClient.BASE_URL_KEY, "http://localhost")
         }
     }
 
@@ -595,7 +605,7 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * 
      * @param authorization  (optional)
      * @param liquidGetKycReq  (optional)
-     * @return kotlin.collections.Map<kotlin.String, kotlin.String>
+     * @return LiquidGetUnionResultResp
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -604,11 +614,11 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvJpKycGetPost(authorization: kotlin.String? = null, liquidGetKycReq: LiquidGetKycReq? = null) : kotlin.collections.Map<kotlin.String, kotlin.String> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvJpKycGetPost(authorization: kotlin.String? = null, liquidGetKycReq: LiquidGetKycReq? = null) : LiquidGetUnionResultResp = withContext(Dispatchers.IO) {
         val localVarResponse = v1IdvJpKycGetPostWithHttpInfo(authorization = authorization, liquidGetKycReq = liquidGetKycReq)
 
         return@withContext when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.Map<kotlin.String, kotlin.String>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as LiquidGetUnionResultResp
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -628,16 +638,16 @@ class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * 
      * @param authorization  (optional)
      * @param liquidGetKycReq  (optional)
-     * @return ApiResponse<kotlin.collections.Map<kotlin.String, kotlin.String>?>
+     * @return ApiResponse<LiquidGetUnionResultResp?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvJpKycGetPostWithHttpInfo(authorization: kotlin.String?, liquidGetKycReq: LiquidGetKycReq?) : ApiResponse<kotlin.collections.Map<kotlin.String, kotlin.String>?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvJpKycGetPostWithHttpInfo(authorization: kotlin.String?, liquidGetKycReq: LiquidGetKycReq?) : ApiResponse<LiquidGetUnionResultResp?> = withContext(Dispatchers.IO) {
         val localVariableConfig = v1IdvJpKycGetPostRequestConfig(authorization = authorization, liquidGetKycReq = liquidGetKycReq)
 
-        return@withContext request<LiquidGetKycReq, kotlin.collections.Map<kotlin.String, kotlin.String>>(
+        return@withContext request<LiquidGetKycReq, LiquidGetUnionResultResp>(
             localVariableConfig
         )
     }

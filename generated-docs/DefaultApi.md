@@ -336,7 +336,7 @@ No authorization required
 
 <a id="v1IdvJpKycGetPost"></a>
 # **v1IdvJpKycGetPost**
-> kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt; v1IdvJpKycGetPost(authorization, liquidGetKycReq)
+> LiquidGetUnionResultResp v1IdvJpKycGetPost(authorization, liquidGetKycReq)
 
 
 
@@ -350,7 +350,7 @@ val apiInstance = DefaultApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
 val liquidGetKycReq : LiquidGetKycReq =  // LiquidGetKycReq | 
 try {
-    val result : kotlin.collections.Map<kotlin.String, kotlin.String> = apiInstance.v1IdvJpKycGetPost(authorization, liquidGetKycReq)
+    val result : LiquidGetUnionResultResp = apiInstance.v1IdvJpKycGetPost(authorization, liquidGetKycReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvJpKycGetPost")
@@ -369,7 +369,7 @@ try {
 
 ### Return type
 
-**kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;**
+[**LiquidGetUnionResultResp**](LiquidGetUnionResultResp.md)
 
 ### Authorization
 

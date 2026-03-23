@@ -23,6 +23,7 @@
 
 package com.tomoarrow.idv.client.generated.models
 
+import com.tomoarrow.idv.client.generated.models.LiquidGetResultResp
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
@@ -31,22 +32,30 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param callbackUrl 
- * @param country 
- * @param loginHint 
+ * @param address 
+ * @param dateOfBirth 
+ * @param name 
+ * @param sex 
+ * @param postalCode 
  */
 @Serializable
 
-data class GoogleStartReq (
+data class LiquidGetUnionResultResp (
 
-    @SerialName(value = "callback_url")
-    val callbackUrl: kotlin.String,
+    @SerialName(value = "address")
+    val address: kotlin.String,
 
-    @SerialName(value = "country")
-    val country: kotlin.String? = null,
+    @SerialName(value = "date_of_birth")
+    val dateOfBirth: kotlin.String,
 
-    @SerialName(value = "login_hint")
-    val loginHint: kotlin.String? = null
+    @SerialName(value = "name")
+    val name: kotlin.String,
+
+    @SerialName(value = "sex")
+    val sex: kotlin.String,
+
+    @SerialName(value = "postal_code")
+    val postalCode: kotlin.String? = null
 
 ) {
 

@@ -8,9 +8,17 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
+    "UnusedImport",
+    "UnnecessaryVariable",
+    "unused"
 )
 
 package com.tomoarrow.idv.client.generated.apis
@@ -24,6 +32,7 @@ import com.tomoarrow.idv.client.generated.models.GetKycResp
 import com.tomoarrow.idv.client.generated.models.GoogleStartReq
 import com.tomoarrow.idv.client.generated.models.GoogleStartResp
 import com.tomoarrow.idv.client.generated.models.LiquidGetKycReq
+import com.tomoarrow.idv.client.generated.models.LiquidGetUnionResultResp
 import com.tomoarrow.idv.client.generated.models.LiquidIntegratedAppResponse
 import com.tomoarrow.idv.client.generated.models.LiquidStartIdvRequest
 import com.tomoarrow.idv.client.generated.models.PlaidGetKycReq
@@ -107,7 +116,7 @@ class DefaultApiTest : ShouldSpec() {
             // uncomment below to test v1IdvJpKycGetPost
             //val authorization : kotlin.String = authorization_example // kotlin.String | 
             //val liquidGetKycReq : LiquidGetKycReq =  // LiquidGetKycReq | 
-            //val result : kotlin.collections.Map<kotlin.String, kotlin.String> = apiInstance.v1IdvJpKycGetPost(authorization, liquidGetKycReq)
+            //val result : LiquidGetUnionResultResp = apiInstance.v1IdvJpKycGetPost(authorization, liquidGetKycReq)
             //result shouldBe ("TODO")
         }
 

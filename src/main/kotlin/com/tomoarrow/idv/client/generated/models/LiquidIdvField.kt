@@ -8,9 +8,17 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
+    "UnusedImport",
+    "UnnecessaryVariable",
+    "unused"
 )
 
 package com.tomoarrow.idv.client.generated.models
@@ -18,6 +26,7 @@ package com.tomoarrow.idv.client.generated.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+
 
 /**
  * 
@@ -62,10 +71,11 @@ enum class LiquidIdvField(val value: kotlin.String) {
          */
         fun decode(data: kotlin.Any?): LiquidIdvField? = data?.let {
           val normalizedData = "$it".lowercase()
-          values().firstOrNull { value ->
+          entries.firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()
           }
         }
     }
 }
+
 
