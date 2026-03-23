@@ -31,14 +31,14 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param socialId 
+ * @param userId 
  */
 @Serializable
 
 data class SocialResultReq (
 
-    @SerialName(value = "social_id")
-    val socialId: kotlin.String
+    @SerialName(value = "user_id")
+    val userId: kotlin.String
 
 ) {
 

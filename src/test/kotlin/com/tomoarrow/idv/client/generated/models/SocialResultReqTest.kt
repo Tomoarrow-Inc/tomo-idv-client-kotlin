@@ -33,10 +33,10 @@ class SocialResultReqTest : ShouldSpec() {
         // uncomment below to create an instance of SocialResultReq
         //val modelInstance = SocialResultReq()
 
-        // to test the property `socialId`
-        should("test socialId") {
+        // to test the property `userId`
+        should("test userId") {
             // uncomment below to test the property
-            //modelInstance.socialId shouldBe ("TODO")
+            //modelInstance.userId shouldBe ("TODO")
         }
 
     }
