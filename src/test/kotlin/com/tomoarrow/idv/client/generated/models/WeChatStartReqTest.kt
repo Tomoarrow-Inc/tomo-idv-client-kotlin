@@ -39,6 +39,12 @@ class WeChatStartReqTest : ShouldSpec() {
             //modelInstance.callbackUrl shouldBe ("TODO")
         }
 
+        // to test the property `code`
+        should("test code") {
+            // uncomment below to test the property
+            //modelInstance.code shouldBe ("TODO")
+        }
+
         // to test the property `country`
         should("test country") {
             // uncomment below to test the property
