@@ -26,13 +26,12 @@ package com.tomoarrow.idv.client.generated.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import com.tomoarrow.idv.client.generated.models.StartIdvReq
-import com.tomoarrow.idv.client.generated.models.Country
+import com.tomoarrow.idv.client.generated.models.TencentStartReq
 
-class StartIdvReqTest : ShouldSpec() {
+class TencentStartReqTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of StartIdvReq
-        //val modelInstance = StartIdvReq()
+        // uncomment below to create an instance of TencentStartReq
+        //val modelInstance = TencentStartReq()
 
         // to test the property `userId`
         should("test userId") {
@@ -44,24 +43,6 @@ class StartIdvReqTest : ShouldSpec() {
         should("test callbackUrl") {
             // uncomment below to test the property
             //modelInstance.callbackUrl shouldBe ("TODO")
-        }
-
-        // to test the property `country`
-        should("test country") {
-            // uncomment below to test the property
-            //modelInstance.country shouldBe ("TODO")
-        }
-
-        // to test the property `email`
-        should("test email") {
-            // uncomment below to test the property
-            //modelInstance.email shouldBe ("TODO")
-        }
-
-        // to test the property `kycPolicyId`
-        should("test kycPolicyId") {
-            // uncomment below to test the property
-            //modelInstance.kycPolicyId shouldBe ("TODO")
         }
 
     }

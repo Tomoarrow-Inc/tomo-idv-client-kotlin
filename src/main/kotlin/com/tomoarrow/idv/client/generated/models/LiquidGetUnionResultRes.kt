@@ -23,7 +23,7 @@
 
 package com.tomoarrow.idv.client.generated.models
 
-import com.tomoarrow.idv.client.generated.models.Country
+import com.tomoarrow.idv.client.generated.models.LiquidGetResultRes
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
@@ -32,30 +32,30 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param userId 
- * @param callbackUrl 
- * @param country 
- * @param email 
- * @param kycPolicyId 
+ * @param address 
+ * @param dateOfBirth 
+ * @param name 
+ * @param sex 
+ * @param postalCode 
  */
 @Serializable
 
-data class StartIdvReq (
+data class LiquidGetUnionResultRes (
 
-    @SerialName(value = "user_id")
-    val userId: kotlin.String,
+    @SerialName(value = "address")
+    val address: kotlin.String,
 
-    @SerialName(value = "callback_url")
-    val callbackUrl: kotlin.String? = null,
+    @SerialName(value = "date_of_birth")
+    val dateOfBirth: kotlin.String,
 
-    @Contextual @SerialName(value = "country")
-    val country: Country? = null,
+    @SerialName(value = "name")
+    val name: kotlin.String,
 
-    @SerialName(value = "email")
-    val email: kotlin.String? = null,
+    @SerialName(value = "sex")
+    val sex: kotlin.String,
 
-    @SerialName(value = "kyc_policy_id")
-    val kycPolicyId: kotlin.String? = null
+    @SerialName(value = "postal_code")
+    val postalCode: kotlin.String? = null
 
 ) {
 

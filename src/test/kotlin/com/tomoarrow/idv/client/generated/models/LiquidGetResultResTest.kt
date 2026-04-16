@@ -26,42 +26,41 @@ package com.tomoarrow.idv.client.generated.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import com.tomoarrow.idv.client.generated.models.StartIdvReq
-import com.tomoarrow.idv.client.generated.models.Country
+import com.tomoarrow.idv.client.generated.models.LiquidGetResultRes
 
-class StartIdvReqTest : ShouldSpec() {
+class LiquidGetResultResTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of StartIdvReq
-        //val modelInstance = StartIdvReq()
+        // uncomment below to create an instance of LiquidGetResultRes
+        //val modelInstance = LiquidGetResultRes()
 
-        // to test the property `userId`
-        should("test userId") {
+        // to test the property `address`
+        should("test address") {
             // uncomment below to test the property
-            //modelInstance.userId shouldBe ("TODO")
+            //modelInstance.address shouldBe ("TODO")
         }
 
-        // to test the property `callbackUrl`
-        should("test callbackUrl") {
+        // to test the property `dateOfBirth`
+        should("test dateOfBirth") {
             // uncomment below to test the property
-            //modelInstance.callbackUrl shouldBe ("TODO")
+            //modelInstance.dateOfBirth shouldBe ("TODO")
         }
 
-        // to test the property `country`
-        should("test country") {
+        // to test the property `name`
+        should("test name") {
             // uncomment below to test the property
-            //modelInstance.country shouldBe ("TODO")
+            //modelInstance.name shouldBe ("TODO")
         }
 
-        // to test the property `email`
-        should("test email") {
+        // to test the property `sex`
+        should("test sex") {
             // uncomment below to test the property
-            //modelInstance.email shouldBe ("TODO")
+            //modelInstance.sex shouldBe ("TODO")
         }
 
-        // to test the property `kycPolicyId`
-        should("test kycPolicyId") {
+        // to test the property `postalCode`
+        should("test postalCode") {
             // uncomment below to test the property
-            //modelInstance.kycPolicyId shouldBe ("TODO")
+            //modelInstance.postalCode shouldBe ("TODO")
         }
 
     }
