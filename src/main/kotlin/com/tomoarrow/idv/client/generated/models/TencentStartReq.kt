@@ -23,7 +23,6 @@
 
 package com.tomoarrow.idv.client.generated.models
 
-import com.tomoarrow.idv.client.generated.models.Country
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
@@ -33,26 +32,26 @@ import kotlinx.serialization.Contextual
  * 
  *
  * @param userId 
+ * @param bestFrameBase64 
  * @param callbackUrl 
- * @param country 
- * @param email 
+ * @param cardImageBase64 
  * @param kycPolicyId 
  */
 @Serializable
 
-data class StartIdvReq (
+data class TencentStartReq (
 
     @SerialName(value = "user_id")
     val userId: kotlin.String,
 
+    @SerialName(value = "best_frame_base64")
+    val bestFrameBase64: kotlin.String? = null,
+
     @SerialName(value = "callback_url")
     val callbackUrl: kotlin.String? = null,
 
-    @Contextual @SerialName(value = "country")
-    val country: Country? = null,
-
-    @SerialName(value = "email")
-    val email: kotlin.String? = null,
+    @SerialName(value = "card_image_base64")
+    val cardImageBase64: kotlin.String? = null,
 
     @SerialName(value = "kyc_policy_id")
     val kycPolicyId: kotlin.String? = null

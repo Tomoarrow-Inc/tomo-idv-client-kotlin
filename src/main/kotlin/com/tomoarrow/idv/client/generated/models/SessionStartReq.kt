@@ -36,11 +36,11 @@ import kotlinx.serialization.Contextual
  * @param callbackUrl 
  * @param country 
  * @param email 
- * @param kycPolicyId 
+ * @param policyId 
  */
 @Serializable
 
-data class StartIdvReq (
+data class SessionStartReq (
 
     @SerialName(value = "user_id")
     val userId: kotlin.String,
@@ -54,8 +54,8 @@ data class StartIdvReq (
     @SerialName(value = "email")
     val email: kotlin.String? = null,
 
-    @SerialName(value = "kyc_policy_id")
-    val kycPolicyId: kotlin.String? = null
+    @SerialName(value = "policy_id")
+    val policyId: kotlin.String? = null
 
 ) {
 

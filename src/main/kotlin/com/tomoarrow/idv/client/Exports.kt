@@ -14,29 +14,31 @@ typealias Serializer = com.tomoarrow.idv.client.generated.infrastructure.Seriali
 // ── Models ──
 typealias Country = com.tomoarrow.idv.client.generated.models.Country
 typealias GetKycReq = com.tomoarrow.idv.client.generated.models.GetKycReq
-typealias GetKycResp = com.tomoarrow.idv.client.generated.models.GetKycResp
-typealias GoogleStartReq = com.tomoarrow.idv.client.generated.models.GoogleStartReq
-typealias GoogleStartResp = com.tomoarrow.idv.client.generated.models.GoogleStartResp
+typealias GetKycRes = com.tomoarrow.idv.client.generated.models.GetKycRes
+typealias LaunchKind = com.tomoarrow.idv.client.generated.models.LaunchKind
 typealias LiquidGetKycReq = com.tomoarrow.idv.client.generated.models.LiquidGetKycReq
+typealias LiquidGetResultRes = com.tomoarrow.idv.client.generated.models.LiquidGetResultRes
+typealias LiquidGetUnionResultRes = com.tomoarrow.idv.client.generated.models.LiquidGetUnionResultRes
 typealias LiquidIdvField = com.tomoarrow.idv.client.generated.models.LiquidIdvField
-typealias LiquidIntegratedAppResponse = com.tomoarrow.idv.client.generated.models.LiquidIntegratedAppResponse
-typealias LiquidStartIdvRequest = com.tomoarrow.idv.client.generated.models.LiquidStartIdvRequest
+typealias LiquidIntegratedAppRes = com.tomoarrow.idv.client.generated.models.LiquidIntegratedAppRes
+typealias LiquidStartIdvReq = com.tomoarrow.idv.client.generated.models.LiquidStartIdvReq
 typealias PlaidGetKycReq = com.tomoarrow.idv.client.generated.models.PlaidGetKycReq
 typealias PlaidIdvField = com.tomoarrow.idv.client.generated.models.PlaidIdvField
-typealias PlaidStartIdvRequest = com.tomoarrow.idv.client.generated.models.PlaidStartIdvRequest
-typealias PlaidStartIdvResp = com.tomoarrow.idv.client.generated.models.PlaidStartIdvResp
-typealias SocialResultReq = com.tomoarrow.idv.client.generated.models.SocialResultReq
+typealias PlaidStartIdvReq = com.tomoarrow.idv.client.generated.models.PlaidStartIdvReq
+typealias PlaidStartIdvRes = com.tomoarrow.idv.client.generated.models.PlaidStartIdvRes
+typealias SessionStartReq = com.tomoarrow.idv.client.generated.models.SessionStartReq
+typealias SessionStartRes = com.tomoarrow.idv.client.generated.models.SessionStartRes
 typealias StartIdvReq = com.tomoarrow.idv.client.generated.models.StartIdvReq
-typealias StartIdvResp = com.tomoarrow.idv.client.generated.models.StartIdvResp
+typealias StartIdvRes = com.tomoarrow.idv.client.generated.models.StartIdvRes
 typealias TencentGetKycReq = com.tomoarrow.idv.client.generated.models.TencentGetKycReq
-typealias TencentGetKycResp = com.tomoarrow.idv.client.generated.models.TencentGetKycResp
-typealias TencentGetUnionResultResp = com.tomoarrow.idv.client.generated.models.TencentGetUnionResultResp
+typealias TencentGetKycRes = com.tomoarrow.idv.client.generated.models.TencentGetKycRes
+typealias TencentGetUnionResultRes = com.tomoarrow.idv.client.generated.models.TencentGetUnionResultRes
 typealias TencentIdvField = com.tomoarrow.idv.client.generated.models.TencentIdvField
-typealias TokenResponse = com.tomoarrow.idv.client.generated.models.TokenResponse
-typealias TomoIdvStartReq = com.tomoarrow.idv.client.generated.models.TomoIdvStartReq
-typealias TomoIdvStartRes = com.tomoarrow.idv.client.generated.models.TomoIdvStartRes
-typealias WeChatStartReq = com.tomoarrow.idv.client.generated.models.WeChatStartReq
-typealias WeChatStartResp = com.tomoarrow.idv.client.generated.models.WeChatStartResp
+typealias TencentStartIdvRes = com.tomoarrow.idv.client.generated.models.TencentStartIdvRes
+typealias TencentStartReq = com.tomoarrow.idv.client.generated.models.TencentStartReq
+typealias TokenRes = com.tomoarrow.idv.client.generated.models.TokenRes
+typealias TomoIdvIssueTokenReq = com.tomoarrow.idv.client.generated.models.TomoIdvIssueTokenReq
+typealias TomoIdvIssueTokenRes = com.tomoarrow.idv.client.generated.models.TomoIdvIssueTokenRes
 
 // ── Client Assertion ──
 // ClientAssertionHelper, ClientAssertionOptions, BodyOptions, TokenRequestData는

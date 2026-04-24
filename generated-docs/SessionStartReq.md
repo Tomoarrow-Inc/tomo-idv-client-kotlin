@@ -1,5 +1,5 @@
 
-# StartIdvReq
+# SessionStartReq
 
 ## Properties
 | Name | Type | Description | Notes |
@@ -8,7 +8,7 @@
 | **callbackUrl** | **kotlin.String** |  |  [optional] |
 | **country** | [**Country**](Country.md) |  |  [optional] |
 | **email** | **kotlin.String** |  |  [optional] |
-| **kycPolicyId** | **kotlin.String** |  |  [optional] |
+| **policyId** | **kotlin.String** |  |  [optional] |
 
 
 
