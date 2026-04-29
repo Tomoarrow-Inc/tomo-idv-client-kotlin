@@ -78,14 +78,6 @@ class DefaultApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
-        // to test v1IdvCnCookieStartPost
-        should("test v1IdvCnCookieStartPost") {
-            // uncomment below to test v1IdvCnCookieStartPost
-            //val tencentStartReq : TencentStartReq =  // TencentStartReq | 
-            //val result : TencentStartIdvRes = apiInstance.v1IdvCnCookieStartPost(tencentStartReq)
-            //result shouldBe ("TODO")
-        }
-
         // to test v1IdvCnHealthGet
         should("test v1IdvCnHealthGet") {
             // uncomment below to test v1IdvCnHealthGet
@@ -99,13 +91,6 @@ class DefaultApiTest : ShouldSpec() {
             //val authorization : kotlin.String = authorization_example // kotlin.String | 
             //val tencentGetKycReq : TencentGetKycReq =  // TencentGetKycReq | 
             //val result : TencentGetUnionResultRes = apiInstance.v1IdvCnKycGetPost(authorization, tencentGetKycReq)
-            //result shouldBe ("TODO")
-        }
-
-        // to test v1IdvCnResultWebPost
-        should("test v1IdvCnResultWebPost") {
-            // uncomment below to test v1IdvCnResultWebPost
-            //val result : kotlin.Any = apiInstance.v1IdvCnResultWebPost()
             //result shouldBe ("TODO")
         }
 

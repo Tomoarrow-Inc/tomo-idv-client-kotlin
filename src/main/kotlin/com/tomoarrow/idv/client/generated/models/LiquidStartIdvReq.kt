@@ -33,6 +33,7 @@ import kotlinx.serialization.Contextual
  *
  * @param callbackUrl 
  * @param userId 
+ * @param kycPolicyId 
  */
 @Serializable
 
@@ -42,7 +43,10 @@ data class LiquidStartIdvReq (
     val callbackUrl: kotlin.String,
 
     @SerialName(value = "user_id")
-    val userId: kotlin.String
+    val userId: kotlin.String,
+
+    @SerialName(value = "kyc_policy_id")
+    val kycPolicyId: kotlin.String? = null
 
 ) {
 

@@ -45,5 +45,11 @@ class LiquidStartIdvReqTest : ShouldSpec() {
             //modelInstance.userId shouldBe ("TODO")
         }
 
+        // to test the property `kycPolicyId`
+        should("test kycPolicyId") {
+            // uncomment below to test the property
+            //modelInstance.kycPolicyId shouldBe ("TODO")
+        }
+
     }
 }

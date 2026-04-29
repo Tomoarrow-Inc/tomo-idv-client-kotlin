@@ -7,10 +7,8 @@ All URIs are relative to *http://localhost*
 | [**v1IdvCaHealthGet**](DefaultApi.md#v1IdvCaHealthGet) | **GET** /v1/idv/ca/health |  |
 | [**v1IdvCaKycGetPost**](DefaultApi.md#v1IdvCaKycGetPost) | **POST** /v1/idv/ca/kyc/get |  |
 | [**v1IdvCaStartPost**](DefaultApi.md#v1IdvCaStartPost) | **POST** /v1/idv/ca/start |  |
-| [**v1IdvCnCookieStartPost**](DefaultApi.md#v1IdvCnCookieStartPost) | **POST** /v1/idv/cn/cookie/start |  |
 | [**v1IdvCnHealthGet**](DefaultApi.md#v1IdvCnHealthGet) | **GET** /v1/idv/cn/health |  |
 | [**v1IdvCnKycGetPost**](DefaultApi.md#v1IdvCnKycGetPost) | **POST** /v1/idv/cn/kyc/get |  |
-| [**v1IdvCnResultWebPost**](DefaultApi.md#v1IdvCnResultWebPost) | **POST** /v1/idv/cn/result/web |  |
 | [**v1IdvCnStartPost**](DefaultApi.md#v1IdvCnStartPost) | **POST** /v1/idv/cn/start |  |
 | [**v1IdvCnTokenPost**](DefaultApi.md#v1IdvCnTokenPost) | **POST** /v1/idv/cn/token |  |
 | [**v1IdvJpHealthGet**](DefaultApi.md#v1IdvJpHealthGet) | **GET** /v1/idv/jp/health |  |
@@ -161,50 +159,6 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
-<a id="v1IdvCnCookieStartPost"></a>
-# **v1IdvCnCookieStartPost**
-> TencentStartIdvRes v1IdvCnCookieStartPost(tencentStartReq)
-
-
-
-### Example
-```kotlin
-// Import classes:
-//import com.tomoarrow.idv.client.generated.infrastructure.*
-//import com.tomoarrow.idv.client.generated.models.*
-
-val apiInstance = DefaultApi()
-val tencentStartReq : TencentStartReq =  // TencentStartReq | 
-try {
-    val result : TencentStartIdvRes = apiInstance.v1IdvCnCookieStartPost(tencentStartReq)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling DefaultApi#v1IdvCnCookieStartPost")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DefaultApi#v1IdvCnCookieStartPost")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **tencentStartReq** | [**TencentStartReq**](TencentStartReq.md)|  | [optional] |
-
-### Return type
-
-[**TencentStartIdvRes**](TencentStartIdvRes.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
 <a id="v1IdvCnHealthGet"></a>
 # **v1IdvCnHealthGet**
 > kotlin.String v1IdvCnHealthGet()
@@ -290,47 +244,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-<a id="v1IdvCnResultWebPost"></a>
-# **v1IdvCnResultWebPost**
-> kotlin.Any v1IdvCnResultWebPost()
-
-
-
-### Example
-```kotlin
-// Import classes:
-//import com.tomoarrow.idv.client.generated.infrastructure.*
-//import com.tomoarrow.idv.client.generated.models.*
-
-val apiInstance = DefaultApi()
-try {
-    val result : kotlin.Any = apiInstance.v1IdvCnResultWebPost()
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling DefaultApi#v1IdvCnResultWebPost")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DefaultApi#v1IdvCnResultWebPost")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**kotlin.Any**](kotlin.Any.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
 <a id="v1IdvCnStartPost"></a>
