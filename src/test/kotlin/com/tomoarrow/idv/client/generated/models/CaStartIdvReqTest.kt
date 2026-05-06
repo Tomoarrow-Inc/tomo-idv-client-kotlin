@@ -26,12 +26,12 @@ package com.tomoarrow.idv.client.generated.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import com.tomoarrow.idv.client.generated.models.PlaidStartIdvReq
+import com.tomoarrow.idv.client.generated.models.CaStartIdvReq
 
-class PlaidStartIdvReqTest : ShouldSpec() {
+class CaStartIdvReqTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of PlaidStartIdvReq
-        //val modelInstance = PlaidStartIdvReq()
+        // uncomment below to create an instance of CaStartIdvReq
+        //val modelInstance = CaStartIdvReq()
 
         // to test the property `callbackUrl`
         should("test callbackUrl") {
@@ -49,12 +49,6 @@ class PlaidStartIdvReqTest : ShouldSpec() {
         should("test email") {
             // uncomment below to test the property
             //modelInstance.email shouldBe ("TODO")
-        }
-
-        // to test the property `kycPolicyId`
-        should("test kycPolicyId") {
-            // uncomment below to test the property
-            //modelInstance.kycPolicyId shouldBe ("TODO")
         }
 
     }

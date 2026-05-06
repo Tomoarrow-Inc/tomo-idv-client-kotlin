@@ -26,17 +26,23 @@ package com.tomoarrow.idv.client.generated.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import com.tomoarrow.idv.client.generated.models.PlaidStartIdvRes
+import com.tomoarrow.idv.client.generated.models.JpStartIdvReq
 
-class PlaidStartIdvResTest : ShouldSpec() {
+class JpStartIdvReqTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of PlaidStartIdvRes
-        //val modelInstance = PlaidStartIdvRes()
+        // uncomment below to create an instance of JpStartIdvReq
+        //val modelInstance = JpStartIdvReq()
 
-        // to test the property `startIdvUri`
-        should("test startIdvUri") {
+        // to test the property `callbackUrl`
+        should("test callbackUrl") {
             // uncomment below to test the property
-            //modelInstance.startIdvUri shouldBe ("TODO")
+            //modelInstance.callbackUrl shouldBe ("TODO")
+        }
+
+        // to test the property `userId`
+        should("test userId") {
+            // uncomment below to test the property
+            //modelInstance.userId shouldBe ("TODO")
         }
 
     }

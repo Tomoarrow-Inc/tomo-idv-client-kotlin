@@ -27,7 +27,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.tomoarrow.idv.client.generated.models.StartIdvReq
-import com.tomoarrow.idv.client.generated.models.Country
+import com.tomoarrow.idv.client.generated.models.KycPolicy
 
 class StartIdvReqTest : ShouldSpec() {
     init {
@@ -58,10 +58,10 @@ class StartIdvReqTest : ShouldSpec() {
             //modelInstance.email shouldBe ("TODO")
         }
 
-        // to test the property `kycPolicyId`
-        should("test kycPolicyId") {
+        // to test the property `kycPolicy`
+        should("test kycPolicy") {
             // uncomment below to test the property
-            //modelInstance.kycPolicyId shouldBe ("TODO")
+            //modelInstance.kycPolicy shouldBe ("TODO")
         }
 
     }

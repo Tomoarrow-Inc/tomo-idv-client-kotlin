@@ -1,10 +1,11 @@
 
-# LiquidIntegratedAppRes
+# JpStartIdvReq
 
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **startIdvUri** | **kotlin.String** |  |  |
+| **callbackUrl** | **kotlin.String** |  |  |
+| **userId** | **kotlin.String** |  |  |
 
 
 

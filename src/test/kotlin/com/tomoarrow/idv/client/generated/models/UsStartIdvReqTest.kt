@@ -26,13 +26,18 @@ package com.tomoarrow.idv.client.generated.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import com.tomoarrow.idv.client.generated.models.PlaidGetKycReq
-import com.tomoarrow.idv.client.generated.models.PlaidIdvField
+import com.tomoarrow.idv.client.generated.models.UsStartIdvReq
 
-class PlaidGetKycReqTest : ShouldSpec() {
+class UsStartIdvReqTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of PlaidGetKycReq
-        //val modelInstance = PlaidGetKycReq()
+        // uncomment below to create an instance of UsStartIdvReq
+        //val modelInstance = UsStartIdvReq()
+
+        // to test the property `callbackUrl`
+        should("test callbackUrl") {
+            // uncomment below to test the property
+            //modelInstance.callbackUrl shouldBe ("TODO")
+        }
 
         // to test the property `userId`
         should("test userId") {
@@ -40,10 +45,10 @@ class PlaidGetKycReqTest : ShouldSpec() {
             //modelInstance.userId shouldBe ("TODO")
         }
 
-        // to test the property `fields`
-        should("test fields") {
+        // to test the property `email`
+        should("test email") {
             // uncomment below to test the property
-            //modelInstance.fields shouldBe ("TODO")
+            //modelInstance.email shouldBe ("TODO")
         }
 
     }

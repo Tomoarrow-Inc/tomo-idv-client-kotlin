@@ -27,22 +27,16 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.tomoarrow.idv.client.generated.apis.DefaultApi
+import com.tomoarrow.idv.client.generated.models.CaStartIdvReq
+import com.tomoarrow.idv.client.generated.models.CnStartIdvReq
 import com.tomoarrow.idv.client.generated.models.GetKycReq
 import com.tomoarrow.idv.client.generated.models.GetKycRes
-import com.tomoarrow.idv.client.generated.models.LiquidGetKycReq
-import com.tomoarrow.idv.client.generated.models.LiquidGetUnionResultRes
-import com.tomoarrow.idv.client.generated.models.LiquidIntegratedAppRes
-import com.tomoarrow.idv.client.generated.models.LiquidStartIdvReq
-import com.tomoarrow.idv.client.generated.models.PlaidGetKycReq
-import com.tomoarrow.idv.client.generated.models.PlaidStartIdvReq
-import com.tomoarrow.idv.client.generated.models.PlaidStartIdvRes
+import com.tomoarrow.idv.client.generated.models.JpStartIdvReq
 import com.tomoarrow.idv.client.generated.models.StartIdvReq
 import com.tomoarrow.idv.client.generated.models.StartIdvRes
-import com.tomoarrow.idv.client.generated.models.TencentGetKycReq
-import com.tomoarrow.idv.client.generated.models.TencentGetUnionResultRes
-import com.tomoarrow.idv.client.generated.models.TencentStartIdvRes
-import com.tomoarrow.idv.client.generated.models.TencentStartReq
 import com.tomoarrow.idv.client.generated.models.TokenRes
+import com.tomoarrow.idv.client.generated.models.UkStartIdvReq
+import com.tomoarrow.idv.client.generated.models.UsStartIdvReq
 
 class DefaultApiTest : ShouldSpec() {
     init {
@@ -56,21 +50,12 @@ class DefaultApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
-        // to test v1IdvCaKycGetPost
-        should("test v1IdvCaKycGetPost") {
-            // uncomment below to test v1IdvCaKycGetPost
-            //val authorization : kotlin.String = authorization_example // kotlin.String | 
-            //val plaidGetKycReq : PlaidGetKycReq =  // PlaidGetKycReq | 
-            //val result : kotlin.collections.Map<kotlin.String, kotlin.String> = apiInstance.v1IdvCaKycGetPost(authorization, plaidGetKycReq)
-            //result shouldBe ("TODO")
-        }
-
         // to test v1IdvCaStartPost
         should("test v1IdvCaStartPost") {
             // uncomment below to test v1IdvCaStartPost
             //val authorization : kotlin.String = authorization_example // kotlin.String | 
-            //val plaidStartIdvReq : PlaidStartIdvReq =  // PlaidStartIdvReq | 
-            //val result : PlaidStartIdvRes = apiInstance.v1IdvCaStartPost(authorization, plaidStartIdvReq)
+            //val caStartIdvReq : CaStartIdvReq =  // CaStartIdvReq | 
+            //val result : StartIdvRes = apiInstance.v1IdvCaStartPost(authorization, caStartIdvReq)
             //result shouldBe ("TODO")
         }
 
@@ -81,21 +66,19 @@ class DefaultApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
-        // to test v1IdvCnKycGetPost
-        should("test v1IdvCnKycGetPost") {
-            // uncomment below to test v1IdvCnKycGetPost
-            //val authorization : kotlin.String = authorization_example // kotlin.String | 
-            //val tencentGetKycReq : TencentGetKycReq =  // TencentGetKycReq | 
-            //val result : TencentGetUnionResultRes = apiInstance.v1IdvCnKycGetPost(authorization, tencentGetKycReq)
-            //result shouldBe ("TODO")
-        }
-
         // to test v1IdvCnStartPost
         should("test v1IdvCnStartPost") {
             // uncomment below to test v1IdvCnStartPost
             //val authorization : kotlin.String = authorization_example // kotlin.String | 
-            //val tencentStartReq : TencentStartReq =  // TencentStartReq | 
-            //val result : TencentStartIdvRes = apiInstance.v1IdvCnStartPost(authorization, tencentStartReq)
+            //val cnStartIdvReq : CnStartIdvReq =  // CnStartIdvReq | 
+            //val result : StartIdvRes = apiInstance.v1IdvCnStartPost(authorization, cnStartIdvReq)
+            //result shouldBe ("TODO")
+        }
+
+        // to test v1IdvHealthGet
+        should("test v1IdvHealthGet") {
+            // uncomment below to test v1IdvHealthGet
+            //val result : kotlin.String = apiInstance.v1IdvHealthGet()
             //result shouldBe ("TODO")
         }
 
@@ -106,21 +89,12 @@ class DefaultApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
-        // to test v1IdvJpKycGetPost
-        should("test v1IdvJpKycGetPost") {
-            // uncomment below to test v1IdvJpKycGetPost
-            //val authorization : kotlin.String = authorization_example // kotlin.String | 
-            //val liquidGetKycReq : LiquidGetKycReq =  // LiquidGetKycReq | 
-            //val result : LiquidGetUnionResultRes = apiInstance.v1IdvJpKycGetPost(authorization, liquidGetKycReq)
-            //result shouldBe ("TODO")
-        }
-
         // to test v1IdvJpStartPost
         should("test v1IdvJpStartPost") {
             // uncomment below to test v1IdvJpStartPost
             //val authorization : kotlin.String = authorization_example // kotlin.String | 
-            //val liquidStartIdvReq : LiquidStartIdvReq =  // LiquidStartIdvReq | 
-            //val result : LiquidIntegratedAppRes = apiInstance.v1IdvJpStartPost(authorization, liquidStartIdvReq)
+            //val jpStartIdvReq : JpStartIdvReq =  // JpStartIdvReq | 
+            //val result : StartIdvRes = apiInstance.v1IdvJpStartPost(authorization, jpStartIdvReq)
             //result shouldBe ("TODO")
         }
 
@@ -130,6 +104,15 @@ class DefaultApiTest : ShouldSpec() {
             //val authorization : kotlin.String = authorization_example // kotlin.String | 
             //val getKycReq : GetKycReq =  // GetKycReq | 
             //val result : GetKycRes = apiInstance.v1IdvKycGetPost(authorization, getKycReq)
+            //result shouldBe ("TODO")
+        }
+
+        // to test v1IdvResultPost
+        should("test v1IdvResultPost") {
+            // uncomment below to test v1IdvResultPost
+            //val authorization : kotlin.String = authorization_example // kotlin.String | 
+            //val getKycReq : GetKycReq =  // GetKycReq | 
+            //val result : GetKycRes = apiInstance.v1IdvResultPost(authorization, getKycReq)
             //result shouldBe ("TODO")
         }
 
@@ -149,21 +132,12 @@ class DefaultApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
-        // to test v1IdvUkKycGetPost
-        should("test v1IdvUkKycGetPost") {
-            // uncomment below to test v1IdvUkKycGetPost
-            //val authorization : kotlin.String = authorization_example // kotlin.String | 
-            //val plaidGetKycReq : PlaidGetKycReq =  // PlaidGetKycReq | 
-            //val result : kotlin.collections.Map<kotlin.String, kotlin.String> = apiInstance.v1IdvUkKycGetPost(authorization, plaidGetKycReq)
-            //result shouldBe ("TODO")
-        }
-
         // to test v1IdvUkStartPost
         should("test v1IdvUkStartPost") {
             // uncomment below to test v1IdvUkStartPost
             //val authorization : kotlin.String = authorization_example // kotlin.String | 
-            //val plaidStartIdvReq : PlaidStartIdvReq =  // PlaidStartIdvReq | 
-            //val result : PlaidStartIdvRes = apiInstance.v1IdvUkStartPost(authorization, plaidStartIdvReq)
+            //val ukStartIdvReq : UkStartIdvReq =  // UkStartIdvReq | 
+            //val result : StartIdvRes = apiInstance.v1IdvUkStartPost(authorization, ukStartIdvReq)
             //result shouldBe ("TODO")
         }
 
@@ -174,21 +148,12 @@ class DefaultApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
-        // to test v1IdvUsKycGetPost
-        should("test v1IdvUsKycGetPost") {
-            // uncomment below to test v1IdvUsKycGetPost
-            //val authorization : kotlin.String = authorization_example // kotlin.String | 
-            //val plaidGetKycReq : PlaidGetKycReq =  // PlaidGetKycReq | 
-            //val result : kotlin.collections.Map<kotlin.String, kotlin.String> = apiInstance.v1IdvUsKycGetPost(authorization, plaidGetKycReq)
-            //result shouldBe ("TODO")
-        }
-
         // to test v1IdvUsStartPost
         should("test v1IdvUsStartPost") {
             // uncomment below to test v1IdvUsStartPost
             //val authorization : kotlin.String = authorization_example // kotlin.String | 
-            //val plaidStartIdvReq : PlaidStartIdvReq =  // PlaidStartIdvReq | 
-            //val result : PlaidStartIdvRes = apiInstance.v1IdvUsStartPost(authorization, plaidStartIdvReq)
+            //val usStartIdvReq : UsStartIdvReq =  // UsStartIdvReq | 
+            //val result : StartIdvRes = apiInstance.v1IdvUsStartPost(authorization, usStartIdvReq)
             //result shouldBe ("TODO")
         }
 

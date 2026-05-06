@@ -36,7 +36,7 @@ import kotlinx.serialization.Contextual
  */
 @Serializable
 
-data class LiquidStartIdvReq (
+data class JpStartIdvReq (
 
     @SerialName(value = "callback_url")
     val callbackUrl: kotlin.String,

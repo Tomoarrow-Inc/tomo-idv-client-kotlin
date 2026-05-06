@@ -12,31 +12,25 @@ typealias ServerException = com.tomoarrow.idv.client.generated.infrastructure.Se
 typealias Serializer = com.tomoarrow.idv.client.generated.infrastructure.Serializer
 
 // ── Models ──
+typealias CaStartIdvReq = com.tomoarrow.idv.client.generated.models.CaStartIdvReq
+typealias CnStartIdvReq = com.tomoarrow.idv.client.generated.models.CnStartIdvReq
 typealias Country = com.tomoarrow.idv.client.generated.models.Country
 typealias GetKycReq = com.tomoarrow.idv.client.generated.models.GetKycReq
-typealias GetKycResp = com.tomoarrow.idv.client.generated.models.GetKycResp
-typealias GoogleStartReq = com.tomoarrow.idv.client.generated.models.GoogleStartReq
-typealias GoogleStartResp = com.tomoarrow.idv.client.generated.models.GoogleStartResp
-typealias LiquidGetKycReq = com.tomoarrow.idv.client.generated.models.LiquidGetKycReq
-typealias LiquidIdvField = com.tomoarrow.idv.client.generated.models.LiquidIdvField
-typealias LiquidIntegratedAppResponse = com.tomoarrow.idv.client.generated.models.LiquidIntegratedAppResponse
-typealias LiquidStartIdvRequest = com.tomoarrow.idv.client.generated.models.LiquidStartIdvRequest
-typealias PlaidGetKycReq = com.tomoarrow.idv.client.generated.models.PlaidGetKycReq
-typealias PlaidIdvField = com.tomoarrow.idv.client.generated.models.PlaidIdvField
-typealias PlaidStartIdvRequest = com.tomoarrow.idv.client.generated.models.PlaidStartIdvRequest
-typealias PlaidStartIdvResp = com.tomoarrow.idv.client.generated.models.PlaidStartIdvResp
-typealias SocialResultReq = com.tomoarrow.idv.client.generated.models.SocialResultReq
+typealias GetKycRes = com.tomoarrow.idv.client.generated.models.GetKycRes
+typealias JpStartIdvReq = com.tomoarrow.idv.client.generated.models.JpStartIdvReq
+typealias KycPolicy = com.tomoarrow.idv.client.generated.models.KycPolicy
 typealias StartIdvReq = com.tomoarrow.idv.client.generated.models.StartIdvReq
-typealias StartIdvResp = com.tomoarrow.idv.client.generated.models.StartIdvResp
-typealias TencentGetKycReq = com.tomoarrow.idv.client.generated.models.TencentGetKycReq
-typealias TencentGetKycResp = com.tomoarrow.idv.client.generated.models.TencentGetKycResp
-typealias TencentGetUnionResultResp = com.tomoarrow.idv.client.generated.models.TencentGetUnionResultResp
-typealias TencentIdvField = com.tomoarrow.idv.client.generated.models.TencentIdvField
-typealias TokenResponse = com.tomoarrow.idv.client.generated.models.TokenResponse
-typealias TomoIdvStartReq = com.tomoarrow.idv.client.generated.models.TomoIdvStartReq
-typealias TomoIdvStartRes = com.tomoarrow.idv.client.generated.models.TomoIdvStartRes
-typealias WeChatStartReq = com.tomoarrow.idv.client.generated.models.WeChatStartReq
-typealias WeChatStartResp = com.tomoarrow.idv.client.generated.models.WeChatStartResp
+typealias StartIdvRes = com.tomoarrow.idv.client.generated.models.StartIdvRes
+typealias TokenRes = com.tomoarrow.idv.client.generated.models.TokenRes
+typealias UkStartIdvReq = com.tomoarrow.idv.client.generated.models.UkStartIdvReq
+typealias UsStartIdvReq = com.tomoarrow.idv.client.generated.models.UsStartIdvReq
+
+// Backward-compatible names for response schemas that were renamed by the
+// narrowed SDK contract. Vendor-specific request/response aliases are omitted
+// because those schemas are intentionally no longer part of the SDK surface.
+typealias GetKycResp = GetKycRes
+typealias StartIdvResp = StartIdvRes
+typealias TokenResponse = TokenRes
 
 // ── Client Assertion ──
 // ClientAssertionHelper, ClientAssertionOptions, BodyOptions, TokenRequestData는

@@ -5,21 +5,18 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**v1IdvCaHealthGet**](DefaultApi.md#v1IdvCaHealthGet) | **GET** /v1/idv/ca/health |  |
-| [**v1IdvCaKycGetPost**](DefaultApi.md#v1IdvCaKycGetPost) | **POST** /v1/idv/ca/kyc/get |  |
 | [**v1IdvCaStartPost**](DefaultApi.md#v1IdvCaStartPost) | **POST** /v1/idv/ca/start |  |
 | [**v1IdvCnHealthGet**](DefaultApi.md#v1IdvCnHealthGet) | **GET** /v1/idv/cn/health |  |
-| [**v1IdvCnKycGetPost**](DefaultApi.md#v1IdvCnKycGetPost) | **POST** /v1/idv/cn/kyc/get |  |
 | [**v1IdvCnStartPost**](DefaultApi.md#v1IdvCnStartPost) | **POST** /v1/idv/cn/start |  |
+| [**v1IdvHealthGet**](DefaultApi.md#v1IdvHealthGet) | **GET** /v1/idv/health |  |
 | [**v1IdvJpHealthGet**](DefaultApi.md#v1IdvJpHealthGet) | **GET** /v1/idv/jp/health |  |
-| [**v1IdvJpKycGetPost**](DefaultApi.md#v1IdvJpKycGetPost) | **POST** /v1/idv/jp/kyc/get |  |
 | [**v1IdvJpStartPost**](DefaultApi.md#v1IdvJpStartPost) | **POST** /v1/idv/jp/start |  |
 | [**v1IdvKycGetPost**](DefaultApi.md#v1IdvKycGetPost) | **POST** /v1/idv/kyc/get |  |
+| [**v1IdvResultPost**](DefaultApi.md#v1IdvResultPost) | **POST** /v1/idv/result |  |
 | [**v1IdvStartPost**](DefaultApi.md#v1IdvStartPost) | **POST** /v1/idv/start |  |
 | [**v1IdvUkHealthGet**](DefaultApi.md#v1IdvUkHealthGet) | **GET** /v1/idv/uk/health |  |
-| [**v1IdvUkKycGetPost**](DefaultApi.md#v1IdvUkKycGetPost) | **POST** /v1/idv/uk/kyc/get |  |
 | [**v1IdvUkStartPost**](DefaultApi.md#v1IdvUkStartPost) | **POST** /v1/idv/uk/start |  |
 | [**v1IdvUsHealthGet**](DefaultApi.md#v1IdvUsHealthGet) | **GET** /v1/idv/us/health |  |
-| [**v1IdvUsKycGetPost**](DefaultApi.md#v1IdvUsKycGetPost) | **POST** /v1/idv/us/kyc/get |  |
 | [**v1IdvUsStartPost**](DefaultApi.md#v1IdvUsStartPost) | **POST** /v1/idv/us/start |  |
 | [**v1Oauth2TokenPost**](DefaultApi.md#v1Oauth2TokenPost) | **POST** /v1/oauth2/token |  |
 
@@ -29,6 +26,8 @@ All URIs are relative to *http://localhost*
 > kotlin.String v1IdvCaHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 ```kotlin
@@ -65,57 +64,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
-<a id="v1IdvCaKycGetPost"></a>
-# **v1IdvCaKycGetPost**
-> kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt; v1IdvCaKycGetPost(authorization, plaidGetKycReq)
-
-
-
-### Example
-```kotlin
-// Import classes:
-//import com.tomoarrow.idv.client.generated.infrastructure.*
-//import com.tomoarrow.idv.client.generated.models.*
-
-val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
-val plaidGetKycReq : PlaidGetKycReq =  // PlaidGetKycReq | 
-try {
-    val result : kotlin.collections.Map<kotlin.String, kotlin.String> = apiInstance.v1IdvCaKycGetPost(authorization, plaidGetKycReq)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling DefaultApi#v1IdvCaKycGetPost")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DefaultApi#v1IdvCaKycGetPost")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **plaidGetKycReq** | [**PlaidGetKycReq**](PlaidGetKycReq.md)|  | [optional] |
-
-### Return type
-
-**kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
 <a id="v1IdvCaStartPost"></a>
 # **v1IdvCaStartPost**
-> PlaidStartIdvRes v1IdvCaStartPost(authorization, plaidStartIdvReq)
+> StartIdvRes v1IdvCaStartPost(authorization, caStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;ca.
 
 ### Example
 ```kotlin
@@ -125,9 +80,9 @@ No authorization required
 
 val apiInstance = DefaultApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
-val plaidStartIdvReq : PlaidStartIdvReq =  // PlaidStartIdvReq | 
+val caStartIdvReq : CaStartIdvReq =  // CaStartIdvReq | 
 try {
-    val result : PlaidStartIdvRes = apiInstance.v1IdvCaStartPost(authorization, plaidStartIdvReq)
+    val result : StartIdvRes = apiInstance.v1IdvCaStartPost(authorization, caStartIdvReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvCaStartPost")
@@ -142,11 +97,11 @@ try {
 | **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **plaidStartIdvReq** | [**PlaidStartIdvReq**](PlaidStartIdvReq.md)|  | [optional] |
+| **caStartIdvReq** | [**CaStartIdvReq**](CaStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 
@@ -162,6 +117,8 @@ No authorization required
 > kotlin.String v1IdvCnHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 ```kotlin
@@ -198,57 +155,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
-<a id="v1IdvCnKycGetPost"></a>
-# **v1IdvCnKycGetPost**
-> TencentGetUnionResultRes v1IdvCnKycGetPost(authorization, tencentGetKycReq)
-
-
-
-### Example
-```kotlin
-// Import classes:
-//import com.tomoarrow.idv.client.generated.infrastructure.*
-//import com.tomoarrow.idv.client.generated.models.*
-
-val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
-val tencentGetKycReq : TencentGetKycReq =  // TencentGetKycReq | 
-try {
-    val result : TencentGetUnionResultRes = apiInstance.v1IdvCnKycGetPost(authorization, tencentGetKycReq)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling DefaultApi#v1IdvCnKycGetPost")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DefaultApi#v1IdvCnKycGetPost")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **tencentGetKycReq** | [**TencentGetKycReq**](TencentGetKycReq.md)|  | [optional] |
-
-### Return type
-
-[**TencentGetUnionResultRes**](TencentGetUnionResultRes.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
 <a id="v1IdvCnStartPost"></a>
 # **v1IdvCnStartPost**
-> TencentStartIdvRes v1IdvCnStartPost(authorization, tencentStartReq)
+> StartIdvRes v1IdvCnStartPost(authorization, cnStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;cn.
 
 ### Example
 ```kotlin
@@ -258,9 +171,9 @@ No authorization required
 
 val apiInstance = DefaultApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
-val tencentStartReq : TencentStartReq =  // TencentStartReq | 
+val cnStartIdvReq : CnStartIdvReq =  // CnStartIdvReq | 
 try {
-    val result : TencentStartIdvRes = apiInstance.v1IdvCnStartPost(authorization, tencentStartReq)
+    val result : StartIdvRes = apiInstance.v1IdvCnStartPost(authorization, cnStartIdvReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvCnStartPost")
@@ -275,11 +188,11 @@ try {
 | **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **tencentStartReq** | [**TencentStartReq**](TencentStartReq.md)|  | [optional] |
+| **cnStartIdvReq** | [**CnStartIdvReq**](CnStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-[**TencentStartIdvRes**](TencentStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 
@@ -290,11 +203,54 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
+<a id="v1IdvHealthGet"></a>
+# **v1IdvHealthGet**
+> kotlin.String v1IdvHealthGet()
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import com.tomoarrow.idv.client.generated.infrastructure.*
+//import com.tomoarrow.idv.client.generated.models.*
+
+val apiInstance = DefaultApi()
+try {
+    val result : kotlin.String = apiInstance.v1IdvHealthGet()
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling DefaultApi#v1IdvHealthGet")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DefaultApi#v1IdvHealthGet")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**kotlin.String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=utf-8
+
 <a id="v1IdvJpHealthGet"></a>
 # **v1IdvJpHealthGet**
 > kotlin.String v1IdvJpHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 ```kotlin
@@ -331,57 +287,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
-<a id="v1IdvJpKycGetPost"></a>
-# **v1IdvJpKycGetPost**
-> LiquidGetUnionResultRes v1IdvJpKycGetPost(authorization, liquidGetKycReq)
-
-
-
-### Example
-```kotlin
-// Import classes:
-//import com.tomoarrow.idv.client.generated.infrastructure.*
-//import com.tomoarrow.idv.client.generated.models.*
-
-val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
-val liquidGetKycReq : LiquidGetKycReq =  // LiquidGetKycReq | 
-try {
-    val result : LiquidGetUnionResultRes = apiInstance.v1IdvJpKycGetPost(authorization, liquidGetKycReq)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling DefaultApi#v1IdvJpKycGetPost")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DefaultApi#v1IdvJpKycGetPost")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **liquidGetKycReq** | [**LiquidGetKycReq**](LiquidGetKycReq.md)|  | [optional] |
-
-### Return type
-
-[**LiquidGetUnionResultRes**](LiquidGetUnionResultRes.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
 <a id="v1IdvJpStartPost"></a>
 # **v1IdvJpStartPost**
-> LiquidIntegratedAppRes v1IdvJpStartPost(authorization, liquidStartIdvReq)
+> StartIdvRes v1IdvJpStartPost(authorization, jpStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;jp.
 
 ### Example
 ```kotlin
@@ -391,9 +303,9 @@ No authorization required
 
 val apiInstance = DefaultApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
-val liquidStartIdvReq : LiquidStartIdvReq =  // LiquidStartIdvReq | 
+val jpStartIdvReq : JpStartIdvReq =  // JpStartIdvReq | 
 try {
-    val result : LiquidIntegratedAppRes = apiInstance.v1IdvJpStartPost(authorization, liquidStartIdvReq)
+    val result : StartIdvRes = apiInstance.v1IdvJpStartPost(authorization, jpStartIdvReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvJpStartPost")
@@ -408,11 +320,11 @@ try {
 | **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **liquidStartIdvReq** | [**LiquidStartIdvReq**](LiquidStartIdvReq.md)|  | [optional] |
+| **jpStartIdvReq** | [**JpStartIdvReq**](JpStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-[**LiquidIntegratedAppRes**](LiquidIntegratedAppRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 
@@ -428,6 +340,8 @@ No authorization required
 > GetKycRes v1IdvKycGetPost(authorization, getKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result.
 
 ### Example
 ```kotlin
@@ -446,6 +360,52 @@ try {
     e.printStackTrace()
 } catch (e: ServerException) {
     println("5xx response calling DefaultApi#v1IdvKycGetPost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **authorization** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **getKycReq** | [**GetKycReq**](GetKycReq.md)|  | [optional] |
+
+### Return type
+
+[**GetKycRes**](GetKycRes.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a id="v1IdvResultPost"></a>
+# **v1IdvResultPost**
+> GetKycRes v1IdvResultPost(authorization, getKycReq)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import com.tomoarrow.idv.client.generated.infrastructure.*
+//import com.tomoarrow.idv.client.generated.models.*
+
+val apiInstance = DefaultApi()
+val authorization : kotlin.String = authorization_example // kotlin.String | 
+val getKycReq : GetKycReq =  // GetKycReq | 
+try {
+    val result : GetKycRes = apiInstance.v1IdvResultPost(authorization, getKycReq)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling DefaultApi#v1IdvResultPost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DefaultApi#v1IdvResultPost")
     e.printStackTrace()
 }
 ```
@@ -521,6 +481,8 @@ No authorization required
 
 
 
+[DEPRECATED] Use /v1/idv/health.
+
 ### Example
 ```kotlin
 // Import classes:
@@ -556,57 +518,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
-<a id="v1IdvUkKycGetPost"></a>
-# **v1IdvUkKycGetPost**
-> kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt; v1IdvUkKycGetPost(authorization, plaidGetKycReq)
-
-
-
-### Example
-```kotlin
-// Import classes:
-//import com.tomoarrow.idv.client.generated.infrastructure.*
-//import com.tomoarrow.idv.client.generated.models.*
-
-val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
-val plaidGetKycReq : PlaidGetKycReq =  // PlaidGetKycReq | 
-try {
-    val result : kotlin.collections.Map<kotlin.String, kotlin.String> = apiInstance.v1IdvUkKycGetPost(authorization, plaidGetKycReq)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling DefaultApi#v1IdvUkKycGetPost")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DefaultApi#v1IdvUkKycGetPost")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **plaidGetKycReq** | [**PlaidGetKycReq**](PlaidGetKycReq.md)|  | [optional] |
-
-### Return type
-
-**kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
 <a id="v1IdvUkStartPost"></a>
 # **v1IdvUkStartPost**
-> PlaidStartIdvRes v1IdvUkStartPost(authorization, plaidStartIdvReq)
+> StartIdvRes v1IdvUkStartPost(authorization, ukStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;uk.
 
 ### Example
 ```kotlin
@@ -616,9 +534,9 @@ No authorization required
 
 val apiInstance = DefaultApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
-val plaidStartIdvReq : PlaidStartIdvReq =  // PlaidStartIdvReq | 
+val ukStartIdvReq : UkStartIdvReq =  // UkStartIdvReq | 
 try {
-    val result : PlaidStartIdvRes = apiInstance.v1IdvUkStartPost(authorization, plaidStartIdvReq)
+    val result : StartIdvRes = apiInstance.v1IdvUkStartPost(authorization, ukStartIdvReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvUkStartPost")
@@ -633,11 +551,11 @@ try {
 | **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **plaidStartIdvReq** | [**PlaidStartIdvReq**](PlaidStartIdvReq.md)|  | [optional] |
+| **ukStartIdvReq** | [**UkStartIdvReq**](UkStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 
@@ -653,6 +571,8 @@ No authorization required
 > kotlin.String v1IdvUsHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 ```kotlin
@@ -689,57 +609,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json;charset=utf-8
 
-<a id="v1IdvUsKycGetPost"></a>
-# **v1IdvUsKycGetPost**
-> kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt; v1IdvUsKycGetPost(authorization, plaidGetKycReq)
-
-
-
-### Example
-```kotlin
-// Import classes:
-//import com.tomoarrow.idv.client.generated.infrastructure.*
-//import com.tomoarrow.idv.client.generated.models.*
-
-val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
-val plaidGetKycReq : PlaidGetKycReq =  // PlaidGetKycReq | 
-try {
-    val result : kotlin.collections.Map<kotlin.String, kotlin.String> = apiInstance.v1IdvUsKycGetPost(authorization, plaidGetKycReq)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling DefaultApi#v1IdvUsKycGetPost")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DefaultApi#v1IdvUsKycGetPost")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **plaidGetKycReq** | [**PlaidGetKycReq**](PlaidGetKycReq.md)|  | [optional] |
-
-### Return type
-
-**kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
 <a id="v1IdvUsStartPost"></a>
 # **v1IdvUsStartPost**
-> PlaidStartIdvRes v1IdvUsStartPost(authorization, plaidStartIdvReq)
+> StartIdvRes v1IdvUsStartPost(authorization, usStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;us.
 
 ### Example
 ```kotlin
@@ -749,9 +625,9 @@ No authorization required
 
 val apiInstance = DefaultApi()
 val authorization : kotlin.String = authorization_example // kotlin.String | 
-val plaidStartIdvReq : PlaidStartIdvReq =  // PlaidStartIdvReq | 
+val usStartIdvReq : UsStartIdvReq =  // UsStartIdvReq | 
 try {
-    val result : PlaidStartIdvRes = apiInstance.v1IdvUsStartPost(authorization, plaidStartIdvReq)
+    val result : StartIdvRes = apiInstance.v1IdvUsStartPost(authorization, usStartIdvReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvUsStartPost")
@@ -766,11 +642,11 @@ try {
 | **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **plaidStartIdvReq** | [**PlaidStartIdvReq**](PlaidStartIdvReq.md)|  | [optional] |
+| **usStartIdvReq** | [**UsStartIdvReq**](UsStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 

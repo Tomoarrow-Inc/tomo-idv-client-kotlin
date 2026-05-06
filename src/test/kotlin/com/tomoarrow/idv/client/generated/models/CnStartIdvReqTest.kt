@@ -26,12 +26,24 @@ package com.tomoarrow.idv.client.generated.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import com.tomoarrow.idv.client.generated.models.LiquidStartIdvReq
+import com.tomoarrow.idv.client.generated.models.CnStartIdvReq
 
-class LiquidStartIdvReqTest : ShouldSpec() {
+class CnStartIdvReqTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of LiquidStartIdvReq
-        //val modelInstance = LiquidStartIdvReq()
+        // uncomment below to create an instance of CnStartIdvReq
+        //val modelInstance = CnStartIdvReq()
+
+        // to test the property `userId`
+        should("test userId") {
+            // uncomment below to test the property
+            //modelInstance.userId shouldBe ("TODO")
+        }
+
+        // to test the property `bestFrameBase64`
+        should("test bestFrameBase64") {
+            // uncomment below to test the property
+            //modelInstance.bestFrameBase64 shouldBe ("TODO")
+        }
 
         // to test the property `callbackUrl`
         should("test callbackUrl") {
@@ -39,10 +51,10 @@ class LiquidStartIdvReqTest : ShouldSpec() {
             //modelInstance.callbackUrl shouldBe ("TODO")
         }
 
-        // to test the property `userId`
-        should("test userId") {
+        // to test the property `cardImageBase64`
+        should("test cardImageBase64") {
             // uncomment below to test the property
-            //modelInstance.userId shouldBe ("TODO")
+            //modelInstance.cardImageBase64 shouldBe ("TODO")
         }
 
     }

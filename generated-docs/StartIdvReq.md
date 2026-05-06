@@ -6,9 +6,9 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **userId** | **kotlin.String** |  |  |
 | **callbackUrl** | **kotlin.String** |  |  [optional] |
-| **country** | [**Country**](Country.md) |  |  [optional] |
+| **country** | **kotlin.String** |  |  [optional] |
 | **email** | **kotlin.String** |  |  [optional] |
-| **kycPolicyId** | **kotlin.String** |  |  [optional] |
+| **kycPolicy** | [**KycPolicy**](KycPolicy.md) |  |  [optional] |
 
 
 

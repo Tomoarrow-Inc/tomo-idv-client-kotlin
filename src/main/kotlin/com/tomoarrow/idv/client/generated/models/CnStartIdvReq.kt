@@ -31,14 +31,26 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param startIdvUri 
+ * @param userId 
+ * @param bestFrameBase64 
+ * @param callbackUrl 
+ * @param cardImageBase64 
  */
 @Serializable
 
-data class PlaidStartIdvRes (
+data class CnStartIdvReq (
 
-    @SerialName(value = "start_idv_uri")
-    val startIdvUri: kotlin.String
+    @SerialName(value = "user_id")
+    val userId: kotlin.String,
+
+    @SerialName(value = "best_frame_base64")
+    val bestFrameBase64: kotlin.String? = null,
+
+    @SerialName(value = "callback_url")
+    val callbackUrl: kotlin.String? = null,
+
+    @SerialName(value = "card_image_base64")
+    val cardImageBase64: kotlin.String? = null
 
 ) {
 

@@ -26,23 +26,29 @@ package com.tomoarrow.idv.client.generated.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import com.tomoarrow.idv.client.generated.models.TencentStartReq
+import com.tomoarrow.idv.client.generated.models.KycPolicy
 
-class TencentStartReqTest : ShouldSpec() {
+class KycPolicyTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of TencentStartReq
-        //val modelInstance = TencentStartReq()
+        // uncomment below to create an instance of KycPolicy
+        //val modelInstance = KycPolicy()
 
-        // to test the property `userId`
-        should("test userId") {
+        // to test the property `method`
+        should("test method") {
             // uncomment below to test the property
-            //modelInstance.userId shouldBe ("TODO")
+            //modelInstance.method shouldBe ("TODO")
         }
 
-        // to test the property `callbackUrl`
-        should("test callbackUrl") {
+        // to test the property `ownerAssurance`
+        should("test ownerAssurance") {
             // uncomment below to test the property
-            //modelInstance.callbackUrl shouldBe ("TODO")
+            //modelInstance.ownerAssurance shouldBe ("TODO")
+        }
+
+        // to test the property `subject`
+        should("test subject") {
+            // uncomment below to test the property
+            //modelInstance.subject shouldBe ("TODO")
         }
 
     }

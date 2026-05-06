@@ -1,11 +1,12 @@
 
-# PlaidGetKycReq
+# UsStartIdvReq
 
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **callbackUrl** | **kotlin.String** |  |  |
 | **userId** | **kotlin.String** |  |  |
-| **fields** | [**kotlin.collections.List&lt;PlaidIdvField&gt;**](PlaidIdvField.md) |  |  [optional] |
+| **email** | **kotlin.String** |  |  [optional] |
 
 
 

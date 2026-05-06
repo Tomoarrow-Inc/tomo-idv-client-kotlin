@@ -23,7 +23,6 @@
 
 package com.tomoarrow.idv.client.generated.models
 
-import com.tomoarrow.idv.client.generated.models.PlaidIdvField
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
@@ -32,18 +31,22 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param userId 
- * @param fields 
+ * @param method 
+ * @param ownerAssurance 
+ * @param subject 
  */
 @Serializable
 
-data class PlaidGetKycReq (
+data class KycPolicy (
 
-    @SerialName(value = "user_id")
-    val userId: kotlin.String,
+    @SerialName(value = "method")
+    val method: kotlin.String,
 
-    @SerialName(value = "fields")
-    val fields: kotlin.collections.List<@Contextual PlaidIdvField>? = null
+    @Contextual @SerialName(value = "owner_assurance")
+    val ownerAssurance: kotlin.Any,
+
+    @Contextual @SerialName(value = "subject")
+    val subject: kotlin.Any
 
 ) {
 

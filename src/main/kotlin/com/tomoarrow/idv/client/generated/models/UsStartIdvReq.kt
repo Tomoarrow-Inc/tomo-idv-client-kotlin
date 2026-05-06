@@ -23,15 +23,33 @@
 
 package com.tomoarrow.idv.client.generated.models
 
-import io.kotlintest.shouldBe
-import io.kotlintest.specs.ShouldSpec
 
-import com.tomoarrow.idv.client.generated.models.TencentIdvField
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Contextual
 
-class TencentIdvFieldTest : ShouldSpec() {
-    init {
-        // uncomment below to create an instance of TencentIdvField
-        //val modelInstance = TencentIdvField()
+/**
+ * 
+ *
+ * @param callbackUrl 
+ * @param userId 
+ * @param email 
+ */
+@Serializable
 
-    }
+data class UsStartIdvReq (
+
+    @SerialName(value = "callback_url")
+    val callbackUrl: kotlin.String,
+
+    @SerialName(value = "user_id")
+    val userId: kotlin.String,
+
+    @SerialName(value = "email")
+    val email: kotlin.String? = null
+
+) {
+
+
 }
+

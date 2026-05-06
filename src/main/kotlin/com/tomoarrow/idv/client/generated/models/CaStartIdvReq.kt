@@ -31,18 +31,22 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param userId 
  * @param callbackUrl 
+ * @param userId 
+ * @param email 
  */
 @Serializable
 
-data class TencentStartReq (
+data class CaStartIdvReq (
+
+    @SerialName(value = "callback_url")
+    val callbackUrl: kotlin.String,
 
     @SerialName(value = "user_id")
     val userId: kotlin.String,
 
-    @SerialName(value = "callback_url")
-    val callbackUrl: kotlin.String? = null
+    @SerialName(value = "email")
+    val email: kotlin.String? = null
 
 ) {
 
