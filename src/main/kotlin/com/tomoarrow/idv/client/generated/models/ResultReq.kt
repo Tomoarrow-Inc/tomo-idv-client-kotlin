@@ -23,6 +23,7 @@
 
 package com.tomoarrow.idv.client.generated.models
 
+import com.tomoarrow.idv.client.generated.models.Country
 import com.tomoarrow.idv.client.generated.models.KycPolicy
 
 import kotlinx.serialization.Serializable
@@ -32,15 +33,19 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param ppid 
+ * @param country 
+ * @param userId 
  * @param policy 
  */
 @Serializable
 
 data class ResultReq (
 
-    @SerialName(value = "ppid")
-    val ppid: kotlin.String,
+    @Contextual @SerialName(value = "country")
+    val country: Country,
+
+    @SerialName(value = "user_id")
+    val userId: kotlin.String,
 
     @SerialName(value = "policy")
     val policy: KycPolicy? = null

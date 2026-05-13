@@ -27,6 +27,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.tomoarrow.idv.client.generated.models.ResultReq
+import com.tomoarrow.idv.client.generated.models.Country
 import com.tomoarrow.idv.client.generated.models.KycPolicy
 
 class ResultReqTest : ShouldSpec() {
@@ -34,10 +35,16 @@ class ResultReqTest : ShouldSpec() {
         // uncomment below to create an instance of ResultReq
         //val modelInstance = ResultReq()
 
-        // to test the property `ppid`
-        should("test ppid") {
+        // to test the property `country`
+        should("test country") {
             // uncomment below to test the property
-            //modelInstance.ppid shouldBe ("TODO")
+            //modelInstance.country shouldBe ("TODO")
+        }
+
+        // to test the property `userId`
+        should("test userId") {
+            // uncomment below to test the property
+            //modelInstance.userId shouldBe ("TODO")
         }
 
         // to test the property `policy`
