@@ -4,8 +4,8 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **country** | [**Country**](Country.md) |  |  |
 | **userId** | **kotlin.String** |  |  |
+| **country** | [**Country**](Country.md) |  |  [optional] |
 | **policy** | [**KycPolicy**](KycPolicy.md) |  |  [optional] |
 
 

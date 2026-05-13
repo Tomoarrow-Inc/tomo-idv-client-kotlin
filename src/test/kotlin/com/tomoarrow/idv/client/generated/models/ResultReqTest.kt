@@ -35,16 +35,16 @@ class ResultReqTest : ShouldSpec() {
         // uncomment below to create an instance of ResultReq
         //val modelInstance = ResultReq()
 
-        // to test the property `country`
-        should("test country") {
-            // uncomment below to test the property
-            //modelInstance.country shouldBe ("TODO")
-        }
-
         // to test the property `userId`
         should("test userId") {
             // uncomment below to test the property
             //modelInstance.userId shouldBe ("TODO")
+        }
+
+        // to test the property `country`
+        should("test country") {
+            // uncomment below to test the property
+            //modelInstance.country shouldBe ("TODO")
         }
 
         // to test the property `policy`

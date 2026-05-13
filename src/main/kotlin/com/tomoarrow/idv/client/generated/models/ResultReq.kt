@@ -33,19 +33,19 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param country 
  * @param userId 
+ * @param country
  * @param policy 
  */
 @Serializable
 
 data class ResultReq (
 
-    @Contextual @SerialName(value = "country")
-    val country: Country,
-
     @SerialName(value = "user_id")
     val userId: kotlin.String,
+
+    @Contextual @SerialName(value = "country")
+    val country: Country? = null,
 
     @SerialName(value = "policy")
     val policy: KycPolicy? = null
@@ -54,4 +54,3 @@ data class ResultReq (
 
 
 }
-
