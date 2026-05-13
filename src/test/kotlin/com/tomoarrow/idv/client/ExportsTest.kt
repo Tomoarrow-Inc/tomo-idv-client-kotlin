@@ -15,8 +15,9 @@ class ExportsTest : ShouldSpec() {
                 subject = mapOf("kind" to "personal_info"),
             )
             val startReq: StartIdvReq = StartIdvReq(
+                callbackUrl = "https://idv.example/callback",
                 userId = "user-1",
-                country = Country.US.toString(),
+                country = Country.US,
                 kycPolicy = policy,
             )
             val startRes: StartIdvRes = StartIdvRes(startIdvUri = "https://idv.example/start")

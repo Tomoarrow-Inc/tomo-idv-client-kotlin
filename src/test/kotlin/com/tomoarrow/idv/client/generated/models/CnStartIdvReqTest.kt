@@ -57,5 +57,11 @@ class CnStartIdvReqTest : ShouldSpec() {
             //modelInstance.cardImageBase64 shouldBe ("TODO")
         }
 
+        // to test the property `kycPolicyId`
+        should("test kycPolicyId") {
+            // uncomment below to test the property
+            //modelInstance.kycPolicyId shouldBe ("TODO")
+        }
+
     }
 }

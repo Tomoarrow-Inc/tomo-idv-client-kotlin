@@ -35,6 +35,7 @@ import kotlinx.serialization.Contextual
  * @param bestFrameBase64 
  * @param callbackUrl 
  * @param cardImageBase64 
+ * @param kycPolicyId 
  */
 @Serializable
 
@@ -50,7 +51,10 @@ data class CnStartIdvReq (
     val callbackUrl: kotlin.String? = null,
 
     @SerialName(value = "card_image_base64")
-    val cardImageBase64: kotlin.String? = null
+    val cardImageBase64: kotlin.String? = null,
+
+    @SerialName(value = "kyc_policy_id")
+    val kycPolicyId: kotlin.String? = null
 
 ) {
 
