@@ -131,6 +131,11 @@ publishing {
 
 signing {
     useGpgCmd() 
-    required { !version.toString().endsWith('SNAPSHOT') && gradle.taskGraph.hasTask('publish') }
-    sign publishing.publications.maven
+    def skipSigning = providers.gradleProperty('skipSigning')
+        .map { it.toBoolean() }
+        .getOrElse(false)
+    required { !skipSigning && !version.toString().endsWith('SNAPSHOT') && gradle.taskGraph.hasTask('publish') }
+    if (!skipSigning) {
+        sign publishing.publications.maven
+    }
 }

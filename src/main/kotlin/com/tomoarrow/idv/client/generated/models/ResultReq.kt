@@ -31,11 +31,11 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Contextual
 
 /**
- * 
  *
- * @param userId 
+ *
+ * @param userId
  * @param country
- * @param policy 
+ * @param policy
  */
 @Serializable
 
