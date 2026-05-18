@@ -31,11 +31,11 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Contextual
 
 /**
+ * 
  *
- *
- * @param userId
- * @param country
- * @param policy
+ * @param userId 
+ * @param country 
+ * @param policy 
  */
 @Serializable
 
@@ -54,3 +54,4 @@ data class ResultReq (
 
 
 }
+

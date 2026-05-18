@@ -957,7 +957,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * POST /v1/idv/kyc/get
      * 
-     * [DEPRECATED] Use /v1/idv/result.
+     * 
      * @param authorization  (optional)
      * @param getKycReq  (optional)
      * @return GetKycRes
@@ -969,9 +969,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    @Deprecated(message = "This operation is deprecated.")
     suspend fun v1IdvKycGetPost(authorization: kotlin.String? = null, getKycReq: GetKycReq? = null) : GetKycRes = withContext(Dispatchers.IO) {
-        @Suppress("DEPRECATION")
         val localVarResponse = v1IdvKycGetPostWithHttpInfo(authorization = authorization, getKycReq = getKycReq)
 
         return@withContext when (localVarResponse.responseType) {
@@ -992,7 +990,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * POST /v1/idv/kyc/get
      * 
-     * [DEPRECATED] Use /v1/idv/result.
+     * 
      * @param authorization  (optional)
      * @param getKycReq  (optional)
      * @return ApiResponse<GetKycRes?>
@@ -1001,9 +999,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    @Deprecated(message = "This operation is deprecated.")
     suspend fun v1IdvKycGetPostWithHttpInfo(authorization: kotlin.String?, getKycReq: GetKycReq?) : ApiResponse<GetKycRes?> = withContext(Dispatchers.IO) {
-        @Suppress("DEPRECATION")
         val localVariableConfig = v1IdvKycGetPostRequestConfig(authorization = authorization, getKycReq = getKycReq)
 
         return@withContext request<GetKycReq, GetKycRes>(
@@ -1018,7 +1014,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @param getKycReq  (optional)
      * @return RequestConfig
      */
-    @Deprecated(message = "This operation is deprecated.")
     fun v1IdvKycGetPostRequestConfig(authorization: kotlin.String?, getKycReq: GetKycReq?) : RequestConfig<GetKycReq> {
         val localVariableBody = getKycReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
