@@ -23,8 +23,6 @@
 
 package com.tomoarrow.idv.client.generated.models
 
-import com.tomoarrow.idv.client.generated.models.Country
-import com.tomoarrow.idv.client.generated.models.KycPolicy
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
@@ -34,29 +32,25 @@ import kotlinx.serialization.Contextual
  * 
  *
  * @param callbackUrl 
- * @param country 
- * @param email 
- * @param kycPolicy 
  * @param userId 
+ * @param email 
+ * @param kycPolicyId 
  */
 @Serializable
 
-data class StartIdvReq (
+data class CaStartIdvReq (
 
     @SerialName(value = "callback_url")
     val callbackUrl: kotlin.String,
 
-    @Contextual @SerialName(value = "country")
-    val country: Country? = null,
+    @SerialName(value = "user_id")
+    val userId: kotlin.String,
 
     @SerialName(value = "email")
     val email: kotlin.String? = null,
 
-    @SerialName(value = "kyc_policy")
-    val kycPolicy: KycPolicy? = null,
-
-    @SerialName(value = "user_id")
-    val userId: kotlin.String? = null
+    @SerialName(value = "kyc_policy_id")
+    val kycPolicyId: kotlin.String? = null
 
 ) {
 

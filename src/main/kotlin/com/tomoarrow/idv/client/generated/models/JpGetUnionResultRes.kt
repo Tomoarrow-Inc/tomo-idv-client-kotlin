@@ -23,8 +23,7 @@
 
 package com.tomoarrow.idv.client.generated.models
 
-import com.tomoarrow.idv.client.generated.models.Country
-import com.tomoarrow.idv.client.generated.models.KycPolicy
+import com.tomoarrow.idv.client.generated.models.JpGetResultRes
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
@@ -33,30 +32,30 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param callbackUrl 
- * @param country 
- * @param email 
- * @param kycPolicy 
- * @param userId 
+ * @param address 
+ * @param dateOfBirth 
+ * @param name 
+ * @param postalCode 
+ * @param sex 
  */
 @Serializable
 
-data class StartIdvReq (
+data class JpGetUnionResultRes (
 
-    @SerialName(value = "callback_url")
-    val callbackUrl: kotlin.String,
+    @SerialName(value = "address")
+    val address: kotlin.String? = null,
 
-    @Contextual @SerialName(value = "country")
-    val country: Country? = null,
+    @SerialName(value = "date_of_birth")
+    val dateOfBirth: kotlin.String? = null,
 
-    @SerialName(value = "email")
-    val email: kotlin.String? = null,
+    @SerialName(value = "name")
+    val name: kotlin.String? = null,
 
-    @SerialName(value = "kyc_policy")
-    val kycPolicy: KycPolicy? = null,
+    @SerialName(value = "postal_code")
+    val postalCode: kotlin.String? = null,
 
-    @SerialName(value = "user_id")
-    val userId: kotlin.String? = null
+    @SerialName(value = "sex")
+    val sex: kotlin.String? = null
 
 ) {
 

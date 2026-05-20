@@ -1,14 +1,13 @@
 
-# StartIdvReq
+# CaStartIdvReq
 
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **callbackUrl** | **kotlin.String** |  |  |
-| **country** | [**Country**](Country.md) |  |  [optional] |
+| **userId** | **kotlin.String** |  |  |
 | **email** | **kotlin.String** |  |  [optional] |
-| **kycPolicy** | [**KycPolicy**](KycPolicy.md) |  |  [optional] |
-| **userId** | **kotlin.String** |  |  [optional] |
+| **kycPolicyId** | **kotlin.String** |  |  [optional] |
 
 
 

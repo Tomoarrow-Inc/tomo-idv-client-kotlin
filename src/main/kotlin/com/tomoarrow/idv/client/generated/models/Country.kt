@@ -31,25 +31,244 @@ import kotlinx.serialization.Serializable
 /**
  * 
  *
- * Values: US,UK,CA,JP,CN,UNKNOWN
+ * Values: AR,AU,AT,BE,BR,CA,CL,CN,CO,CZ,DK,FI,FR,DE,GI,HK,IN,IE,IT,JP,KE,LU,MY,MX,NL,NZ,NG,NO,PH,PL,PT,SG,SK,ZA,ES,SE,CH,TR,GB,US,AF,AZ,BH,BD,BT,BN,KH,ID,IQ,IL,JO,KZ,KW,KG,LA,LB,MO,MV,MN,MM,NP,OM,PK,PS,QA,RU,SA,KR,LK,TW,TJ,TH,TM,AE,UZ,VN,YE,UK,UNKNOWN
  */
 @Serializable
 enum class Country(val value: kotlin.String) {
 
-    @SerialName(value = "us")
-    US("us"),
+    @SerialName(value = "ar")
+    AR("ar"),
 
-    @SerialName(value = "uk")
-    UK("uk"),
+    @SerialName(value = "au")
+    AU("au"),
+
+    @SerialName(value = "at")
+    AT("at"),
+
+    @SerialName(value = "be")
+    BE("be"),
+
+    @SerialName(value = "br")
+    BR("br"),
 
     @SerialName(value = "ca")
     CA("ca"),
 
-    @SerialName(value = "jp")
-    JP("jp"),
+    @SerialName(value = "cl")
+    CL("cl"),
 
     @SerialName(value = "cn")
     CN("cn"),
+
+    @SerialName(value = "co")
+    CO("co"),
+
+    @SerialName(value = "cz")
+    CZ("cz"),
+
+    @SerialName(value = "dk")
+    DK("dk"),
+
+    @SerialName(value = "fi")
+    FI("fi"),
+
+    @SerialName(value = "fr")
+    FR("fr"),
+
+    @SerialName(value = "de")
+    DE("de"),
+
+    @SerialName(value = "gi")
+    GI("gi"),
+
+    @SerialName(value = "hk")
+    HK("hk"),
+
+    @SerialName(value = "in")
+    IN("in"),
+
+    @SerialName(value = "ie")
+    IE("ie"),
+
+    @SerialName(value = "it")
+    IT("it"),
+
+    @SerialName(value = "jp")
+    JP("jp"),
+
+    @SerialName(value = "ke")
+    KE("ke"),
+
+    @SerialName(value = "lu")
+    LU("lu"),
+
+    @SerialName(value = "my")
+    MY("my"),
+
+    @SerialName(value = "mx")
+    MX("mx"),
+
+    @SerialName(value = "nl")
+    NL("nl"),
+
+    @SerialName(value = "nz")
+    NZ("nz"),
+
+    @SerialName(value = "ng")
+    NG("ng"),
+
+    @SerialName(value = "no")
+    NO("no"),
+
+    @SerialName(value = "ph")
+    PH("ph"),
+
+    @SerialName(value = "pl")
+    PL("pl"),
+
+    @SerialName(value = "pt")
+    PT("pt"),
+
+    @SerialName(value = "sg")
+    SG("sg"),
+
+    @SerialName(value = "sk")
+    SK("sk"),
+
+    @SerialName(value = "za")
+    ZA("za"),
+
+    @SerialName(value = "es")
+    ES("es"),
+
+    @SerialName(value = "se")
+    SE("se"),
+
+    @SerialName(value = "ch")
+    CH("ch"),
+
+    @SerialName(value = "tr")
+    TR("tr"),
+
+    @SerialName(value = "gb")
+    GB("gb"),
+
+    @SerialName(value = "us")
+    US("us"),
+
+    @SerialName(value = "af")
+    AF("af"),
+
+    @SerialName(value = "az")
+    AZ("az"),
+
+    @SerialName(value = "bh")
+    BH("bh"),
+
+    @SerialName(value = "bd")
+    BD("bd"),
+
+    @SerialName(value = "bt")
+    BT("bt"),
+
+    @SerialName(value = "bn")
+    BN("bn"),
+
+    @SerialName(value = "kh")
+    KH("kh"),
+
+    @SerialName(value = "id")
+    ID("id"),
+
+    @SerialName(value = "iq")
+    IQ("iq"),
+
+    @SerialName(value = "il")
+    IL("il"),
+
+    @SerialName(value = "jo")
+    JO("jo"),
+
+    @SerialName(value = "kz")
+    KZ("kz"),
+
+    @SerialName(value = "kw")
+    KW("kw"),
+
+    @SerialName(value = "kg")
+    KG("kg"),
+
+    @SerialName(value = "la")
+    LA("la"),
+
+    @SerialName(value = "lb")
+    LB("lb"),
+
+    @SerialName(value = "mo")
+    MO("mo"),
+
+    @SerialName(value = "mv")
+    MV("mv"),
+
+    @SerialName(value = "mn")
+    MN("mn"),
+
+    @SerialName(value = "mm")
+    MM("mm"),
+
+    @SerialName(value = "np")
+    NP("np"),
+
+    @SerialName(value = "om")
+    OM("om"),
+
+    @SerialName(value = "pk")
+    PK("pk"),
+
+    @SerialName(value = "ps")
+    PS("ps"),
+
+    @SerialName(value = "qa")
+    QA("qa"),
+
+    @SerialName(value = "ru")
+    RU("ru"),
+
+    @SerialName(value = "sa")
+    SA("sa"),
+
+    @SerialName(value = "kr")
+    KR("kr"),
+
+    @SerialName(value = "lk")
+    LK("lk"),
+
+    @SerialName(value = "tw")
+    TW("tw"),
+
+    @SerialName(value = "tj")
+    TJ("tj"),
+
+    @SerialName(value = "th")
+    TH("th"),
+
+    @SerialName(value = "tm")
+    TM("tm"),
+
+    @SerialName(value = "ae")
+    AE("ae"),
+
+    @SerialName(value = "uz")
+    UZ("uz"),
+
+    @SerialName(value = "vn")
+    VN("vn"),
+
+    @SerialName(value = "ye")
+    YE("ye"),
+
+    @SerialName(value = "uk")
+    UK("uk"),
 
     @SerialName(value = "unknown")
     UNKNOWN("unknown");

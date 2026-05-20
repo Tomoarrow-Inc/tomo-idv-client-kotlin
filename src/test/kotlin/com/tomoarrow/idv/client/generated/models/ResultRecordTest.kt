@@ -26,19 +26,18 @@ package com.tomoarrow.idv.client.generated.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import com.tomoarrow.idv.client.generated.models.StartIdvReq
-import com.tomoarrow.idv.client.generated.models.Country
-import com.tomoarrow.idv.client.generated.models.KycPolicy
+import com.tomoarrow.idv.client.generated.models.ResultRecord
+import com.tomoarrow.idv.client.generated.models.GetKycRes
 
-class StartIdvReqTest : ShouldSpec() {
+class ResultRecordTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of StartIdvReq
-        //val modelInstance = StartIdvReq()
+        // uncomment below to create an instance of ResultRecord
+        //val modelInstance = ResultRecord()
 
-        // to test the property `callbackUrl`
-        should("test callbackUrl") {
+        // to test the property `authId`
+        should("test authId") {
             // uncomment below to test the property
-            //modelInstance.callbackUrl shouldBe ("TODO")
+            //modelInstance.authId shouldBe ("TODO")
         }
 
         // to test the property `country`
@@ -47,22 +46,16 @@ class StartIdvReqTest : ShouldSpec() {
             //modelInstance.country shouldBe ("TODO")
         }
 
-        // to test the property `email`
-        should("test email") {
+        // to test the property `policyKey`
+        should("test policyKey") {
             // uncomment below to test the property
-            //modelInstance.email shouldBe ("TODO")
+            //modelInstance.policyKey shouldBe ("TODO")
         }
 
-        // to test the property `kycPolicy`
-        should("test kycPolicy") {
+        // to test the property `result`
+        should("test result") {
             // uncomment below to test the property
-            //modelInstance.kycPolicy shouldBe ("TODO")
-        }
-
-        // to test the property `userId`
-        should("test userId") {
-            // uncomment below to test the property
-            //modelInstance.userId shouldBe ("TODO")
+            //modelInstance.result shouldBe ("TODO")
         }
 
     }
