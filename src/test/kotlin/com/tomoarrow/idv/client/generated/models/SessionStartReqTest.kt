@@ -65,5 +65,17 @@ class SessionStartReqTest : ShouldSpec() {
             //modelInstance.kycPolicy shouldBe ("TODO")
         }
 
+        // to test the property `redirectUrl`
+        should("test redirectUrl") {
+            // uncomment below to test the property
+            //modelInstance.redirectUrl shouldBe ("TODO")
+        }
+
+        // to test the property `webhookUrl`
+        should("test webhookUrl") {
+            // uncomment below to test the property
+            //modelInstance.webhookUrl shouldBe ("TODO")
+        }
+
     }
 }

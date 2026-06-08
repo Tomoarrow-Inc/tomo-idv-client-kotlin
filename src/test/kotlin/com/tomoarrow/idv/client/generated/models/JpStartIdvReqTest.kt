@@ -33,22 +33,28 @@ class JpStartIdvReqTest : ShouldSpec() {
         // uncomment below to create an instance of JpStartIdvReq
         //val modelInstance = JpStartIdvReq()
 
-        // to test the property `callbackUrl`
-        should("test callbackUrl") {
-            // uncomment below to test the property
-            //modelInstance.callbackUrl shouldBe ("TODO")
-        }
-
         // to test the property `userId`
         should("test userId") {
             // uncomment below to test the property
             //modelInstance.userId shouldBe ("TODO")
         }
 
-        // to test the property `kycPolicyId`
-        should("test kycPolicyId") {
+        // to test the property `callbackUrl`
+        should("test callbackUrl") {
             // uncomment below to test the property
-            //modelInstance.kycPolicyId shouldBe ("TODO")
+            //modelInstance.callbackUrl shouldBe ("TODO")
+        }
+
+        // to test the property `redirectUrl`
+        should("test redirectUrl") {
+            // uncomment below to test the property
+            //modelInstance.redirectUrl shouldBe ("TODO")
+        }
+
+        // to test the property `webhookUrl`
+        should("test webhookUrl") {
+            // uncomment below to test the property
+            //modelInstance.webhookUrl shouldBe ("TODO")
         }
 
     }

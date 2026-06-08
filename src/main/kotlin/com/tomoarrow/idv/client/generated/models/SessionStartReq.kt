@@ -38,6 +38,8 @@ import kotlinx.serialization.Contextual
  * @param country 
  * @param email 
  * @param kycPolicy 
+ * @param redirectUrl 
+ * @param webhookUrl 
  */
 @Serializable
 
@@ -56,7 +58,13 @@ data class SessionStartReq (
     val email: kotlin.String? = null,
 
     @SerialName(value = "kyc_policy")
-    val kycPolicy: KycPolicy? = null
+    val kycPolicy: KycPolicy? = null,
+
+    @SerialName(value = "redirect_url")
+    val redirectUrl: kotlin.String? = null,
+
+    @SerialName(value = "webhook_url")
+    val webhookUrl: kotlin.String? = null
 
 ) {
 

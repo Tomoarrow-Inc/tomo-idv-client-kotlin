@@ -33,6 +33,7 @@ import kotlinx.serialization.Contextual
  *
  * @param method 
  * @param ownerAssurance 
+ * @param preset 
  * @param subject 
  */
 @Serializable
@@ -40,13 +41,16 @@ import kotlinx.serialization.Contextual
 data class KycPolicy (
 
     @SerialName(value = "method")
-    val method: kotlin.String,
+    val method: kotlin.String? = null,
 
     @Contextual @SerialName(value = "owner_assurance")
-    val ownerAssurance: kotlin.Any,
+    val ownerAssurance: kotlin.Any? = null,
+
+    @SerialName(value = "preset")
+    val preset: kotlin.String? = null,
 
     @Contextual @SerialName(value = "subject")
-    val subject: kotlin.Any
+    val subject: kotlin.Any? = null
 
 ) {
 

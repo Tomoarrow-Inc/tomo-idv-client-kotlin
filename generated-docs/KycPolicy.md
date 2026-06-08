@@ -4,9 +4,10 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **method** | **kotlin.String** |  |  |
-| **ownerAssurance** | [**kotlin.Any**](.md) |  |  |
-| **subject** | [**kotlin.Any**](.md) |  |  |
+| **method** | **kotlin.String** |  |  [optional] |
+| **ownerAssurance** | [**kotlin.Any**](.md) |  |  [optional] |
+| **preset** | **kotlin.String** |  |  [optional] |
+| **subject** | [**kotlin.Any**](.md) |  |  [optional] |
 
 
 

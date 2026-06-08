@@ -32,10 +32,9 @@ import kotlinx.serialization.Contextual
  * 
  *
  * @param userId 
- * @param bestFrameBase64 
  * @param callbackUrl 
- * @param cardImageBase64 
- * @param kycPolicyId 
+ * @param redirectUrl 
+ * @param webhookUrl 
  */
 @Serializable
 
@@ -44,17 +43,14 @@ data class CnStartIdvReq (
     @SerialName(value = "user_id")
     val userId: kotlin.String,
 
-    @SerialName(value = "best_frame_base64")
-    val bestFrameBase64: kotlin.String? = null,
-
     @SerialName(value = "callback_url")
     val callbackUrl: kotlin.String? = null,
 
-    @SerialName(value = "card_image_base64")
-    val cardImageBase64: kotlin.String? = null,
+    @SerialName(value = "redirect_url")
+    val redirectUrl: kotlin.String? = null,
 
-    @SerialName(value = "kyc_policy_id")
-    val kycPolicyId: kotlin.String? = null
+    @SerialName(value = "webhook_url")
+    val webhookUrl: kotlin.String? = null
 
 ) {
 

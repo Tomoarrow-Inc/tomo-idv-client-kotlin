@@ -73,7 +73,7 @@ No authorization required
 
 <a id="v1IdvCaKycGetPost"></a>
 # **v1IdvCaKycGetPost**
-> UsGetUnionResultRes v1IdvCaKycGetPost(authorization, usGetKycReq)
+> UsGetUnionResultRes v1IdvCaKycGetPost(usGetKycReq)
 
 
 
@@ -86,10 +86,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val usGetKycReq : UsGetKycReq =  // UsGetKycReq | 
 try {
-    val result : UsGetUnionResultRes = apiInstance.v1IdvCaKycGetPost(authorization, usGetKycReq)
+    val result : UsGetUnionResultRes = apiInstance.v1IdvCaKycGetPost(usGetKycReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvCaKycGetPost")
@@ -101,7 +100,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
@@ -112,7 +110,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -121,7 +121,7 @@ No authorization required
 
 <a id="v1IdvCaStartPost"></a>
 # **v1IdvCaStartPost**
-> StartIdvRes v1IdvCaStartPost(authorization, caStartIdvReq)
+> StartIdvRes v1IdvCaStartPost(caStartIdvReq)
 
 
 
@@ -134,10 +134,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val caStartIdvReq : CaStartIdvReq =  // CaStartIdvReq | 
 try {
-    val result : StartIdvRes = apiInstance.v1IdvCaStartPost(authorization, caStartIdvReq)
+    val result : StartIdvRes = apiInstance.v1IdvCaStartPost(caStartIdvReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvCaStartPost")
@@ -149,7 +148,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **caStartIdvReq** | [**CaStartIdvReq**](CaStartIdvReq.md)|  | [optional] |
@@ -160,7 +158,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -212,7 +212,7 @@ No authorization required
 
 <a id="v1IdvCnKycGetPost"></a>
 # **v1IdvCnKycGetPost**
-> CnGetUnionResultRes v1IdvCnKycGetPost(authorization, cnGetKycReq)
+> CnGetUnionResultRes v1IdvCnKycGetPost(cnGetKycReq)
 
 
 
@@ -225,10 +225,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val cnGetKycReq : CnGetKycReq =  // CnGetKycReq | 
 try {
-    val result : CnGetUnionResultRes = apiInstance.v1IdvCnKycGetPost(authorization, cnGetKycReq)
+    val result : CnGetUnionResultRes = apiInstance.v1IdvCnKycGetPost(cnGetKycReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvCnKycGetPost")
@@ -240,7 +239,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **cnGetKycReq** | [**CnGetKycReq**](CnGetKycReq.md)|  | [optional] |
@@ -251,7 +249,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -260,7 +260,7 @@ No authorization required
 
 <a id="v1IdvCnStartPost"></a>
 # **v1IdvCnStartPost**
-> StartIdvRes v1IdvCnStartPost(authorization, cnStartIdvReq)
+> StartIdvRes v1IdvCnStartPost(cnStartIdvReq)
 
 
 
@@ -273,10 +273,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val cnStartIdvReq : CnStartIdvReq =  // CnStartIdvReq | 
 try {
-    val result : StartIdvRes = apiInstance.v1IdvCnStartPost(authorization, cnStartIdvReq)
+    val result : StartIdvRes = apiInstance.v1IdvCnStartPost(cnStartIdvReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvCnStartPost")
@@ -288,7 +287,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **cnStartIdvReq** | [**CnStartIdvReq**](CnStartIdvReq.md)|  | [optional] |
@@ -299,7 +297,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -308,7 +308,7 @@ No authorization required
 
 <a id="v1IdvCnTokenPost"></a>
 # **v1IdvCnTokenPost**
-> TomoIdvIssueTokenRes v1IdvCnTokenPost(authorization, tomoIdvIssueTokenReq)
+> TomoIdvIssueTokenRes v1IdvCnTokenPost(tomoIdvIssueTokenReq)
 
 
 
@@ -321,10 +321,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val tomoIdvIssueTokenReq : TomoIdvIssueTokenReq =  // TomoIdvIssueTokenReq | 
 try {
-    val result : TomoIdvIssueTokenRes = apiInstance.v1IdvCnTokenPost(authorization, tomoIdvIssueTokenReq)
+    val result : TomoIdvIssueTokenRes = apiInstance.v1IdvCnTokenPost(tomoIdvIssueTokenReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvCnTokenPost")
@@ -336,7 +335,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **tomoIdvIssueTokenReq** | [**TomoIdvIssueTokenReq**](TomoIdvIssueTokenReq.md)|  | [optional] |
@@ -347,7 +345,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -440,7 +440,7 @@ No authorization required
 
 <a id="v1IdvJpKycGetPost"></a>
 # **v1IdvJpKycGetPost**
-> JpGetUnionResultRes v1IdvJpKycGetPost(authorization, jpGetKycReq)
+> JpGetUnionResultRes v1IdvJpKycGetPost(jpGetKycReq)
 
 
 
@@ -453,10 +453,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val jpGetKycReq : JpGetKycReq =  // JpGetKycReq | 
 try {
-    val result : JpGetUnionResultRes = apiInstance.v1IdvJpKycGetPost(authorization, jpGetKycReq)
+    val result : JpGetUnionResultRes = apiInstance.v1IdvJpKycGetPost(jpGetKycReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvJpKycGetPost")
@@ -468,7 +467,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **jpGetKycReq** | [**JpGetKycReq**](JpGetKycReq.md)|  | [optional] |
@@ -479,7 +477,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -488,7 +488,7 @@ No authorization required
 
 <a id="v1IdvJpStartPost"></a>
 # **v1IdvJpStartPost**
-> StartIdvRes v1IdvJpStartPost(authorization, jpStartIdvReq)
+> StartIdvRes v1IdvJpStartPost(jpStartIdvReq)
 
 
 
@@ -501,10 +501,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val jpStartIdvReq : JpStartIdvReq =  // JpStartIdvReq | 
 try {
-    val result : StartIdvRes = apiInstance.v1IdvJpStartPost(authorization, jpStartIdvReq)
+    val result : StartIdvRes = apiInstance.v1IdvJpStartPost(jpStartIdvReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvJpStartPost")
@@ -516,7 +515,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **jpStartIdvReq** | [**JpStartIdvReq**](JpStartIdvReq.md)|  | [optional] |
@@ -527,7 +525,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -536,7 +536,7 @@ No authorization required
 
 <a id="v1IdvKycGetPost"></a>
 # **v1IdvKycGetPost**
-> GetKycRes v1IdvKycGetPost(authorization, getKycReq)
+> GetKycRes v1IdvKycGetPost(getKycReq)
 
 
 
@@ -547,10 +547,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val getKycReq : GetKycReq =  // GetKycReq | 
 try {
-    val result : GetKycRes = apiInstance.v1IdvKycGetPost(authorization, getKycReq)
+    val result : GetKycRes = apiInstance.v1IdvKycGetPost(getKycReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvKycGetPost")
@@ -562,7 +561,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **getKycReq** | [**GetKycReq**](GetKycReq.md)|  | [optional] |
@@ -573,7 +571,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -582,7 +582,7 @@ No authorization required
 
 <a id="v1IdvResultPost"></a>
 # **v1IdvResultPost**
-> ResultRes v1IdvResultPost(authorization, resultReq)
+> ResultRes v1IdvResultPost(resultReq)
 
 
 
@@ -593,10 +593,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val resultReq : ResultReq =  // ResultReq | 
 try {
-    val result : ResultRes = apiInstance.v1IdvResultPost(authorization, resultReq)
+    val result : ResultRes = apiInstance.v1IdvResultPost(resultReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvResultPost")
@@ -608,7 +607,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **resultReq** | [**ResultReq**](ResultReq.md)|  | [optional] |
@@ -619,7 +617,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -628,7 +628,7 @@ No authorization required
 
 <a id="v1IdvSessionsStartPost"></a>
 # **v1IdvSessionsStartPost**
-> SessionStartRes v1IdvSessionsStartPost(authorization, sessionStartReq)
+> SessionStartRes v1IdvSessionsStartPost(sessionStartReq)
 
 
 
@@ -641,10 +641,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val sessionStartReq : SessionStartReq =  // SessionStartReq | 
 try {
-    val result : SessionStartRes = apiInstance.v1IdvSessionsStartPost(authorization, sessionStartReq)
+    val result : SessionStartRes = apiInstance.v1IdvSessionsStartPost(sessionStartReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvSessionsStartPost")
@@ -656,7 +655,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionStartReq** | [**SessionStartReq**](SessionStartReq.md)|  | [optional] |
@@ -667,7 +665,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -676,7 +676,7 @@ No authorization required
 
 <a id="v1IdvStartPost"></a>
 # **v1IdvStartPost**
-> StartIdvRes v1IdvStartPost(authorization, startIdvReq)
+> StartIdvRes v1IdvStartPost(startIdvReq)
 
 
 
@@ -687,10 +687,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val startIdvReq : StartIdvReq =  // StartIdvReq | 
 try {
-    val result : StartIdvRes = apiInstance.v1IdvStartPost(authorization, startIdvReq)
+    val result : StartIdvRes = apiInstance.v1IdvStartPost(startIdvReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvStartPost")
@@ -702,7 +701,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **startIdvReq** | [**StartIdvReq**](StartIdvReq.md)|  | [optional] |
@@ -713,7 +711,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -765,7 +765,7 @@ No authorization required
 
 <a id="v1IdvUkKycGetPost"></a>
 # **v1IdvUkKycGetPost**
-> UsGetUnionResultRes v1IdvUkKycGetPost(authorization, usGetKycReq)
+> UsGetUnionResultRes v1IdvUkKycGetPost(usGetKycReq)
 
 
 
@@ -778,10 +778,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val usGetKycReq : UsGetKycReq =  // UsGetKycReq | 
 try {
-    val result : UsGetUnionResultRes = apiInstance.v1IdvUkKycGetPost(authorization, usGetKycReq)
+    val result : UsGetUnionResultRes = apiInstance.v1IdvUkKycGetPost(usGetKycReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvUkKycGetPost")
@@ -793,7 +792,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
@@ -804,7 +802,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -813,7 +813,7 @@ No authorization required
 
 <a id="v1IdvUkStartPost"></a>
 # **v1IdvUkStartPost**
-> StartIdvRes v1IdvUkStartPost(authorization, ukStartIdvReq)
+> StartIdvRes v1IdvUkStartPost(ukStartIdvReq)
 
 
 
@@ -826,10 +826,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val ukStartIdvReq : UkStartIdvReq =  // UkStartIdvReq | 
 try {
-    val result : StartIdvRes = apiInstance.v1IdvUkStartPost(authorization, ukStartIdvReq)
+    val result : StartIdvRes = apiInstance.v1IdvUkStartPost(ukStartIdvReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvUkStartPost")
@@ -841,7 +840,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ukStartIdvReq** | [**UkStartIdvReq**](UkStartIdvReq.md)|  | [optional] |
@@ -852,7 +850,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -904,7 +904,7 @@ No authorization required
 
 <a id="v1IdvUsKycGetPost"></a>
 # **v1IdvUsKycGetPost**
-> UsGetUnionResultRes v1IdvUsKycGetPost(authorization, usGetKycReq)
+> UsGetUnionResultRes v1IdvUsKycGetPost(usGetKycReq)
 
 
 
@@ -917,10 +917,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val usGetKycReq : UsGetKycReq =  // UsGetKycReq | 
 try {
-    val result : UsGetUnionResultRes = apiInstance.v1IdvUsKycGetPost(authorization, usGetKycReq)
+    val result : UsGetUnionResultRes = apiInstance.v1IdvUsKycGetPost(usGetKycReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvUsKycGetPost")
@@ -932,7 +931,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
@@ -943,7 +941,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 
@@ -952,7 +952,7 @@ No authorization required
 
 <a id="v1IdvUsStartPost"></a>
 # **v1IdvUsStartPost**
-> StartIdvRes v1IdvUsStartPost(authorization, usStartIdvReq)
+> StartIdvRes v1IdvUsStartPost(usStartIdvReq)
 
 
 
@@ -965,10 +965,9 @@ No authorization required
 //import com.tomoarrow.idv.client.generated.models.*
 
 val apiInstance = DefaultApi()
-val authorization : kotlin.String = authorization_example // kotlin.String | 
 val usStartIdvReq : UsStartIdvReq =  // UsStartIdvReq | 
 try {
-    val result : StartIdvRes = apiInstance.v1IdvUsStartPost(authorization, usStartIdvReq)
+    val result : StartIdvRes = apiInstance.v1IdvUsStartPost(usStartIdvReq)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DefaultApi#v1IdvUsStartPost")
@@ -980,7 +979,6 @@ try {
 ```
 
 ### Parameters
-| **authorization** | **kotlin.String**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **usStartIdvReq** | [**UsStartIdvReq**](UsStartIdvReq.md)|  | [optional] |
@@ -991,7 +989,9 @@ try {
 
 ### Authorization
 
-No authorization required
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
 
 ### HTTP request headers
 

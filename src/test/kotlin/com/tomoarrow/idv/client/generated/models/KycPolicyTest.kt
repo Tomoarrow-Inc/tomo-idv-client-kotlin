@@ -45,6 +45,12 @@ class KycPolicyTest : ShouldSpec() {
             //modelInstance.ownerAssurance shouldBe ("TODO")
         }
 
+        // to test the property `preset`
+        should("test preset") {
+            // uncomment below to test the property
+            //modelInstance.preset shouldBe ("TODO")
+        }
+
         // to test the property `subject`
         should("test subject") {
             // uncomment below to test the property

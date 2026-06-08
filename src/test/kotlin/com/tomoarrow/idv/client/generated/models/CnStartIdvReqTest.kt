@@ -39,28 +39,22 @@ class CnStartIdvReqTest : ShouldSpec() {
             //modelInstance.userId shouldBe ("TODO")
         }
 
-        // to test the property `bestFrameBase64`
-        should("test bestFrameBase64") {
-            // uncomment below to test the property
-            //modelInstance.bestFrameBase64 shouldBe ("TODO")
-        }
-
         // to test the property `callbackUrl`
         should("test callbackUrl") {
             // uncomment below to test the property
             //modelInstance.callbackUrl shouldBe ("TODO")
         }
 
-        // to test the property `cardImageBase64`
-        should("test cardImageBase64") {
+        // to test the property `redirectUrl`
+        should("test redirectUrl") {
             // uncomment below to test the property
-            //modelInstance.cardImageBase64 shouldBe ("TODO")
+            //modelInstance.redirectUrl shouldBe ("TODO")
         }
 
-        // to test the property `kycPolicyId`
-        should("test kycPolicyId") {
+        // to test the property `webhookUrl`
+        should("test webhookUrl") {
             // uncomment below to test the property
-            //modelInstance.kycPolicyId shouldBe ("TODO")
+            //modelInstance.webhookUrl shouldBe ("TODO")
         }
 
     }

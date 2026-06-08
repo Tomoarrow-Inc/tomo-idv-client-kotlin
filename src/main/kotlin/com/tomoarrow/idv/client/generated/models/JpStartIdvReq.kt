@@ -31,22 +31,26 @@ import kotlinx.serialization.Contextual
 /**
  * 
  *
- * @param callbackUrl 
  * @param userId 
- * @param kycPolicyId 
+ * @param callbackUrl 
+ * @param redirectUrl 
+ * @param webhookUrl 
  */
 @Serializable
 
 data class JpStartIdvReq (
 
-    @SerialName(value = "callback_url")
-    val callbackUrl: kotlin.String,
-
     @SerialName(value = "user_id")
     val userId: kotlin.String,
 
-    @SerialName(value = "kyc_policy_id")
-    val kycPolicyId: kotlin.String? = null
+    @SerialName(value = "callback_url")
+    val callbackUrl: kotlin.String? = null,
+
+    @SerialName(value = "redirect_url")
+    val redirectUrl: kotlin.String? = null,
+
+    @SerialName(value = "webhook_url")
+    val webhookUrl: kotlin.String? = null
 
 ) {
 

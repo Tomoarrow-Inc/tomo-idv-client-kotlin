@@ -4,9 +4,10 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **callbackUrl** | **kotlin.String** |  |  |
 | **userId** | **kotlin.String** |  |  |
-| **kycPolicyId** | **kotlin.String** |  |  [optional] |
+| **callbackUrl** | **kotlin.String** |  |  [optional] |
+| **redirectUrl** | **kotlin.String** |  |  [optional] |
+| **webhookUrl** | **kotlin.String** |  |  [optional] |
 
 
 

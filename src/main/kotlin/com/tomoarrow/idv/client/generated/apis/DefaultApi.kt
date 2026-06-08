@@ -157,7 +157,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/ca/kyc/get
      * 
      * [DEPRECATED] Use /v1/idv/result with country&#x3D;ca.
-     * @param authorization  (optional)
      * @param usGetKycReq  (optional)
      * @return UsGetUnionResultRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -169,9 +168,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvCaKycGetPost(authorization: kotlin.String? = null, usGetKycReq: UsGetKycReq? = null) : UsGetUnionResultRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvCaKycGetPost(usGetKycReq: UsGetKycReq? = null) : UsGetUnionResultRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvCaKycGetPostWithHttpInfo(authorization = authorization, usGetKycReq = usGetKycReq)
+        val localVarResponse = v1IdvCaKycGetPostWithHttpInfo(usGetKycReq = usGetKycReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as UsGetUnionResultRes
@@ -192,7 +191,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/ca/kyc/get
      * 
      * [DEPRECATED] Use /v1/idv/result with country&#x3D;ca.
-     * @param authorization  (optional)
      * @param usGetKycReq  (optional)
      * @return ApiResponse<UsGetUnionResultRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -201,9 +199,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvCaKycGetPostWithHttpInfo(authorization: kotlin.String?, usGetKycReq: UsGetKycReq?) : ApiResponse<UsGetUnionResultRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvCaKycGetPostWithHttpInfo(usGetKycReq: UsGetKycReq?) : ApiResponse<UsGetUnionResultRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvCaKycGetPostRequestConfig(authorization = authorization, usGetKycReq = usGetKycReq)
+        val localVariableConfig = v1IdvCaKycGetPostRequestConfig(usGetKycReq = usGetKycReq)
 
         return@withContext request<UsGetKycReq, UsGetUnionResultRes>(
             localVariableConfig
@@ -213,16 +211,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvCaKycGetPost
      *
-     * @param authorization  (optional)
      * @param usGetKycReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvCaKycGetPostRequestConfig(authorization: kotlin.String?, usGetKycReq: UsGetKycReq?) : RequestConfig<UsGetKycReq> {
+    fun v1IdvCaKycGetPostRequestConfig(usGetKycReq: UsGetKycReq?) : RequestConfig<UsGetKycReq> {
         val localVariableBody = usGetKycReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -231,7 +227,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/ca/kyc/get",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -240,7 +236,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/ca/start
      * 
      * [DEPRECATED] Use /v1/idv/start with country&#x3D;ca.
-     * @param authorization  (optional)
      * @param caStartIdvReq  (optional)
      * @return StartIdvRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -252,9 +247,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvCaStartPost(authorization: kotlin.String? = null, caStartIdvReq: CaStartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvCaStartPost(caStartIdvReq: CaStartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvCaStartPostWithHttpInfo(authorization = authorization, caStartIdvReq = caStartIdvReq)
+        val localVarResponse = v1IdvCaStartPostWithHttpInfo(caStartIdvReq = caStartIdvReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as StartIdvRes
@@ -275,7 +270,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/ca/start
      * 
      * [DEPRECATED] Use /v1/idv/start with country&#x3D;ca.
-     * @param authorization  (optional)
      * @param caStartIdvReq  (optional)
      * @return ApiResponse<StartIdvRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -284,9 +278,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvCaStartPostWithHttpInfo(authorization: kotlin.String?, caStartIdvReq: CaStartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvCaStartPostWithHttpInfo(caStartIdvReq: CaStartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvCaStartPostRequestConfig(authorization = authorization, caStartIdvReq = caStartIdvReq)
+        val localVariableConfig = v1IdvCaStartPostRequestConfig(caStartIdvReq = caStartIdvReq)
 
         return@withContext request<CaStartIdvReq, StartIdvRes>(
             localVariableConfig
@@ -296,16 +290,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvCaStartPost
      *
-     * @param authorization  (optional)
      * @param caStartIdvReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvCaStartPostRequestConfig(authorization: kotlin.String?, caStartIdvReq: CaStartIdvReq?) : RequestConfig<CaStartIdvReq> {
+    fun v1IdvCaStartPostRequestConfig(caStartIdvReq: CaStartIdvReq?) : RequestConfig<CaStartIdvReq> {
         val localVariableBody = caStartIdvReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -314,7 +306,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/ca/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -398,7 +390,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/cn/kyc/get
      * 
      * [DEPRECATED] Use /v1/idv/result with country&#x3D;cn.
-     * @param authorization  (optional)
      * @param cnGetKycReq  (optional)
      * @return CnGetUnionResultRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -410,9 +401,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvCnKycGetPost(authorization: kotlin.String? = null, cnGetKycReq: CnGetKycReq? = null) : CnGetUnionResultRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvCnKycGetPost(cnGetKycReq: CnGetKycReq? = null) : CnGetUnionResultRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvCnKycGetPostWithHttpInfo(authorization = authorization, cnGetKycReq = cnGetKycReq)
+        val localVarResponse = v1IdvCnKycGetPostWithHttpInfo(cnGetKycReq = cnGetKycReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CnGetUnionResultRes
@@ -433,7 +424,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/cn/kyc/get
      * 
      * [DEPRECATED] Use /v1/idv/result with country&#x3D;cn.
-     * @param authorization  (optional)
      * @param cnGetKycReq  (optional)
      * @return ApiResponse<CnGetUnionResultRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -442,9 +432,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvCnKycGetPostWithHttpInfo(authorization: kotlin.String?, cnGetKycReq: CnGetKycReq?) : ApiResponse<CnGetUnionResultRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvCnKycGetPostWithHttpInfo(cnGetKycReq: CnGetKycReq?) : ApiResponse<CnGetUnionResultRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvCnKycGetPostRequestConfig(authorization = authorization, cnGetKycReq = cnGetKycReq)
+        val localVariableConfig = v1IdvCnKycGetPostRequestConfig(cnGetKycReq = cnGetKycReq)
 
         return@withContext request<CnGetKycReq, CnGetUnionResultRes>(
             localVariableConfig
@@ -454,16 +444,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvCnKycGetPost
      *
-     * @param authorization  (optional)
      * @param cnGetKycReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvCnKycGetPostRequestConfig(authorization: kotlin.String?, cnGetKycReq: CnGetKycReq?) : RequestConfig<CnGetKycReq> {
+    fun v1IdvCnKycGetPostRequestConfig(cnGetKycReq: CnGetKycReq?) : RequestConfig<CnGetKycReq> {
         val localVariableBody = cnGetKycReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -472,7 +460,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/cn/kyc/get",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -481,7 +469,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/cn/start
      * 
      * [DEPRECATED] Use /v1/idv/start with country&#x3D;cn.
-     * @param authorization  (optional)
      * @param cnStartIdvReq  (optional)
      * @return StartIdvRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -493,9 +480,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvCnStartPost(authorization: kotlin.String? = null, cnStartIdvReq: CnStartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvCnStartPost(cnStartIdvReq: CnStartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvCnStartPostWithHttpInfo(authorization = authorization, cnStartIdvReq = cnStartIdvReq)
+        val localVarResponse = v1IdvCnStartPostWithHttpInfo(cnStartIdvReq = cnStartIdvReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as StartIdvRes
@@ -516,7 +503,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/cn/start
      * 
      * [DEPRECATED] Use /v1/idv/start with country&#x3D;cn.
-     * @param authorization  (optional)
      * @param cnStartIdvReq  (optional)
      * @return ApiResponse<StartIdvRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -525,9 +511,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvCnStartPostWithHttpInfo(authorization: kotlin.String?, cnStartIdvReq: CnStartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvCnStartPostWithHttpInfo(cnStartIdvReq: CnStartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvCnStartPostRequestConfig(authorization = authorization, cnStartIdvReq = cnStartIdvReq)
+        val localVariableConfig = v1IdvCnStartPostRequestConfig(cnStartIdvReq = cnStartIdvReq)
 
         return@withContext request<CnStartIdvReq, StartIdvRes>(
             localVariableConfig
@@ -537,16 +523,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvCnStartPost
      *
-     * @param authorization  (optional)
      * @param cnStartIdvReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvCnStartPostRequestConfig(authorization: kotlin.String?, cnStartIdvReq: CnStartIdvReq?) : RequestConfig<CnStartIdvReq> {
+    fun v1IdvCnStartPostRequestConfig(cnStartIdvReq: CnStartIdvReq?) : RequestConfig<CnStartIdvReq> {
         val localVariableBody = cnStartIdvReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -555,7 +539,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/cn/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -564,7 +548,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/cn/token
      * 
      * [DEPRECATED] Use the OAuth2 token endpoint.
-     * @param authorization  (optional)
      * @param tomoIdvIssueTokenReq  (optional)
      * @return TomoIdvIssueTokenRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -576,9 +559,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvCnTokenPost(authorization: kotlin.String? = null, tomoIdvIssueTokenReq: TomoIdvIssueTokenReq? = null) : TomoIdvIssueTokenRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvCnTokenPost(tomoIdvIssueTokenReq: TomoIdvIssueTokenReq? = null) : TomoIdvIssueTokenRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvCnTokenPostWithHttpInfo(authorization = authorization, tomoIdvIssueTokenReq = tomoIdvIssueTokenReq)
+        val localVarResponse = v1IdvCnTokenPostWithHttpInfo(tomoIdvIssueTokenReq = tomoIdvIssueTokenReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as TomoIdvIssueTokenRes
@@ -599,7 +582,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/cn/token
      * 
      * [DEPRECATED] Use the OAuth2 token endpoint.
-     * @param authorization  (optional)
      * @param tomoIdvIssueTokenReq  (optional)
      * @return ApiResponse<TomoIdvIssueTokenRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -608,9 +590,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvCnTokenPostWithHttpInfo(authorization: kotlin.String?, tomoIdvIssueTokenReq: TomoIdvIssueTokenReq?) : ApiResponse<TomoIdvIssueTokenRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvCnTokenPostWithHttpInfo(tomoIdvIssueTokenReq: TomoIdvIssueTokenReq?) : ApiResponse<TomoIdvIssueTokenRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvCnTokenPostRequestConfig(authorization = authorization, tomoIdvIssueTokenReq = tomoIdvIssueTokenReq)
+        val localVariableConfig = v1IdvCnTokenPostRequestConfig(tomoIdvIssueTokenReq = tomoIdvIssueTokenReq)
 
         return@withContext request<TomoIdvIssueTokenReq, TomoIdvIssueTokenRes>(
             localVariableConfig
@@ -620,16 +602,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvCnTokenPost
      *
-     * @param authorization  (optional)
      * @param tomoIdvIssueTokenReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvCnTokenPostRequestConfig(authorization: kotlin.String?, tomoIdvIssueTokenReq: TomoIdvIssueTokenReq?) : RequestConfig<TomoIdvIssueTokenReq> {
+    fun v1IdvCnTokenPostRequestConfig(tomoIdvIssueTokenReq: TomoIdvIssueTokenReq?) : RequestConfig<TomoIdvIssueTokenReq> {
         val localVariableBody = tomoIdvIssueTokenReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -638,7 +618,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/cn/token",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -792,7 +772,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/jp/kyc/get
      * 
      * [DEPRECATED] Use /v1/idv/result with country&#x3D;jp.
-     * @param authorization  (optional)
      * @param jpGetKycReq  (optional)
      * @return JpGetUnionResultRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -804,9 +783,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvJpKycGetPost(authorization: kotlin.String? = null, jpGetKycReq: JpGetKycReq? = null) : JpGetUnionResultRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvJpKycGetPost(jpGetKycReq: JpGetKycReq? = null) : JpGetUnionResultRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvJpKycGetPostWithHttpInfo(authorization = authorization, jpGetKycReq = jpGetKycReq)
+        val localVarResponse = v1IdvJpKycGetPostWithHttpInfo(jpGetKycReq = jpGetKycReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as JpGetUnionResultRes
@@ -827,7 +806,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/jp/kyc/get
      * 
      * [DEPRECATED] Use /v1/idv/result with country&#x3D;jp.
-     * @param authorization  (optional)
      * @param jpGetKycReq  (optional)
      * @return ApiResponse<JpGetUnionResultRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -836,9 +814,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvJpKycGetPostWithHttpInfo(authorization: kotlin.String?, jpGetKycReq: JpGetKycReq?) : ApiResponse<JpGetUnionResultRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvJpKycGetPostWithHttpInfo(jpGetKycReq: JpGetKycReq?) : ApiResponse<JpGetUnionResultRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvJpKycGetPostRequestConfig(authorization = authorization, jpGetKycReq = jpGetKycReq)
+        val localVariableConfig = v1IdvJpKycGetPostRequestConfig(jpGetKycReq = jpGetKycReq)
 
         return@withContext request<JpGetKycReq, JpGetUnionResultRes>(
             localVariableConfig
@@ -848,16 +826,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvJpKycGetPost
      *
-     * @param authorization  (optional)
      * @param jpGetKycReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvJpKycGetPostRequestConfig(authorization: kotlin.String?, jpGetKycReq: JpGetKycReq?) : RequestConfig<JpGetKycReq> {
+    fun v1IdvJpKycGetPostRequestConfig(jpGetKycReq: JpGetKycReq?) : RequestConfig<JpGetKycReq> {
         val localVariableBody = jpGetKycReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -866,7 +842,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/jp/kyc/get",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -875,7 +851,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/jp/start
      * 
      * [DEPRECATED] Use /v1/idv/start with country&#x3D;jp.
-     * @param authorization  (optional)
      * @param jpStartIdvReq  (optional)
      * @return StartIdvRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -887,9 +862,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvJpStartPost(authorization: kotlin.String? = null, jpStartIdvReq: JpStartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvJpStartPost(jpStartIdvReq: JpStartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvJpStartPostWithHttpInfo(authorization = authorization, jpStartIdvReq = jpStartIdvReq)
+        val localVarResponse = v1IdvJpStartPostWithHttpInfo(jpStartIdvReq = jpStartIdvReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as StartIdvRes
@@ -910,7 +885,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/jp/start
      * 
      * [DEPRECATED] Use /v1/idv/start with country&#x3D;jp.
-     * @param authorization  (optional)
      * @param jpStartIdvReq  (optional)
      * @return ApiResponse<StartIdvRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -919,9 +893,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvJpStartPostWithHttpInfo(authorization: kotlin.String?, jpStartIdvReq: JpStartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvJpStartPostWithHttpInfo(jpStartIdvReq: JpStartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvJpStartPostRequestConfig(authorization = authorization, jpStartIdvReq = jpStartIdvReq)
+        val localVariableConfig = v1IdvJpStartPostRequestConfig(jpStartIdvReq = jpStartIdvReq)
 
         return@withContext request<JpStartIdvReq, StartIdvRes>(
             localVariableConfig
@@ -931,16 +905,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvJpStartPost
      *
-     * @param authorization  (optional)
      * @param jpStartIdvReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvJpStartPostRequestConfig(authorization: kotlin.String?, jpStartIdvReq: JpStartIdvReq?) : RequestConfig<JpStartIdvReq> {
+    fun v1IdvJpStartPostRequestConfig(jpStartIdvReq: JpStartIdvReq?) : RequestConfig<JpStartIdvReq> {
         val localVariableBody = jpStartIdvReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -949,7 +921,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/jp/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -958,7 +930,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/kyc/get
      * 
      * 
-     * @param authorization  (optional)
      * @param getKycReq  (optional)
      * @return GetKycRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -969,8 +940,8 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvKycGetPost(authorization: kotlin.String? = null, getKycReq: GetKycReq? = null) : GetKycRes = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvKycGetPostWithHttpInfo(authorization = authorization, getKycReq = getKycReq)
+    suspend fun v1IdvKycGetPost(getKycReq: GetKycReq? = null) : GetKycRes = withContext(Dispatchers.IO) {
+        val localVarResponse = v1IdvKycGetPostWithHttpInfo(getKycReq = getKycReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as GetKycRes
@@ -991,7 +962,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/kyc/get
      * 
      * 
-     * @param authorization  (optional)
      * @param getKycReq  (optional)
      * @return ApiResponse<GetKycRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -999,8 +969,8 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvKycGetPostWithHttpInfo(authorization: kotlin.String?, getKycReq: GetKycReq?) : ApiResponse<GetKycRes?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvKycGetPostRequestConfig(authorization = authorization, getKycReq = getKycReq)
+    suspend fun v1IdvKycGetPostWithHttpInfo(getKycReq: GetKycReq?) : ApiResponse<GetKycRes?> = withContext(Dispatchers.IO) {
+        val localVariableConfig = v1IdvKycGetPostRequestConfig(getKycReq = getKycReq)
 
         return@withContext request<GetKycReq, GetKycRes>(
             localVariableConfig
@@ -1010,15 +980,13 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvKycGetPost
      *
-     * @param authorization  (optional)
      * @param getKycReq  (optional)
      * @return RequestConfig
      */
-    fun v1IdvKycGetPostRequestConfig(authorization: kotlin.String?, getKycReq: GetKycReq?) : RequestConfig<GetKycReq> {
+    fun v1IdvKycGetPostRequestConfig(getKycReq: GetKycReq?) : RequestConfig<GetKycReq> {
         val localVariableBody = getKycReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -1027,7 +995,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/kyc/get",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -1036,7 +1004,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/result
      * 
      * 
-     * @param authorization  (optional)
      * @param resultReq  (optional)
      * @return ResultRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -1047,8 +1014,8 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvResultPost(authorization: kotlin.String? = null, resultReq: ResultReq? = null) : ResultRes = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvResultPostWithHttpInfo(authorization = authorization, resultReq = resultReq)
+    suspend fun v1IdvResultPost(resultReq: ResultReq? = null) : ResultRes = withContext(Dispatchers.IO) {
+        val localVarResponse = v1IdvResultPostWithHttpInfo(resultReq = resultReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ResultRes
@@ -1069,7 +1036,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/result
      * 
      * 
-     * @param authorization  (optional)
      * @param resultReq  (optional)
      * @return ApiResponse<ResultRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1077,8 +1043,8 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvResultPostWithHttpInfo(authorization: kotlin.String?, resultReq: ResultReq?) : ApiResponse<ResultRes?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvResultPostRequestConfig(authorization = authorization, resultReq = resultReq)
+    suspend fun v1IdvResultPostWithHttpInfo(resultReq: ResultReq?) : ApiResponse<ResultRes?> = withContext(Dispatchers.IO) {
+        val localVariableConfig = v1IdvResultPostRequestConfig(resultReq = resultReq)
 
         return@withContext request<ResultReq, ResultRes>(
             localVariableConfig
@@ -1088,15 +1054,13 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvResultPost
      *
-     * @param authorization  (optional)
      * @param resultReq  (optional)
      * @return RequestConfig
      */
-    fun v1IdvResultPostRequestConfig(authorization: kotlin.String?, resultReq: ResultReq?) : RequestConfig<ResultReq> {
+    fun v1IdvResultPostRequestConfig(resultReq: ResultReq?) : RequestConfig<ResultReq> {
         val localVariableBody = resultReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -1105,7 +1069,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/result",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -1114,7 +1078,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/sessions/start
      * 
      * [DEPRECATED] Use /v1/idv/start.
-     * @param authorization  (optional)
      * @param sessionStartReq  (optional)
      * @return SessionStartRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -1126,9 +1089,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvSessionsStartPost(authorization: kotlin.String? = null, sessionStartReq: SessionStartReq? = null) : SessionStartRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvSessionsStartPost(sessionStartReq: SessionStartReq? = null) : SessionStartRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvSessionsStartPostWithHttpInfo(authorization = authorization, sessionStartReq = sessionStartReq)
+        val localVarResponse = v1IdvSessionsStartPostWithHttpInfo(sessionStartReq = sessionStartReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as SessionStartRes
@@ -1149,7 +1112,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/sessions/start
      * 
      * [DEPRECATED] Use /v1/idv/start.
-     * @param authorization  (optional)
      * @param sessionStartReq  (optional)
      * @return ApiResponse<SessionStartRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1158,9 +1120,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvSessionsStartPostWithHttpInfo(authorization: kotlin.String?, sessionStartReq: SessionStartReq?) : ApiResponse<SessionStartRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvSessionsStartPostWithHttpInfo(sessionStartReq: SessionStartReq?) : ApiResponse<SessionStartRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvSessionsStartPostRequestConfig(authorization = authorization, sessionStartReq = sessionStartReq)
+        val localVariableConfig = v1IdvSessionsStartPostRequestConfig(sessionStartReq = sessionStartReq)
 
         return@withContext request<SessionStartReq, SessionStartRes>(
             localVariableConfig
@@ -1170,16 +1132,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvSessionsStartPost
      *
-     * @param authorization  (optional)
      * @param sessionStartReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvSessionsStartPostRequestConfig(authorization: kotlin.String?, sessionStartReq: SessionStartReq?) : RequestConfig<SessionStartReq> {
+    fun v1IdvSessionsStartPostRequestConfig(sessionStartReq: SessionStartReq?) : RequestConfig<SessionStartReq> {
         val localVariableBody = sessionStartReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -1188,7 +1148,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/sessions/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -1197,7 +1157,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/start
      * 
      * 
-     * @param authorization  (optional)
      * @param startIdvReq  (optional)
      * @return StartIdvRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -1208,8 +1167,8 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    suspend fun v1IdvStartPost(authorization: kotlin.String? = null, startIdvReq: StartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
-        val localVarResponse = v1IdvStartPostWithHttpInfo(authorization = authorization, startIdvReq = startIdvReq)
+    suspend fun v1IdvStartPost(startIdvReq: StartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
+        val localVarResponse = v1IdvStartPostWithHttpInfo(startIdvReq = startIdvReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as StartIdvRes
@@ -1230,7 +1189,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/start
      * 
      * 
-     * @param authorization  (optional)
      * @param startIdvReq  (optional)
      * @return ApiResponse<StartIdvRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1238,8 +1196,8 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    suspend fun v1IdvStartPostWithHttpInfo(authorization: kotlin.String?, startIdvReq: StartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
-        val localVariableConfig = v1IdvStartPostRequestConfig(authorization = authorization, startIdvReq = startIdvReq)
+    suspend fun v1IdvStartPostWithHttpInfo(startIdvReq: StartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
+        val localVariableConfig = v1IdvStartPostRequestConfig(startIdvReq = startIdvReq)
 
         return@withContext request<StartIdvReq, StartIdvRes>(
             localVariableConfig
@@ -1249,15 +1207,13 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvStartPost
      *
-     * @param authorization  (optional)
      * @param startIdvReq  (optional)
      * @return RequestConfig
      */
-    fun v1IdvStartPostRequestConfig(authorization: kotlin.String?, startIdvReq: StartIdvReq?) : RequestConfig<StartIdvReq> {
+    fun v1IdvStartPostRequestConfig(startIdvReq: StartIdvReq?) : RequestConfig<StartIdvReq> {
         val localVariableBody = startIdvReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -1266,7 +1222,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -1350,7 +1306,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/uk/kyc/get
      * 
      * [DEPRECATED] Use /v1/idv/result with country&#x3D;uk.
-     * @param authorization  (optional)
      * @param usGetKycReq  (optional)
      * @return UsGetUnionResultRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -1362,9 +1317,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvUkKycGetPost(authorization: kotlin.String? = null, usGetKycReq: UsGetKycReq? = null) : UsGetUnionResultRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvUkKycGetPost(usGetKycReq: UsGetKycReq? = null) : UsGetUnionResultRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvUkKycGetPostWithHttpInfo(authorization = authorization, usGetKycReq = usGetKycReq)
+        val localVarResponse = v1IdvUkKycGetPostWithHttpInfo(usGetKycReq = usGetKycReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as UsGetUnionResultRes
@@ -1385,7 +1340,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/uk/kyc/get
      * 
      * [DEPRECATED] Use /v1/idv/result with country&#x3D;uk.
-     * @param authorization  (optional)
      * @param usGetKycReq  (optional)
      * @return ApiResponse<UsGetUnionResultRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1394,9 +1348,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvUkKycGetPostWithHttpInfo(authorization: kotlin.String?, usGetKycReq: UsGetKycReq?) : ApiResponse<UsGetUnionResultRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvUkKycGetPostWithHttpInfo(usGetKycReq: UsGetKycReq?) : ApiResponse<UsGetUnionResultRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvUkKycGetPostRequestConfig(authorization = authorization, usGetKycReq = usGetKycReq)
+        val localVariableConfig = v1IdvUkKycGetPostRequestConfig(usGetKycReq = usGetKycReq)
 
         return@withContext request<UsGetKycReq, UsGetUnionResultRes>(
             localVariableConfig
@@ -1406,16 +1360,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvUkKycGetPost
      *
-     * @param authorization  (optional)
      * @param usGetKycReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvUkKycGetPostRequestConfig(authorization: kotlin.String?, usGetKycReq: UsGetKycReq?) : RequestConfig<UsGetKycReq> {
+    fun v1IdvUkKycGetPostRequestConfig(usGetKycReq: UsGetKycReq?) : RequestConfig<UsGetKycReq> {
         val localVariableBody = usGetKycReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -1424,7 +1376,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/uk/kyc/get",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -1433,7 +1385,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/uk/start
      * 
      * [DEPRECATED] Use /v1/idv/start with country&#x3D;uk.
-     * @param authorization  (optional)
      * @param ukStartIdvReq  (optional)
      * @return StartIdvRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -1445,9 +1396,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvUkStartPost(authorization: kotlin.String? = null, ukStartIdvReq: UkStartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvUkStartPost(ukStartIdvReq: UkStartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvUkStartPostWithHttpInfo(authorization = authorization, ukStartIdvReq = ukStartIdvReq)
+        val localVarResponse = v1IdvUkStartPostWithHttpInfo(ukStartIdvReq = ukStartIdvReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as StartIdvRes
@@ -1468,7 +1419,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/uk/start
      * 
      * [DEPRECATED] Use /v1/idv/start with country&#x3D;uk.
-     * @param authorization  (optional)
      * @param ukStartIdvReq  (optional)
      * @return ApiResponse<StartIdvRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1477,9 +1427,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvUkStartPostWithHttpInfo(authorization: kotlin.String?, ukStartIdvReq: UkStartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvUkStartPostWithHttpInfo(ukStartIdvReq: UkStartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvUkStartPostRequestConfig(authorization = authorization, ukStartIdvReq = ukStartIdvReq)
+        val localVariableConfig = v1IdvUkStartPostRequestConfig(ukStartIdvReq = ukStartIdvReq)
 
         return@withContext request<UkStartIdvReq, StartIdvRes>(
             localVariableConfig
@@ -1489,16 +1439,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvUkStartPost
      *
-     * @param authorization  (optional)
      * @param ukStartIdvReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvUkStartPostRequestConfig(authorization: kotlin.String?, ukStartIdvReq: UkStartIdvReq?) : RequestConfig<UkStartIdvReq> {
+    fun v1IdvUkStartPostRequestConfig(ukStartIdvReq: UkStartIdvReq?) : RequestConfig<UkStartIdvReq> {
         val localVariableBody = ukStartIdvReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -1507,7 +1455,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/uk/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -1591,7 +1539,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/us/kyc/get
      * 
      * [DEPRECATED] Use /v1/idv/result with country&#x3D;us.
-     * @param authorization  (optional)
      * @param usGetKycReq  (optional)
      * @return UsGetUnionResultRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -1603,9 +1550,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvUsKycGetPost(authorization: kotlin.String? = null, usGetKycReq: UsGetKycReq? = null) : UsGetUnionResultRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvUsKycGetPost(usGetKycReq: UsGetKycReq? = null) : UsGetUnionResultRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvUsKycGetPostWithHttpInfo(authorization = authorization, usGetKycReq = usGetKycReq)
+        val localVarResponse = v1IdvUsKycGetPostWithHttpInfo(usGetKycReq = usGetKycReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as UsGetUnionResultRes
@@ -1626,7 +1573,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/us/kyc/get
      * 
      * [DEPRECATED] Use /v1/idv/result with country&#x3D;us.
-     * @param authorization  (optional)
      * @param usGetKycReq  (optional)
      * @return ApiResponse<UsGetUnionResultRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1635,9 +1581,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvUsKycGetPostWithHttpInfo(authorization: kotlin.String?, usGetKycReq: UsGetKycReq?) : ApiResponse<UsGetUnionResultRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvUsKycGetPostWithHttpInfo(usGetKycReq: UsGetKycReq?) : ApiResponse<UsGetUnionResultRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvUsKycGetPostRequestConfig(authorization = authorization, usGetKycReq = usGetKycReq)
+        val localVariableConfig = v1IdvUsKycGetPostRequestConfig(usGetKycReq = usGetKycReq)
 
         return@withContext request<UsGetKycReq, UsGetUnionResultRes>(
             localVariableConfig
@@ -1647,16 +1593,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvUsKycGetPost
      *
-     * @param authorization  (optional)
      * @param usGetKycReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvUsKycGetPostRequestConfig(authorization: kotlin.String?, usGetKycReq: UsGetKycReq?) : RequestConfig<UsGetKycReq> {
+    fun v1IdvUsKycGetPostRequestConfig(usGetKycReq: UsGetKycReq?) : RequestConfig<UsGetKycReq> {
         val localVariableBody = usGetKycReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -1665,7 +1609,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/us/kyc/get",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
@@ -1674,7 +1618,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/us/start
      * 
      * [DEPRECATED] Use /v1/idv/start with country&#x3D;us.
-     * @param authorization  (optional)
      * @param usStartIdvReq  (optional)
      * @return StartIdvRes
      * @throws IllegalStateException If the request is not correctly configured
@@ -1686,9 +1629,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvUsStartPost(authorization: kotlin.String? = null, usStartIdvReq: UsStartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
+    suspend fun v1IdvUsStartPost(usStartIdvReq: UsStartIdvReq? = null) : StartIdvRes = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVarResponse = v1IdvUsStartPostWithHttpInfo(authorization = authorization, usStartIdvReq = usStartIdvReq)
+        val localVarResponse = v1IdvUsStartPostWithHttpInfo(usStartIdvReq = usStartIdvReq)
 
         return@withContext when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as StartIdvRes
@@ -1709,7 +1652,6 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * POST /v1/idv/us/start
      * 
      * [DEPRECATED] Use /v1/idv/start with country&#x3D;us.
-     * @param authorization  (optional)
      * @param usStartIdvReq  (optional)
      * @return ApiResponse<StartIdvRes?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1718,9 +1660,9 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    suspend fun v1IdvUsStartPostWithHttpInfo(authorization: kotlin.String?, usStartIdvReq: UsStartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
+    suspend fun v1IdvUsStartPostWithHttpInfo(usStartIdvReq: UsStartIdvReq?) : ApiResponse<StartIdvRes?> = withContext(Dispatchers.IO) {
         @Suppress("DEPRECATION")
-        val localVariableConfig = v1IdvUsStartPostRequestConfig(authorization = authorization, usStartIdvReq = usStartIdvReq)
+        val localVariableConfig = v1IdvUsStartPostRequestConfig(usStartIdvReq = usStartIdvReq)
 
         return@withContext request<UsStartIdvReq, StartIdvRes>(
             localVariableConfig
@@ -1730,16 +1672,14 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     /**
      * To obtain the request config of the operation v1IdvUsStartPost
      *
-     * @param authorization  (optional)
      * @param usStartIdvReq  (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun v1IdvUsStartPostRequestConfig(authorization: kotlin.String?, usStartIdvReq: UsStartIdvReq?) : RequestConfig<UsStartIdvReq> {
+    fun v1IdvUsStartPostRequestConfig(usStartIdvReq: UsStartIdvReq?) : RequestConfig<UsStartIdvReq> {
         val localVariableBody = usStartIdvReq
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        authorization?.apply { localVariableHeaders["Authorization"] = this.toString() }
         localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
         localVariableHeaders["Accept"] = "application/json;charset=utf-8"
 
@@ -1748,7 +1688,7 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
             path = "/v1/idv/us/start",
             query = localVariableQuery,
             headers = localVariableHeaders,
-            requiresAuthentication = false,
+            requiresAuthentication = true,
             body = localVariableBody
         )
     }
