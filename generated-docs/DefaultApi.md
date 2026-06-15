@@ -16,6 +16,8 @@ All URIs are relative to *http://localhost*
 | [**v1IdvJpKycGetPost**](DefaultApi.md#v1IdvJpKycGetPost) | **POST** /v1/idv/jp/kyc/get |  |
 | [**v1IdvJpStartPost**](DefaultApi.md#v1IdvJpStartPost) | **POST** /v1/idv/jp/start |  |
 | [**v1IdvKycGetPost**](DefaultApi.md#v1IdvKycGetPost) | **POST** /v1/idv/kyc/get |  |
+| [**v1IdvResultBulkDeletePost**](DefaultApi.md#v1IdvResultBulkDeletePost) | **POST** /v1/idv/result/bulk-delete |  |
+| [**v1IdvResultDeletePost**](DefaultApi.md#v1IdvResultDeletePost) | **POST** /v1/idv/result/delete |  |
 | [**v1IdvResultPost**](DefaultApi.md#v1IdvResultPost) | **POST** /v1/idv/result |  |
 | [**v1IdvSessionsStartPost**](DefaultApi.md#v1IdvSessionsStartPost) | **POST** /v1/idv/sessions/start |  |
 | [**v1IdvStartPost**](DefaultApi.md#v1IdvStartPost) | **POST** /v1/idv/start |  |
@@ -568,6 +570,98 @@ try {
 ### Return type
 
 [**GetKycRes**](GetKycRes.md)
+
+### Authorization
+
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a id="v1IdvResultBulkDeletePost"></a>
+# **v1IdvResultBulkDeletePost**
+> ResultBulkDeleteRes v1IdvResultBulkDeletePost(resultBulkDeleteReq)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import com.tomoarrow.idv.client.generated.infrastructure.*
+//import com.tomoarrow.idv.client.generated.models.*
+
+val apiInstance = DefaultApi()
+val resultBulkDeleteReq : ResultBulkDeleteReq =  // ResultBulkDeleteReq | 
+try {
+    val result : ResultBulkDeleteRes = apiInstance.v1IdvResultBulkDeletePost(resultBulkDeleteReq)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling DefaultApi#v1IdvResultBulkDeletePost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DefaultApi#v1IdvResultBulkDeletePost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resultBulkDeleteReq** | [**ResultBulkDeleteReq**](ResultBulkDeleteReq.md)|  | [optional] |
+
+### Return type
+
+[**ResultBulkDeleteRes**](ResultBulkDeleteRes.md)
+
+### Authorization
+
+
+Configure bearerAuth:
+    ApiClient.accessToken = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a id="v1IdvResultDeletePost"></a>
+# **v1IdvResultDeletePost**
+> ResultDeleteRes v1IdvResultDeletePost(resultDeleteReq)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import com.tomoarrow.idv.client.generated.infrastructure.*
+//import com.tomoarrow.idv.client.generated.models.*
+
+val apiInstance = DefaultApi()
+val resultDeleteReq : ResultDeleteReq =  // ResultDeleteReq | 
+try {
+    val result : ResultDeleteRes = apiInstance.v1IdvResultDeletePost(resultDeleteReq)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling DefaultApi#v1IdvResultDeletePost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling DefaultApi#v1IdvResultDeletePost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resultDeleteReq** | [**ResultDeleteReq**](ResultDeleteReq.md)|  | [optional] |
+
+### Return type
+
+[**ResultDeleteRes**](ResultDeleteRes.md)
 
 ### Authorization
 

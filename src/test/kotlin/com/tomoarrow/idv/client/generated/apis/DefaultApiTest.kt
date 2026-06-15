@@ -36,6 +36,10 @@ import com.tomoarrow.idv.client.generated.models.GetKycRes
 import com.tomoarrow.idv.client.generated.models.JpGetKycReq
 import com.tomoarrow.idv.client.generated.models.JpGetUnionResultRes
 import com.tomoarrow.idv.client.generated.models.JpStartIdvReq
+import com.tomoarrow.idv.client.generated.models.ResultBulkDeleteReq
+import com.tomoarrow.idv.client.generated.models.ResultBulkDeleteRes
+import com.tomoarrow.idv.client.generated.models.ResultDeleteReq
+import com.tomoarrow.idv.client.generated.models.ResultDeleteRes
 import com.tomoarrow.idv.client.generated.models.ResultReq
 import com.tomoarrow.idv.client.generated.models.ResultRes
 import com.tomoarrow.idv.client.generated.models.SessionStartReq
@@ -144,6 +148,22 @@ class DefaultApiTest : ShouldSpec() {
             // uncomment below to test v1IdvKycGetPost
             //val getKycReq : GetKycReq =  // GetKycReq | 
             //val result : GetKycRes = apiInstance.v1IdvKycGetPost(getKycReq)
+            //result shouldBe ("TODO")
+        }
+
+        // to test v1IdvResultBulkDeletePost
+        should("test v1IdvResultBulkDeletePost") {
+            // uncomment below to test v1IdvResultBulkDeletePost
+            //val resultBulkDeleteReq : ResultBulkDeleteReq =  // ResultBulkDeleteReq | 
+            //val result : ResultBulkDeleteRes = apiInstance.v1IdvResultBulkDeletePost(resultBulkDeleteReq)
+            //result shouldBe ("TODO")
+        }
+
+        // to test v1IdvResultDeletePost
+        should("test v1IdvResultDeletePost") {
+            // uncomment below to test v1IdvResultDeletePost
+            //val resultDeleteReq : ResultDeleteReq =  // ResultDeleteReq | 
+            //val result : ResultDeleteRes = apiInstance.v1IdvResultDeletePost(resultDeleteReq)
             //result shouldBe ("TODO")
         }
 

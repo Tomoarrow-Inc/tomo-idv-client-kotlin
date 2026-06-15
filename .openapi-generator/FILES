@@ -15,6 +15,11 @@ docs/JpIdvField.md
 docs/JpStartIdvReq.md
 docs/KycPolicy.md
 docs/LaunchKind.md
+docs/ResultBulkDeleteReq.md
+docs/ResultBulkDeleteRes.md
+docs/ResultDeleteReq.md
+docs/ResultDeleteRes.md
+docs/ResultDeleteStatus.md
 docs/ResultRecord.md
 docs/ResultReq.md
 docs/ResultRes.md
@@ -69,6 +74,11 @@ src/main/kotlin/com/tomoarrow/idv/client/generated/models/JpIdvField.kt
 src/main/kotlin/com/tomoarrow/idv/client/generated/models/JpStartIdvReq.kt
 src/main/kotlin/com/tomoarrow/idv/client/generated/models/KycPolicy.kt
 src/main/kotlin/com/tomoarrow/idv/client/generated/models/LaunchKind.kt
+src/main/kotlin/com/tomoarrow/idv/client/generated/models/ResultBulkDeleteReq.kt
+src/main/kotlin/com/tomoarrow/idv/client/generated/models/ResultBulkDeleteRes.kt
+src/main/kotlin/com/tomoarrow/idv/client/generated/models/ResultDeleteReq.kt
+src/main/kotlin/com/tomoarrow/idv/client/generated/models/ResultDeleteRes.kt
+src/main/kotlin/com/tomoarrow/idv/client/generated/models/ResultDeleteStatus.kt
 src/main/kotlin/com/tomoarrow/idv/client/generated/models/ResultRecord.kt
 src/main/kotlin/com/tomoarrow/idv/client/generated/models/ResultReq.kt
 src/main/kotlin/com/tomoarrow/idv/client/generated/models/ResultRes.kt
@@ -102,6 +112,11 @@ src/test/kotlin/com/tomoarrow/idv/client/generated/models/JpIdvFieldTest.kt
 src/test/kotlin/com/tomoarrow/idv/client/generated/models/JpStartIdvReqTest.kt
 src/test/kotlin/com/tomoarrow/idv/client/generated/models/KycPolicyTest.kt
 src/test/kotlin/com/tomoarrow/idv/client/generated/models/LaunchKindTest.kt
+src/test/kotlin/com/tomoarrow/idv/client/generated/models/ResultBulkDeleteReqTest.kt
+src/test/kotlin/com/tomoarrow/idv/client/generated/models/ResultBulkDeleteResTest.kt
+src/test/kotlin/com/tomoarrow/idv/client/generated/models/ResultDeleteReqTest.kt
+src/test/kotlin/com/tomoarrow/idv/client/generated/models/ResultDeleteResTest.kt
+src/test/kotlin/com/tomoarrow/idv/client/generated/models/ResultDeleteStatusTest.kt
 src/test/kotlin/com/tomoarrow/idv/client/generated/models/ResultRecordTest.kt
 src/test/kotlin/com/tomoarrow/idv/client/generated/models/ResultReqTest.kt
 src/test/kotlin/com/tomoarrow/idv/client/generated/models/ResultResTest.kt

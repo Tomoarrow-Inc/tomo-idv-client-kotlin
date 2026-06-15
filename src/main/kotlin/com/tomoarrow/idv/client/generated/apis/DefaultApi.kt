@@ -36,6 +36,10 @@ import com.tomoarrow.idv.client.generated.models.GetKycRes
 import com.tomoarrow.idv.client.generated.models.JpGetKycReq
 import com.tomoarrow.idv.client.generated.models.JpGetUnionResultRes
 import com.tomoarrow.idv.client.generated.models.JpStartIdvReq
+import com.tomoarrow.idv.client.generated.models.ResultBulkDeleteReq
+import com.tomoarrow.idv.client.generated.models.ResultBulkDeleteRes
+import com.tomoarrow.idv.client.generated.models.ResultDeleteReq
+import com.tomoarrow.idv.client.generated.models.ResultDeleteRes
 import com.tomoarrow.idv.client.generated.models.ResultReq
 import com.tomoarrow.idv.client.generated.models.ResultRes
 import com.tomoarrow.idv.client.generated.models.SessionStartReq
@@ -993,6 +997,154 @@ open class DefaultApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/v1/idv/kyc/get",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /v1/idv/result/bulk-delete
+     * 
+     * 
+     * @param resultBulkDeleteReq  (optional)
+     * @return ResultBulkDeleteRes
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    suspend fun v1IdvResultBulkDeletePost(resultBulkDeleteReq: ResultBulkDeleteReq? = null) : ResultBulkDeleteRes = withContext(Dispatchers.IO) {
+        val localVarResponse = v1IdvResultBulkDeletePostWithHttpInfo(resultBulkDeleteReq = resultBulkDeleteReq)
+
+        return@withContext when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ResultBulkDeleteRes
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /v1/idv/result/bulk-delete
+     * 
+     * 
+     * @param resultBulkDeleteReq  (optional)
+     * @return ApiResponse<ResultBulkDeleteRes?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    suspend fun v1IdvResultBulkDeletePostWithHttpInfo(resultBulkDeleteReq: ResultBulkDeleteReq?) : ApiResponse<ResultBulkDeleteRes?> = withContext(Dispatchers.IO) {
+        val localVariableConfig = v1IdvResultBulkDeletePostRequestConfig(resultBulkDeleteReq = resultBulkDeleteReq)
+
+        return@withContext request<ResultBulkDeleteReq, ResultBulkDeleteRes>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation v1IdvResultBulkDeletePost
+     *
+     * @param resultBulkDeleteReq  (optional)
+     * @return RequestConfig
+     */
+    fun v1IdvResultBulkDeletePostRequestConfig(resultBulkDeleteReq: ResultBulkDeleteReq?) : RequestConfig<ResultBulkDeleteReq> {
+        val localVariableBody = resultBulkDeleteReq
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
+        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/v1/idv/result/bulk-delete",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /v1/idv/result/delete
+     * 
+     * 
+     * @param resultDeleteReq  (optional)
+     * @return ResultDeleteRes
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    suspend fun v1IdvResultDeletePost(resultDeleteReq: ResultDeleteReq? = null) : ResultDeleteRes = withContext(Dispatchers.IO) {
+        val localVarResponse = v1IdvResultDeletePostWithHttpInfo(resultDeleteReq = resultDeleteReq)
+
+        return@withContext when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ResultDeleteRes
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /v1/idv/result/delete
+     * 
+     * 
+     * @param resultDeleteReq  (optional)
+     * @return ApiResponse<ResultDeleteRes?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    suspend fun v1IdvResultDeletePostWithHttpInfo(resultDeleteReq: ResultDeleteReq?) : ApiResponse<ResultDeleteRes?> = withContext(Dispatchers.IO) {
+        val localVariableConfig = v1IdvResultDeletePostRequestConfig(resultDeleteReq = resultDeleteReq)
+
+        return@withContext request<ResultDeleteReq, ResultDeleteRes>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation v1IdvResultDeletePost
+     *
+     * @param resultDeleteReq  (optional)
+     * @return RequestConfig
+     */
+    fun v1IdvResultDeletePostRequestConfig(resultDeleteReq: ResultDeleteReq?) : RequestConfig<ResultDeleteReq> {
+        val localVariableBody = resultDeleteReq
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json;charset=utf-8"
+        localVariableHeaders["Accept"] = "application/json;charset=utf-8"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/v1/idv/result/delete",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
