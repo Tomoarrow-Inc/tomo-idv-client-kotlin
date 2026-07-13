@@ -59,10 +59,16 @@ class StartIdvReqTest : ShouldSpec() {
             //modelInstance.kycPolicy shouldBe ("TODO")
         }
 
-        // to test the property `redirectUrl`
-        should("test redirectUrl") {
+        // to test the property `redirectUrlFail`
+        should("test redirectUrlFail") {
             // uncomment below to test the property
-            //modelInstance.redirectUrl shouldBe ("TODO")
+            //modelInstance.redirectUrlFail shouldBe ("TODO")
+        }
+
+        // to test the property `redirectUrlSuccess`
+        should("test redirectUrlSuccess") {
+            // uncomment below to test the property
+            //modelInstance.redirectUrlSuccess shouldBe ("TODO")
         }
 
         // to test the property `userId`

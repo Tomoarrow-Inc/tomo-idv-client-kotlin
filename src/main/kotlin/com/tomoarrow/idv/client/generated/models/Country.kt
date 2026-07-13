@@ -31,37 +31,40 @@ import kotlinx.serialization.Serializable
 /**
  * 
  *
- * Values: AR,AU,AT,BE,BR,CA,CL,CN,CO,CZ,DK,FI,FR,DE,GI,HK,IN,IE,IT,JP,KE,LU,MY,MX,NL,NZ,NG,NO,PH,PL,PT,SG,SK,ZA,ES,SE,CH,TR,GB,US,AF,AZ,BH,BD,BT,BN,KH,ID,IQ,IL,JO,KZ,KW,KG,LA,LB,MO,MV,MN,MM,NP,OM,PK,PS,QA,RU,SA,KR,LK,TW,TJ,TH,TM,AE,UZ,VN,YE,UK,UNKNOWN
+ * Values: AL,AD,AM,AT,BY,BE,BA,BG,HR,CY,CZ,DK,EE,FO,FI,FR,GE,DE,GI,GR,GL,GG,HU,IS,IE,IM,IT,JE,XK,LV,LI,LT,LU,MT,MD,MC,ME,NL,MK,NO,PL,PT,RO,SM,RS,SK,SI,ES,SE,CH,TR,UA,GB,VA,CA,MX,US,AI,AG,AW,BS,BB,BZ,BM,VG,KY,CR,CW,DM,DO,SV,GD,GT,HT,HN,JM,MS,NI,PA,KN,LC,MF,VC,TT,TC,BQ,AR,BO,BR,CL,CO,EC,GY,PY,PE,SR,UY,VE,AF,AZ,BH,BD,BT,BN,KH,CN,HK,IN,ID,IQ,IL,JP,JO,KZ,KW,KG,LA,LB,MO,MY,MV,MN,MM,NP,OM,PK,PS,PH,QA,RU,SA,SG,KR,LK,TW,TJ,TH,TM,AE,UZ,VN,YE,AU,CK,FJ,PF,KI,NR,NZ,NU,PG,WS,SB,TL,TO,TV,VU,DZ,AO,BJ,BW,BF,BI,CM,CV,CF,TD,KM,CG,CI,DJ,EG,ER,SZ,ET,GA,GM,GH,GN,GW,KE,LS,LR,MG,MW,ML,MR,MU,MA,MZ,NA,NE,NG,RW,SN,SC,SL,SO,ZA,SS,SD,ST,TZ,TG,TN,UG,EH,ZM,ZW,UK,UNKNOWN
  */
 @Serializable
 enum class Country(val value: kotlin.String) {
 
-    @SerialName(value = "ar")
-    AR("ar"),
+    @SerialName(value = "al")
+    AL("al"),
 
-    @SerialName(value = "au")
-    AU("au"),
+    @SerialName(value = "ad")
+    AD("ad"),
+
+    @SerialName(value = "am")
+    AM("am"),
 
     @SerialName(value = "at")
     AT("at"),
 
+    @SerialName(value = "by")
+    BY("by"),
+
     @SerialName(value = "be")
     BE("be"),
 
-    @SerialName(value = "br")
-    BR("br"),
+    @SerialName(value = "ba")
+    BA("ba"),
 
-    @SerialName(value = "ca")
-    CA("ca"),
+    @SerialName(value = "bg")
+    BG("bg"),
 
-    @SerialName(value = "cl")
-    CL("cl"),
+    @SerialName(value = "hr")
+    HR("hr"),
 
-    @SerialName(value = "cn")
-    CN("cn"),
-
-    @SerialName(value = "co")
-    CO("co"),
+    @SerialName(value = "cy")
+    CY("cy"),
 
     @SerialName(value = "cz")
     CZ("cz"),
@@ -69,11 +72,20 @@ enum class Country(val value: kotlin.String) {
     @SerialName(value = "dk")
     DK("dk"),
 
+    @SerialName(value = "ee")
+    EE("ee"),
+
+    @SerialName(value = "fo")
+    FO("fo"),
+
     @SerialName(value = "fi")
     FI("fi"),
 
     @SerialName(value = "fr")
     FR("fr"),
+
+    @SerialName(value = "ge")
+    GE("ge"),
 
     @SerialName(value = "de")
     DE("de"),
@@ -81,47 +93,68 @@ enum class Country(val value: kotlin.String) {
     @SerialName(value = "gi")
     GI("gi"),
 
-    @SerialName(value = "hk")
-    HK("hk"),
+    @SerialName(value = "gr")
+    GR("gr"),
 
-    @SerialName(value = "in")
-    IN("in"),
+    @SerialName(value = "gl")
+    GL("gl"),
+
+    @SerialName(value = "gg")
+    GG("gg"),
+
+    @SerialName(value = "hu")
+    HU("hu"),
+
+    @SerialName(value = "is")
+    IS("is"),
 
     @SerialName(value = "ie")
     IE("ie"),
 
+    @SerialName(value = "im")
+    IM("im"),
+
     @SerialName(value = "it")
     IT("it"),
 
-    @SerialName(value = "jp")
-    JP("jp"),
+    @SerialName(value = "je")
+    JE("je"),
 
-    @SerialName(value = "ke")
-    KE("ke"),
+    @SerialName(value = "xk")
+    XK("xk"),
+
+    @SerialName(value = "lv")
+    LV("lv"),
+
+    @SerialName(value = "li")
+    LI("li"),
+
+    @SerialName(value = "lt")
+    LT("lt"),
 
     @SerialName(value = "lu")
     LU("lu"),
 
-    @SerialName(value = "my")
-    MY("my"),
+    @SerialName(value = "mt")
+    MT("mt"),
 
-    @SerialName(value = "mx")
-    MX("mx"),
+    @SerialName(value = "md")
+    MD("md"),
+
+    @SerialName(value = "mc")
+    MC("mc"),
+
+    @SerialName(value = "me")
+    ME("me"),
 
     @SerialName(value = "nl")
     NL("nl"),
 
-    @SerialName(value = "nz")
-    NZ("nz"),
-
-    @SerialName(value = "ng")
-    NG("ng"),
+    @SerialName(value = "mk")
+    MK("mk"),
 
     @SerialName(value = "no")
     NO("no"),
-
-    @SerialName(value = "ph")
-    PH("ph"),
 
     @SerialName(value = "pl")
     PL("pl"),
@@ -129,14 +162,20 @@ enum class Country(val value: kotlin.String) {
     @SerialName(value = "pt")
     PT("pt"),
 
-    @SerialName(value = "sg")
-    SG("sg"),
+    @SerialName(value = "ro")
+    RO("ro"),
+
+    @SerialName(value = "sm")
+    SM("sm"),
+
+    @SerialName(value = "rs")
+    RS("rs"),
 
     @SerialName(value = "sk")
     SK("sk"),
 
-    @SerialName(value = "za")
-    ZA("za"),
+    @SerialName(value = "si")
+    SI("si"),
 
     @SerialName(value = "es")
     ES("es"),
@@ -150,11 +189,146 @@ enum class Country(val value: kotlin.String) {
     @SerialName(value = "tr")
     TR("tr"),
 
+    @SerialName(value = "ua")
+    UA("ua"),
+
     @SerialName(value = "gb")
     GB("gb"),
 
+    @SerialName(value = "va")
+    VA("va"),
+
+    @SerialName(value = "ca")
+    CA("ca"),
+
+    @SerialName(value = "mx")
+    MX("mx"),
+
     @SerialName(value = "us")
     US("us"),
+
+    @SerialName(value = "ai")
+    AI("ai"),
+
+    @SerialName(value = "ag")
+    AG("ag"),
+
+    @SerialName(value = "aw")
+    AW("aw"),
+
+    @SerialName(value = "bs")
+    BS("bs"),
+
+    @SerialName(value = "bb")
+    BB("bb"),
+
+    @SerialName(value = "bz")
+    BZ("bz"),
+
+    @SerialName(value = "bm")
+    BM("bm"),
+
+    @SerialName(value = "vg")
+    VG("vg"),
+
+    @SerialName(value = "ky")
+    KY("ky"),
+
+    @SerialName(value = "cr")
+    CR("cr"),
+
+    @SerialName(value = "cw")
+    CW("cw"),
+
+    @SerialName(value = "dm")
+    DM("dm"),
+
+    @SerialName(value = "do")
+    DO("do"),
+
+    @SerialName(value = "sv")
+    SV("sv"),
+
+    @SerialName(value = "gd")
+    GD("gd"),
+
+    @SerialName(value = "gt")
+    GT("gt"),
+
+    @SerialName(value = "ht")
+    HT("ht"),
+
+    @SerialName(value = "hn")
+    HN("hn"),
+
+    @SerialName(value = "jm")
+    JM("jm"),
+
+    @SerialName(value = "ms")
+    MS("ms"),
+
+    @SerialName(value = "ni")
+    NI("ni"),
+
+    @SerialName(value = "pa")
+    PA("pa"),
+
+    @SerialName(value = "kn")
+    KN("kn"),
+
+    @SerialName(value = "lc")
+    LC("lc"),
+
+    @SerialName(value = "mf")
+    MF("mf"),
+
+    @SerialName(value = "vc")
+    VC("vc"),
+
+    @SerialName(value = "tt")
+    TT("tt"),
+
+    @SerialName(value = "tc")
+    TC("tc"),
+
+    @SerialName(value = "bq")
+    BQ("bq"),
+
+    @SerialName(value = "ar")
+    AR("ar"),
+
+    @SerialName(value = "bo")
+    BO("bo"),
+
+    @SerialName(value = "br")
+    BR("br"),
+
+    @SerialName(value = "cl")
+    CL("cl"),
+
+    @SerialName(value = "co")
+    CO("co"),
+
+    @SerialName(value = "ec")
+    EC("ec"),
+
+    @SerialName(value = "gy")
+    GY("gy"),
+
+    @SerialName(value = "py")
+    PY("py"),
+
+    @SerialName(value = "pe")
+    PE("pe"),
+
+    @SerialName(value = "sr")
+    SR("sr"),
+
+    @SerialName(value = "uy")
+    UY("uy"),
+
+    @SerialName(value = "ve")
+    VE("ve"),
 
     @SerialName(value = "af")
     AF("af"),
@@ -177,6 +351,15 @@ enum class Country(val value: kotlin.String) {
     @SerialName(value = "kh")
     KH("kh"),
 
+    @SerialName(value = "cn")
+    CN("cn"),
+
+    @SerialName(value = "hk")
+    HK("hk"),
+
+    @SerialName(value = "in")
+    IN("in"),
+
     @SerialName(value = "id")
     ID("id"),
 
@@ -185,6 +368,9 @@ enum class Country(val value: kotlin.String) {
 
     @SerialName(value = "il")
     IL("il"),
+
+    @SerialName(value = "jp")
+    JP("jp"),
 
     @SerialName(value = "jo")
     JO("jo"),
@@ -207,6 +393,9 @@ enum class Country(val value: kotlin.String) {
     @SerialName(value = "mo")
     MO("mo"),
 
+    @SerialName(value = "my")
+    MY("my"),
+
     @SerialName(value = "mv")
     MV("mv"),
 
@@ -228,6 +417,9 @@ enum class Country(val value: kotlin.String) {
     @SerialName(value = "ps")
     PS("ps"),
 
+    @SerialName(value = "ph")
+    PH("ph"),
+
     @SerialName(value = "qa")
     QA("qa"),
 
@@ -236,6 +428,9 @@ enum class Country(val value: kotlin.String) {
 
     @SerialName(value = "sa")
     SA("sa"),
+
+    @SerialName(value = "sg")
+    SG("sg"),
 
     @SerialName(value = "kr")
     KR("kr"),
@@ -266,6 +461,207 @@ enum class Country(val value: kotlin.String) {
 
     @SerialName(value = "ye")
     YE("ye"),
+
+    @SerialName(value = "au")
+    AU("au"),
+
+    @SerialName(value = "ck")
+    CK("ck"),
+
+    @SerialName(value = "fj")
+    FJ("fj"),
+
+    @SerialName(value = "pf")
+    PF("pf"),
+
+    @SerialName(value = "ki")
+    KI("ki"),
+
+    @SerialName(value = "nr")
+    NR("nr"),
+
+    @SerialName(value = "nz")
+    NZ("nz"),
+
+    @SerialName(value = "nu")
+    NU("nu"),
+
+    @SerialName(value = "pg")
+    PG("pg"),
+
+    @SerialName(value = "ws")
+    WS("ws"),
+
+    @SerialName(value = "sb")
+    SB("sb"),
+
+    @SerialName(value = "tl")
+    TL("tl"),
+
+    @SerialName(value = "to")
+    TO("to"),
+
+    @SerialName(value = "tv")
+    TV("tv"),
+
+    @SerialName(value = "vu")
+    VU("vu"),
+
+    @SerialName(value = "dz")
+    DZ("dz"),
+
+    @SerialName(value = "ao")
+    AO("ao"),
+
+    @SerialName(value = "bj")
+    BJ("bj"),
+
+    @SerialName(value = "bw")
+    BW("bw"),
+
+    @SerialName(value = "bf")
+    BF("bf"),
+
+    @SerialName(value = "bi")
+    BI("bi"),
+
+    @SerialName(value = "cm")
+    CM("cm"),
+
+    @SerialName(value = "cv")
+    CV("cv"),
+
+    @SerialName(value = "cf")
+    CF("cf"),
+
+    @SerialName(value = "td")
+    TD("td"),
+
+    @SerialName(value = "km")
+    KM("km"),
+
+    @SerialName(value = "cg")
+    CG("cg"),
+
+    @SerialName(value = "ci")
+    CI("ci"),
+
+    @SerialName(value = "dj")
+    DJ("dj"),
+
+    @SerialName(value = "eg")
+    EG("eg"),
+
+    @SerialName(value = "er")
+    ER("er"),
+
+    @SerialName(value = "sz")
+    SZ("sz"),
+
+    @SerialName(value = "et")
+    ET("et"),
+
+    @SerialName(value = "ga")
+    GA("ga"),
+
+    @SerialName(value = "gm")
+    GM("gm"),
+
+    @SerialName(value = "gh")
+    GH("gh"),
+
+    @SerialName(value = "gn")
+    GN("gn"),
+
+    @SerialName(value = "gw")
+    GW("gw"),
+
+    @SerialName(value = "ke")
+    KE("ke"),
+
+    @SerialName(value = "ls")
+    LS("ls"),
+
+    @SerialName(value = "lr")
+    LR("lr"),
+
+    @SerialName(value = "mg")
+    MG("mg"),
+
+    @SerialName(value = "mw")
+    MW("mw"),
+
+    @SerialName(value = "ml")
+    ML("ml"),
+
+    @SerialName(value = "mr")
+    MR("mr"),
+
+    @SerialName(value = "mu")
+    MU("mu"),
+
+    @SerialName(value = "ma")
+    MA("ma"),
+
+    @SerialName(value = "mz")
+    MZ("mz"),
+
+    @SerialName(value = "na")
+    NA("na"),
+
+    @SerialName(value = "ne")
+    NE("ne"),
+
+    @SerialName(value = "ng")
+    NG("ng"),
+
+    @SerialName(value = "rw")
+    RW("rw"),
+
+    @SerialName(value = "sn")
+    SN("sn"),
+
+    @SerialName(value = "sc")
+    SC("sc"),
+
+    @SerialName(value = "sl")
+    SL("sl"),
+
+    @SerialName(value = "so")
+    SO("so"),
+
+    @SerialName(value = "za")
+    ZA("za"),
+
+    @SerialName(value = "ss")
+    SS("ss"),
+
+    @SerialName(value = "sd")
+    SD("sd"),
+
+    @SerialName(value = "st")
+    ST("st"),
+
+    @SerialName(value = "tz")
+    TZ("tz"),
+
+    @SerialName(value = "tg")
+    TG("tg"),
+
+    @SerialName(value = "tn")
+    TN("tn"),
+
+    @SerialName(value = "ug")
+    UG("ug"),
+
+    @SerialName(value = "eh")
+    EH("eh"),
+
+    @SerialName(value = "zm")
+    ZM("zm"),
+
+    @SerialName(value = "zw")
+    ZW("zw"),
 
     @SerialName(value = "uk")
     UK("uk"),

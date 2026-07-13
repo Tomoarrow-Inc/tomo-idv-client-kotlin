@@ -8,7 +8,8 @@
 | **country** | [**Country**](Country.md) |  |  [optional] |
 | **email** | **kotlin.String** |  |  [optional] |
 | **kycPolicy** | [**KycPolicy**](KycPolicy.md) |  |  [optional] |
-| **redirectUrl** | **kotlin.String** |  |  [optional] |
+| **redirectUrlFail** | **kotlin.String** |  |  [optional] |
+| **redirectUrlSuccess** | **kotlin.String** |  |  [optional] |
 | **userId** | **kotlin.String** |  |  [optional] |
 | **webhookUrl** | **kotlin.String** |  |  [optional] |
 

@@ -37,7 +37,8 @@ import kotlinx.serialization.Contextual
  * @param country 
  * @param email 
  * @param kycPolicy 
- * @param redirectUrl 
+ * @param redirectUrlFail 
+ * @param redirectUrlSuccess 
  * @param userId 
  * @param webhookUrl 
  */
@@ -57,8 +58,11 @@ data class StartIdvReq (
     @SerialName(value = "kyc_policy")
     val kycPolicy: KycPolicy? = null,
 
-    @SerialName(value = "redirect_url")
-    val redirectUrl: kotlin.String? = null,
+    @SerialName(value = "redirect_url_fail")
+    val redirectUrlFail: kotlin.String? = null,
+
+    @SerialName(value = "redirect_url_success")
+    val redirectUrlSuccess: kotlin.String? = null,
 
     @SerialName(value = "user_id")
     val userId: kotlin.String? = null,
